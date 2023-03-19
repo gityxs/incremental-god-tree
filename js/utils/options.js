@@ -11,7 +11,7 @@ function getStartOptions() {
 		offlineProd: true,
 		hideChallenges: false,
 		showStory: true,
-		forceOneTab: false,
+		forceOneTab: true,
 		oldStyle: false,
 		tooltipForcing: true,
 	}
@@ -75,4 +75,9 @@ function milestoneShown(layer, id) {
 			break;
 	}
 	return false;
+}
+let notations = ['Scientific', 'Engineering', 'Standard']
+
+function changeNotation() {
+	player.notation = notations[(notations.indexOf(player.notation) + 1) % notations.length]
 }

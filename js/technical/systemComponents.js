@@ -29,8 +29,6 @@ var systemComponents = {
 				}
 				else {run(layers[layer].onClick, layers[layer])}
 			}"
-
-
 			v-bind:class="{
 				treeNode: tmp[layer].isLayer,
 				treeButton: !tmp[layer].isLayer,
@@ -63,7 +61,7 @@ var systemComponents = {
 		`
 	},
 
-	
+
 	'layer-tab': {
 		props: ['layer', 'back', 'spacing', 'embedded'],
 		template: `<div v-bind:style="[tmp[layer].style ? tmp[layer].style : {}, (tmp[layer].tabFormat && !Array.isArray(tmp[layer].tabFormat)) ? tmp[layer].tabFormat[player.subtabs[layer].mainTabs].style : {}]" class="noBackground">
@@ -120,10 +118,10 @@ var systemComponents = {
 		<div v-for="thing in tmp.displayThings" class="overlayThing"><span v-if="thing" v-html="thing"></span></div>
 	</div>
 	`
-    },
+	},
 
-    'info-tab': {
-        template: `
+	'info-tab': {
+		template: `
         <div>
         <h2>{{modInfo.name}}</h2>
         <br>
@@ -135,8 +133,11 @@ var systemComponents = {
         <br>
         The Modding Tree <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '14px', 'display': 'inline'}" >{{TMT_VERSION.tmtNum}}</a> by Acamaeda
         <br>
-        The Prestige Tree made by Jacorb and Aarex
-		<br><br>
+        The Prestige Tree made by Jacorb and Aarex<br>
+        Tested by Piterpicher, Ree, NovaLol, and Niko<br>
+        Extra notations by Niko<br>
+        Typo check by Piterpicher<br>
+		<br>
 		<div class="link" onclick="showTab('changelog-tab')">Changelog</div><br>
         <span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink" target="_blank">{{modInfo.discordName}}</a><br></span>
         <a class="link" href="https://discord.gg/F3xveHV" target="_blank" v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree Discord</a><br>
@@ -146,10 +147,10 @@ var systemComponents = {
         <h3>Hotkeys</h3><br>
         <span v-for="key in hotkeys" v-if="player[key.layer].unlocked && tmp[key.layer].hotkeys[key.id].unlocked"><br>{{key.description}}</span></div>
     `
-    },
+	},
 
-    'options-tab': {
-        template: `
+	'options-tab': {
+		template: `
         <table>
             <tr>
                 <td><button class="opt" onclick="save()">Save</button></td>
@@ -171,24 +172,27 @@ var systemComponents = {
                 <td><button class="opt" onclick="toggleOpt('forceOneTab'); needsCanvasUpdate = true">Single-Tab Mode: {{ options.forceOneTab?"ALWAYS":"AUTO" }}</button></td>
 				<td><button class="opt" onclick="toggleOpt('forceTooltips'); needsCanvasUpdate = true">Shift-Click to Toggle Tooltips: {{ options.forceTooltips?"ON":"OFF" }}</button></td>
 				</tr> 
+				<tr>
+                <td><button class="opt" onclick="changeNotation()">Notation: {{ player.notation }}</button></td>
+\t\t\t</tr> 
         </table>`
-    },
+	},
 
-    'back-button': {
-        template: `
+	'back-button': {
+		template: `
         <button v-bind:class="back" onclick="goBack()">←</button>
         `
-    },
+	},
 
 
-	'tooltip' : {
+	'tooltip': {
 		props: ['text'],
 		template: `<div class="tooltip" v-html="text"></div>
 		`
 	},
 
 	'node-mark': {
-		props: {'layer': {}, data: {}, offset: {default: 0}, scale: {default: 1}},
+		props: { 'layer': {}, data: {}, offset: { default: 0 }, scale: { default: 1 } },
 		template: `<div v-if='data'>
 			<div v-if='data === true' class='star' v-bind:style='{position: "absolute", left: (offset-10) + "px", top: (offset-10) + "px", transform: "scale( " + scale||1 + ", " + scale||1 + ")"}'></div>
 			<img v-else class='mark' v-bind:style='{position: "absolute", left: (offset-22) + "px", top: (offset-15) + "px", transform: "scale( " + scale||1 + ", " + scale||1 + ")"}' v-bind:src="data"></div>
@@ -217,4 +221,3 @@ var systemComponents = {
 	}
 
 }
-

@@ -10,7 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="css/other-tabs.css" />
 	<link rel="stylesheet" type="text/css" href="css/popup.css" />
 	<link rel="stylesheet" type="text/css" href="css/tree-node.css" />
-
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="icon" href="resources/tablogo.png">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
@@ -22,7 +23,7 @@
 
 	<script src="js/technical/temp.js"></script>
 	<script src="js/technical/displays.js"></script>
-	
+
 	<script src="js/game.js"></script>
 	<script src="js/utils.js"></script>
 	<script src="js/utils/easyAccess.js"></script>
@@ -84,8 +85,8 @@
 				<ul id="discord-links">
 					<li v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
 							target="_blank">{{modInfo.discordName}}</a><br></li>
-					<li><a class="link" href="https://discord.gg/F3xveHV" target="_blank"
-							v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree
+					<li><a class="link" href="https://discord.gg/DubGsHrbs2" target="_blank"
+							v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Incremental God Tree
 							Discord</a><br></li>
 					<li><a class="link" href="http://discord.gg/wwQfgPa" target="_blank"
 							v-bind:style="{'font-size': '16px'}">Main Prestige Tree server</a></li>
@@ -112,7 +113,7 @@
 		<div class="popup-container">
 			<transition-group name="fade">
 				<div v-for="popup,index in activePopups" class="popup" v-bind:class="popup.type"
-					v-bind:key="'p' + popup.id" v-on:click="() => {activePopups.splice(index, 1)}" v-bind:style="popup.color ? {'background-color': popup.color} : {}">
+					 v-bind:key="'p' + popup.id" v-on:click="() => {activePopups.splice(index, 1)}" v-bind:style="popup.color ? {'background-color': popup.color} : {}">
 					<h3>{{popup.title}}</h3><br>
 					<h2 v-html="popup.message"></h2>
 				</div>
