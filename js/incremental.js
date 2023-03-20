@@ -14,6 +14,7 @@
         treesoftcap: new Decimal(1),
         treegen: new Decimal(1),
         //Computer
+        cryptopause: new Decimal(0),
         crypto: new Decimal(0),
         cryptotoget: new Decimal(0),
         bytes: new Decimal(0),
@@ -31,6 +32,7 @@
         cryptodim4: new Decimal(0),
         cryptodim4mult: new Decimal(1),
         //Coding
+        codeexperiencepause: new Decimal(0),
         codeexperience: new Decimal(0),
         codeexperiencetoget: new Decimal(0),
         codeexperienceeffect: new Decimal(0),
@@ -525,6 +527,11 @@
         if (inChallenge("i", 22)) player.i.treegen = new Decimal(1)
 
         //computer 
+        player.i.cryptopause = player.i.cryptopause.sub(1)
+
+        if (player.i.cryptopause.gt(0)) {
+            layers.i.cryptoreset();
+        }
         player.i.cryptotoget = player.points.div(5000).pow(0.8)
         player.i.cryptotoget = player.i.cryptotoget.mul(buyableEffect("i", 21))
         if (hasUpgrade("i", 37) && !inChallenge("i", 24)) player.i.cryptotoget = player.i.cryptotoget.mul(upgradeEffect("i", 37))
@@ -568,6 +575,11 @@
         }
         if (hasUpgrade("i", 51)) player.i.crypto = player.i.crypto.add(player.i.cryptotoget.mul(1).mul(delta))
         //coding
+        player.i.codeexperiencepause = player.i.codeexperiencepause.sub(1)
+
+        if (player.i.codeexperiencepause.gt(0)) {
+            layers.i.codereset();
+        }
         player.i.codeexperiencetoget = player.i.crypto.div(1e15).pow(0.10)
         player.i.codeexperiencetoget = player.i.codeexperiencetoget.mul(player.i.voidmodseffect)
         player.i.codeexperiencetoget = player.i.codeexperiencetoget.mul(buyableEffect("i", 24))
@@ -1267,11 +1279,7 @@
         player.i.jacorbianunlock = new Decimal(0)
         player.i.jacorbiantrialunlock = new Decimal(0)
     },
-    clickables: {
-        11: {
-            title() { return "<h2>Reset for crypto " },
-            canClick() { return player.i.cryptotoget.gte(1) },
-            onClick() {
+    cryptoreset() {
                 if (!hasUpgrade("i", 38)) {
                     if (!hasUpgrade("i", 31)) {
                         for (let i = 0; i < player.i.upgrades.length; i++) {
@@ -1281,15 +1289,58 @@
                             }
                         }
                     }
+        }
+        player.i.trees = new Decimal(0)
+        player.points = new Decimal(1)
+        player.i.leaves = new Decimal(0)
+        player.i.buyables[11] = new Decimal(0)
+        player.i.buyables[12] = new Decimal(0)
+        player.i.buyables[13] = new Decimal(0)
+        player.i.buyables[14] = new Decimal(0)
+        player.i.crypto = player.i.crypto.add(player.i.cryptotoget)
+    },
+    codereset() {
+        if (!hasUpgrade("i", 42)) {
+            for (let i = 0; i < player.i.upgrades.length; i++) {
+                if (+player.i.upgrades[i] < 36) {
+                    player.i.upgrades.splice(i, 1);
+                    i--;
                 }
-                player.i.trees = new Decimal(0)
-                player.points = new Decimal(1)
-                player.i.leaves = new Decimal(0)
-                player.i.buyables[11] = new Decimal(0)
-                player.i.buyables[12] = new Decimal(0)
-                player.i.buyables[13] = new Decimal(0)
-                player.i.buyables[14] = new Decimal(0)
-                player.i.crypto = player.i.crypto.add(player.i.cryptotoget)
+            }
+        }
+        player.i.buyables[11] = new Decimal(0)
+        player.i.buyables[12] = new Decimal(0)
+        player.i.buyables[13] = new Decimal(0)
+        player.i.buyables[14] = new Decimal(0)
+        player.i.buyables[15] = new Decimal(0)
+        player.i.buyables[16] = new Decimal(0)
+        player.i.buyables[17] = new Decimal(0)
+        player.i.buyables[18] = new Decimal(0)
+        player.i.buyables[19] = new Decimal(0)
+        player.i.buyables[20] = new Decimal(0)
+        player.i.buyables[21] = new Decimal(0)
+        player.i.buyables[22] = new Decimal(0)
+        player.i.bytes = new Decimal(0)
+        player.i.crypto = new Decimal(0)
+        player.i.cryptodim1 = new Decimal(0)
+        player.i.cryptodim1mult = new Decimal(1)
+        player.i.cryptodim2 = new Decimal(0)
+        player.i.cryptodim2mult = new Decimal(1)
+        player.i.cryptodim3 = new Decimal(0)
+        player.i.cryptodim3mult = new Decimal(1)
+        player.i.cryptodim4 = new Decimal(0)
+        player.i.cryptodim4mult = new Decimal(1)
+        player.i.trees = new Decimal(0)
+        player.points = new Decimal(1)
+        player.i.leaves = new Decimal(0)
+        player.i.codeexperience = player.i.codeexperience.add(player.i.codeexperiencetoget)
+    },
+    clickables: {
+        11: {
+            title() { return "<h2>Reset for crypto " },
+            canClick() { return player.i.cryptotoget.gte(1) },
+            onClick() {
+                player.i.cryptopause = new Decimal(3)
             },
             style: { width: '400px', "min-height": '100px' }
         },
@@ -1297,40 +1348,7 @@
             title() { return "<h2>Reset for code experience " },
             canClick() { return player.i.codeexperiencetoget.gte(1) },
             onClick() {
-                if (!hasUpgrade("i", 42)) {
-                    for (let i = 0; i < player.i.upgrades.length; i++) {
-                        if (+player.i.upgrades[i] < 36) {
-                            player.i.upgrades.splice(i, 1);
-                            i--;
-                        }
-                    }
-                }
-                player.i.buyables[11] = new Decimal(0)
-                player.i.buyables[12] = new Decimal(0)
-                player.i.buyables[13] = new Decimal(0)
-                player.i.buyables[14] = new Decimal(0)
-                player.i.buyables[15] = new Decimal(0)
-                player.i.buyables[16] = new Decimal(0)
-                player.i.buyables[17] = new Decimal(0)
-                player.i.buyables[18] = new Decimal(0)
-                player.i.buyables[19] = new Decimal(0)
-                player.i.buyables[20] = new Decimal(0)
-                player.i.buyables[21] = new Decimal(0)
-                player.i.buyables[22] = new Decimal(0)
-                player.i.bytes = new Decimal(0)
-                player.i.crypto = new Decimal(0)
-                player.i.cryptodim1 = new Decimal(0)
-                player.i.cryptodim1mult = new Decimal(1)
-                player.i.cryptodim2 = new Decimal(0)
-                player.i.cryptodim2mult = new Decimal(1)
-                player.i.cryptodim3 = new Decimal(0)
-                player.i.cryptodim3mult = new Decimal(1)
-                player.i.cryptodim4 = new Decimal(0)
-                player.i.cryptodim4mult = new Decimal(1)
-                player.i.trees = new Decimal(0)
-                player.points = new Decimal(1)
-                player.i.leaves = new Decimal(0)
-                player.i.codeexperience = player.i.codeexperience.add(player.i.codeexperiencetoget)
+                player.i.codeexperiencepause = new Decimal(3)
             },
             style: { width: '400px', "min-height": '100px' }
         },
