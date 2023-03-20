@@ -4942,7 +4942,7 @@
                         ["blank", "25px"],
                         ["row", [["bar", "modbar"]]],
                         ["raw-html", function () { return "<h2>You are writing  " + format(player.i.linesofcodepersecond) + "<h2> lines of code per second. (Based on code experience) " }],
-                        ["raw-html", function () { return "<h2>You made  " + formatWhole(player.i.mods) + "<h2> mods, which give a x " + format(player.i.modeffect) + "<h2> boost to crypto dimensions. " }],
+                        ["raw-html", function () { return "<h2>You made  " + formatWhole(player.i.mods) + "<h2> mods, which give a x" + format(player.i.modeffect) + "<h2> boost to crypto dimensions. " }],
                         ["raw-html", function () { return "<h2>You will gain  " + format(player.i.modgen, 1) + "<h2> mods." }],
                         ["raw-html", function () { return player.i.mods.gte(player.i.modsoftcapstart) ? "After " + formatWhole(player.i.modsoftcapstart) + " mods, lines of code gain is divided by " + format(player.i.modsoftcap) + " (Based on mods)" : "" }, { "color": "red", "font-size": "16px", "font-family": "monospace" }],
                         ["blank", "50px"],
