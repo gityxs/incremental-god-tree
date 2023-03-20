@@ -709,12 +709,12 @@
             player.i.infinitypoints = new Decimal(0)
         }
         if (inChallenge("i", 16)) {
-            player.i.apoints = player.i.apoints.mul(1.14)
+            player.i.apoints = player.i.apoints.mul(1.07)
             if (player.points.gte(1e100)) {
-                player.i.apoints = player.i.apoints.mul(1.4)
+                player.i.apoints = player.i.apoints.mul(1.2)
             }
             if (player.points.gte(1e200)) {
-                player.i.apoints = player.i.apoints.mul(1.8)
+                player.i.apoints = player.i.apoints.mul(1.5)
             }
             if (player.i.apoints.gt(player.points)) {
                 layers.i.infinityreset();
@@ -3188,7 +3188,7 @@
                 let growth = 1.2
                 let max = Decimal.affordGeometricSeries(player.i.crypto, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                if (!hasUpgrade("i", 41) || !hasMilestone("i", 12)) player.i.crypto = player.i.crypto.sub(cost)
+                if (!hasUpgrade("i", 41)) player.i.crypto = player.i.crypto.sub(cost)
                 player.i.cryptodim1mult = player.i.cryptodim1mult.add(max.div(100))
                 player.i.cryptodim1 = player.i.cryptodim1.add(max)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
@@ -5056,10 +5056,10 @@
                         ["raw-html", function () { return "<h2>You will gain  " + format(player.i.infinitypointstoget) + "<h2> on reset. " }],
                         ["raw-html", function () { return "<h3>You have  " + format(player.i.infinities) + "<h3> infinities. " }],
                         ["raw-html", function () { return "<h3>You will gain  " + format(player.i.infinitiestoget) + "<h3> on reset. " }],
-                        ["raw-html", function () { return "<h3>+" + format(player.i.ippassive) + "<h3> passive IP per second. " }],
+                        ["raw-html", function () { return hasChallenge("i", 14) ? "<h3>+" + format(player.i.ippassive) + "<h3> passive IP per second. " : ""}],
                         ["row", [["upgrade", 54], ["upgrade", 55], ["upgrade", 56], ["upgrade", 57], ["upgrade", 58], ["upgrade", 59]]],
                         ["row", [["upgrade", 61], ["upgrade", 62], ["upgrade", 63], ["upgrade", 64], ["upgrade", 65], ["upgrade", 66]]],
-                        ["raw-html", function () { return "<h3>You have a x " + format(player.i.preinfinityresourcemult) + "<h3> pre-infinity resource multiplier. " }],
+                        ["raw-html", function () { return "<h3>You have a x" + format(player.i.preinfinityresourcemult) + "<h3> pre-infinity resource multiplier. " }],
                         ["blank", "25px"],
                         ["row", [["buyable", 27], ["buyable", 36]]],
                         ["blank", "25px"],
