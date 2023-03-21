@@ -1482,6 +1482,30 @@
                 player.i.infinitypoints = player.i.infinitypoints.add(player.i.infinitypointstoget)
                 player.i.infinityresets = player.i.infinityresets.add(1)
                 layers.i.infinityreset();
+                if (inChallenge("i", 11)) {
+                    startChallenge("i", 11)
+                }
+                if (inChallenge("i", 12)) {
+                    startChallenge("i", 12)
+                }
+                if (inChallenge("i", 13)) {
+                    startChallenge("i", 13)
+                }
+                if (inChallenge("i", 14)) {
+                    startChallenge("i", 14)
+                }
+                if (inChallenge("i", 15)) {
+                    startChallenge("i", 15)
+                }
+                if (inChallenge("i", 16)) {
+                    startChallenge("i", 16)
+                }
+                if (inChallenge("i", 17)) {
+                    startChallenge("i", 17)
+                }
+                if (inChallenge("i", 18)) {
+                    startChallenge("i", 18)
+                }
             },
             style: { width: '400px', "min-height": '100px' }
         },
@@ -1554,6 +1578,30 @@
                 player.i.infinitypoints = player.i.infinitypoints.add(player.i.infinitypointstoget)
                 player.i.infinityresets = player.i.infinityresets.add(1)
                 layers.i.infinityreset();
+                if (inChallenge("i", 11)) {
+                    startChallenge("i", 11)
+                }
+                if (inChallenge("i", 12)) {
+                    startChallenge("i", 12)
+                }
+                if (inChallenge("i", 13)) {
+                    startChallenge("i", 13)
+                }
+                if (inChallenge("i", 14)) {
+                    startChallenge("i", 14)
+                }
+                if (inChallenge("i", 15)) {
+                    startChallenge("i", 15)
+                }
+                if (inChallenge("i", 16)) {
+                    startChallenge("i", 16)
+                }
+                if (inChallenge("i", 17)) {
+                    startChallenge("i", 17)
+                }
+                if (inChallenge("i", 18)) {
+                    startChallenge("i", 18)
+                }
             },
             style: { width: '150px', "min-height": '60px' }
         },
@@ -4492,7 +4540,7 @@
         },
         14: {
             name: "Medium Challenge",
-            challengeDescription: "Divides all pre-infinity resource production by 5.",
+            challengeDescription: "Divides all pre-infinity resource production by 10.",
             goal() { return new Decimal("1.79e308") },
             canComplete: function () { return player.points.gte(1.79e308) || player.i.infinitypause.eq(1) },
             rewardDescription: "Passively gain IP per minute based on IP on reset.",
