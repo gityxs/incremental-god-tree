@@ -34,7 +34,7 @@ addLayer("a", {
     buyables: {
         11: {
             cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul(10000) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1) },
             unlocked() { return true },
             canAfford() { return player.a.achievementpoints.gte(this.cost()) },
             title() {
