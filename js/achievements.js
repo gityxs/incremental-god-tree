@@ -523,6 +523,12 @@ addLayer("a", {
             tooltip: "Get e1e15 singularity points.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
+        97: {
+            name: "Don't forget...",
+            done() { return player.i.jacorbianenergy.gte("1e456") },
+            tooltip: "Get 1e456 jacorbian energy.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
         //FUN ACHIEVEMENTS
         1001: {
             name: "Zuck Would Be Proud",
@@ -709,7 +715,7 @@ addLayer("a", {
                     ["row", [["achievement", 51], ["achievement", 52], ["achievement", 53], ["achievement", 54], ["achievement", 55], ["achievement", 56], ["achievement", 57], ["achievement", 58], ["achievement", 59], ["achievement", 61], ["achievement", 62], ["achievement", 63]]],
                     ["row", [["achievement", 64], ["achievement", 65], ["achievement", 66], ["achievement", 67], ["achievement", 68], ["achievement", 69], ["achievement", 71], ["achievement", 72], ["achievement", 73], ["achievement", 74], ["achievement", 75], ["achievement", 76]]],
                     ["row", [["achievement", 77], ["achievement", 78], ["achievement", 79], ["achievement", 81], ["achievement", 82], ["achievement", 83], ["achievement", 84], ["achievement", 85], ["achievement", 86], ["achievement", 87], ["achievement", 88], ["achievement", 89]]],
-                    ["row", [["achievement", 91], ["achievement", 92], ["achievement", 93], ["achievement", 94], ["achievement", 95], ["achievement", 96]]],
+                    ["row", [["achievement", 91], ["achievement", 92], ["achievement", 93], ["achievement", 94], ["achievement", 95], ["achievement", 96], ["achievement", 97]]],
                     ["raw-html", function () { return "<h3>Note: Some achievements are worth more than others</h3>" }],
                 ]
 

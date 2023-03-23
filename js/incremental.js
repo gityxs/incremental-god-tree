@@ -175,6 +175,7 @@
         jacorbmods: new Decimal(0),
         jacorbmodseffect: new Decimal(0),
         jacorbmodspersecond: new Decimal(0), 
+        jacorbparticleenable: new Decimal(1),
         //voidsingularities
         voidsingularities: new Decimal(0),
         voidsingularitiestoget: new Decimal(0),
@@ -984,7 +985,7 @@
 
         document.body.style.setProperty('--background', player.i.jacorbianunlock.gte(1) ? "linear-gradient(90deg, #3B0051, #0f0f0f)" : inChallenge("i", 24) ? "linear-gradient(90deg, black, #210069)" : "#0f0f0f");
 
-        if (player.i.jacorbianunlock.eq(1)) {
+        if (player.i.jacorbianunlock.eq(1) && player.i.jacorbparticleenable.eq(1)) {
         makeParticles(jacorbparticle, 1)
         }
 
@@ -1721,6 +1722,22 @@
             unlocked() { return player.i.jacorbcutscene.neq(0) },
             onClick() {
                 player.i.jacorbscene = player.i.jacorbscene.add(1)
+            },
+        },
+        52: {
+            title() { return "<h3> Enable Jacorbian Rain  " },
+            canClick() { return true },
+            unlocked() { return player.i.jacorbianunlock.eq(1) },
+            onClick() {
+                player.i.jacorbparticleenable = new Decimal(1)
+            },
+        },
+        53: {
+            title() { return "<h3> Disable Jacorbian Rain  " },
+            canClick() { return true },
+            unlocked() { return player.i.jacorbianunlock.eq(1)},
+            onClick() {
+                player.i.jacorbparticleenable = new Decimal(0)
             },
         },
     },
@@ -5010,7 +5027,7 @@
                         //cr
                         ["raw-html", function () { return player.i.currentdisplay.eq(1) ? "<h2>You made " + format(player.i.creatormods, 0) + "<h2> creation mods. " : "" }, { "color": "red", "font-size": "24px", "font-family": "monospace" }],
                         ["raw-html", function () { return player.i.currentdisplay.eq(1) ? "Currently making mods powered by the CREATOR REALM." : "" }, { "color": "red", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return player.i.currentdisplay.eq(1) ? "<h2>Which boost tree and leaf gain by x " + format(player.i.creatormodseffect, 2) : "" }, { "color": "red", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.currentdisplay.eq(1) ? "<h2>Which boost tree and leaf gain by x" + format(player.i.creatormodseffect, 2) : "" }, { "color": "red", "font-size": "16px", "font-family": "monospace" }],
                         //hpoe
                         ["raw-html", function () { return player.i.currentdisplay.eq(2) ? "<h2>You made " + format(player.i.highmods, 0) + "<h2> divine mods. " : "" }, { "color": "orange", "font-size": "24px", "font-family": "monospace" }],
                         ["raw-html", function () { return player.i.currentdisplay.eq(2) ? "Currently making mods powered by the HIGHER PLANE." : "" }, { "color": "orange", "font-size": "24px", "font-family": "monospace" }],
@@ -5063,7 +5080,7 @@
                         ["raw-html", function () { return "<h2>You have  " + format(player.i.totalrealmmods, 0) + "<h2> total realm mods. " }, { "color": "purple", "font-size": "16px", "font-family": "monospace" }],
                         ["row", [["clickable", 26], ["clickable", 27]]],
                         ["raw-html", function () { return "<h2>You have  " + format(player.i.jacorbianenergy) + "<h2> jacorbian energy. " }, { "color": "purple", "font-size": "20px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "<h3>Your jacorbian energy give a x " + format(player.i.jacorbianenergyeffect) + "<h3> boost to mod gain and mod softcap extension. " }, { "color": "purple", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "<h3>Your jacorbian energy give a x" + format(player.i.jacorbianenergyeffect) + "<h3> boost to mod gain and mod softcap extension. " }, { "color": "purple", "font-size": "16px", "font-family": "monospace" }],
                         ["raw-html", function () { return "<h3>You will gain  " + format(player.i.jacorbianenergytoget) + "<h3> on reset. (Based on total realm mods) " }, { "color": "purple", "font-size": "16px", "font-family": "monospace" }],
                         ["blank", "25px"],
                         ["row", [["clickable", 48], ["clickable", 49]]],
@@ -5071,6 +5088,7 @@
                         ["raw-html", function () { return player.i.jacorbianunlock.eq(1) ? "<h3>Note: Buying the upgrade that disables this feature or doing a singularity reset stops jacorbian balancing. " :"" }, { "color": "purple", "font-size": "16px", "font-family": "monospace" }],
                         ["blank", "25px"],
                         ["row", [["buyable", 59], ["buyable", 61]]],
+                        ["row", [["clickable", 53], ["clickable", 52]]],
                     ]
 
             },
