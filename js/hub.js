@@ -621,7 +621,7 @@ addLayer("h", {
             title: "Sweet, Sweet, Automation.",
             description: "Autobuys willpower generators and infinity shrines.",
             unlocked() { return true },
-            cost: new Decimal(1000),
+            cost: new Decimal(250),
             currencyLocation() { return player.h },
             currencyDisplayName: "Prestige Power",
             currencyInternalName: "prestigepower",
