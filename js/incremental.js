@@ -2100,7 +2100,7 @@
             currencyInternalName: "mods",
             effectDisplay() { return format(upgradeEffect(this.layer, this.id)) + "x" },
             effect() {
-                return player.i.leaves.div(player.i.treereq).add(1)
+                return player.i.linesofcode.div(player.i.modreq).add(1)
             },
         },
         47:
