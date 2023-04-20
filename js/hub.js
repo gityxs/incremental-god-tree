@@ -1385,7 +1385,7 @@
 
         player.h.aarexianenergyeffect = player.h.aarexianenergy.pow(0.8).add(1)
 
-        if (hasUpgrade("i", 33)) player.h.aarexianenergy = player.h.aarexianenergy.add(player.h.aarexianenergytoget.mul(delta))
+        if (hasUpgrade("h", 33)) player.h.aarexianenergy = player.h.aarexianenergy.add(player.h.aarexianenergytoget.mul(delta))
     },
     milestones: {
         11: {
