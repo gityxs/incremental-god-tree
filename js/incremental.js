@@ -1401,8 +1401,8 @@
         tsdimbooster = tsdimbooster.mul(timestop)
         tsdimbooster = tsdimbooster.mul(buyableEffect("h", 35))
 
-        if (hasMilestone("i", 28)) player.i.tspowerpersecond = onepersec.mul(timestop)
-        player.i.tspowerpersecond = player.i.tspowerpersecond.mul(player.i.tsdim1.mul(player.i.tsdim1mult).mul(tsdimbooster))
+
+        if (hasMilestone("i", 28)) player.i.tspowerpersecond = player.i.tsdim1.mul(player.i.tsdim1mult).mul(tsdimbooster).add(1)
 
         player.i.tsdim1persecond = player.i.tsdim2.mul(player.i.tsdim2mult.mul(tsdimbooster))
         player.i.tsdim2persecond = player.i.tsdim3.mul(player.i.tsdim3mult.mul(tsdimbooster))
