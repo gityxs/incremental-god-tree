@@ -1,4 +1,4 @@
-addLayer("a", {
+﻿addLayer("a", {
     name: "Achievements", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "<img src='resources/trophy.png' style='width:calc(80%);height:calc(80%);margin:10%'></img>", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -29,7 +29,15 @@ addLayer("a", {
 
     },
     upgrades: {
-
+        11:
+        {
+            title: "Artifact (a)",
+            unlocked() { return hasUpgrade("i", 155) },
+            cost: new Decimal("1e6"),
+            currencyLocation() { return player.a },
+            currencyDisplayName: "Achievement Points",
+            currencyInternalName: "achievementpoints",
+        },
     },
     buyables: {
         11: {
@@ -488,7 +496,7 @@ addLayer("a", {
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         91: {
-            name: "Pi on Drugs.",
+            name: "Pi on Drugs",
             done() { return player.i.singularitypower.gte("1e314") },
             tooltip: "Get 1e314 singularity power", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
@@ -524,9 +532,75 @@ addLayer("a", {
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         97: {
-            name: "Don't forget...",
+            name: "Don't Forget...",
             done() { return player.i.jacorbianenergy.gte("1e456") },
             tooltip: "Get 1e456 jacorbian energy.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        98: {
+            name: "Omega Layers Reference?",
+            done() { return player.i.omegapoints.gte("6") },
+            tooltip: "Get 6 ω.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(2) },
+        },
+        99: {
+            name: "Pi Body Pillow Owner",
+            done() { return player.points.gte("ee3141") },
+            tooltip: "Get e1e3141 points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        101: {
+            name: "Beta Male Moment",
+            done() { return player.i.beta.gte("1000") },
+            tooltip: "Get 1000 β.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        102: {
+            name: "Enough Antimatter Dimensions References!",
+            done() { return player.i.sacrificemult.gte("11") },
+            tooltip: "Get a x11 β dimensions sacrifice multiplier.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        103: {
+            name: "There Will Always Be More Challenges",
+            done() { return hasChallenge("i", 25) },
+            tooltip: "Beat δ Challenge I.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        104: {
+            name: "Aarex Running Through Your Veins",
+            done() { return player.h.aarexianenergy.gte(1000) },
+            tooltip: "Gain 1000 aarexian energy.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        105: {
+            name: "Epsilionaire",
+            done() { return player.i.epsilon.gte(1000000) },
+            tooltip: "Gain 1000000 ε.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        106: {
+            name: "Triple E's",
+            done() { return player.points.gte("eee9") },
+            tooltip: "Gain eee9 points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        107: {
+            name: "Don't you already have more than a few thousand of these?",
+            done() { return player.i.truesingularitylevel.gte("10") },
+            tooltip: "Get TS level 10.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        108: {
+            name: "Pi Tier 3 Sub",
+            done() { return player.i.aarexpoints.gte("3.14e10") },
+            tooltip: "Get 3.14e10 aarex points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        109: {
+            name: "Quest Lord",
+            done() { return player.i.singularityenergy.gte("65") },
+            tooltip: "Get 65 singularity energy.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         //FUN ACHIEVEMENTS
@@ -641,20 +715,32 @@ addLayer("a", {
         1021: {
             name: "But Why?",
             done() { return player.h.slotredenergy[7].gte(100000) && player.a.achievementpower.gte(18) },
-            tooltip: "Get 100000 red energy on slot 7", // Shows when achievement is not completed
+            tooltip: "Get 100000 red energy on slot 7.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(1) },
         },
         1022: {
             name: "True Jacorbian Hell",
             done() { return inChallenge("i", 23) && player.points.gte("1e6666") && player.a.achievementpower.gte(18) },
-            tooltip: "Get 1e6666 points in Trial IV", // Shows when achievement is not completed
+            tooltip: "Get 1e6666 points in Trial IV.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(1) },
+        },
+        1023: {
+            name: "Screaming in Greek",
+            done() { return player.i.omegas.gt(player.i.omegapoints) && player.a.achievementpower.gte(18) },
+            tooltip: "Get more Ω than ω.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        1024: {
+            name: "A Lot of Jacorb in Your Veins",
+            done() { return player.i.jacorbianenergy.gt("ee9") && player.points.lt("eee9") && player.a.achievementpower.gte(18) },
+            tooltip: "Get more than ee9 jacorbian energy whilst having less than eee9 points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         //COMMUNITY
         2001: {
             name: "Once a man, Jacorb was no fool.",
             done() { return player.i.jacorbianunlock.eq(1) },
-            tooltip: "Implement jacorbian balancing", // Shows when achievement is not completed
+            tooltip: "Implement jacorbian balancing.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(2.5) },
         },
         2002: {
@@ -678,25 +764,74 @@ addLayer("a", {
         2005: {
             name: "Jacorb is a noble, he is the automation one.",
             done() { return hasChallenge("i", 19) },
-            tooltip: "Beat Trial I", // Shows when achievement is not completed
+            tooltip: "Beat Trial I.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         2006: {
             name: "When he got captured by the death, he was done.",
             done() { return hasChallenge("i", 21) },
-            tooltip: "Beat Trial II", // Shows when achievement is not completed
+            tooltip: "Beat Trial II.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         2007: {
             name: "In exile, Jacorb may have become insane.",
             done() { return hasChallenge("i", 22) },
-            tooltip: "Beat Trial III", // Shows when achievement is not completed
+            tooltip: "Beat Trial III.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
         2008: {
             name: "Softcaps and inflation? I don't think it's the same.",
             done() { return hasChallenge("i", 23) },
-            tooltip: "Beat Trial IV", // Shows when achievement is not completed
+            tooltip: "Beat Trial IV.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        2009: {
+            name: "Aarex, the omnisity of NG+3.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            tooltip: "Get all aarexian artifacts.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(2.5) },
+        },
+        2011: {
+            name: "Him and jacorb, they made the prestige tree.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return player.i.aarexpoints.gte(10000) },
+            tooltip: "Get 10000 aarex points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        2012: {
+            name: "Both in exile, you must set them free.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return player.i.wastedaarexpoints.gte(1000) },
+            tooltip: "Get 1000 wasted aarex points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        2013: {
+            name: "If not, you will fail.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return player.i.aarexpoints.gte(100000) },
+            tooltip: "Get 100000 aarex points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        2014: {
+            name: "Aarex will give gifts, like the quantum trail.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return player.i.wastedaarexpoints.gte(100000) },
+            tooltip: "Get 100000 wasted aarex points.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        2015: {
+            name: "Grinding aarex points, to pay off his bail.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return player.i.aarexifiedinfinities.gte(1000) },
+            tooltip: "Get 1000 aarexified infinities.", // Shows when achievement is not completed
+            onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
+        },
+        2016: {
+            name: "When you set him free, he will tell you his tale.",
+            unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+            done() { return player.i.aarexifiedsingularities.gte(1000) },
+            tooltip: "Get 1000 aarexified singularities.", // Shows when achievement is not completed
             onComplete() { player.a.achievementpower = player.a.achievementpower.add(0.5) },
         },
     },
@@ -715,7 +850,8 @@ addLayer("a", {
                     ["row", [["achievement", 51], ["achievement", 52], ["achievement", 53], ["achievement", 54], ["achievement", 55], ["achievement", 56], ["achievement", 57], ["achievement", 58], ["achievement", 59], ["achievement", 61], ["achievement", 62], ["achievement", 63]]],
                     ["row", [["achievement", 64], ["achievement", 65], ["achievement", 66], ["achievement", 67], ["achievement", 68], ["achievement", 69], ["achievement", 71], ["achievement", 72], ["achievement", 73], ["achievement", 74], ["achievement", 75], ["achievement", 76]]],
                     ["row", [["achievement", 77], ["achievement", 78], ["achievement", 79], ["achievement", 81], ["achievement", 82], ["achievement", 83], ["achievement", 84], ["achievement", 85], ["achievement", 86], ["achievement", 87], ["achievement", 88], ["achievement", 89]]],
-                    ["row", [["achievement", 91], ["achievement", 92], ["achievement", 93], ["achievement", 94], ["achievement", 95], ["achievement", 96], ["achievement", 97]]],
+                    ["row", [["achievement", 91], ["achievement", 92], ["achievement", 93], ["achievement", 94], ["achievement", 95], ["achievement", 96], ["achievement", 97], ["achievement", 98], ["achievement", 99], ["achievement", 101], ["achievement", 102], ["achievement", 103]]],
+                    ["row", [["achievement", 104], ["achievement", 105], ["achievement", 106], ["achievement", 107], ["achievement", 108], ["achievement", 109]]],
                     ["raw-html", function () { return "<h3>Note: Some achievements are worth more than others</h3>" }],
                 ]
 
@@ -727,7 +863,7 @@ addLayer("a", {
                     ["blank", "25px"],
                     ["raw-html", function () { return "<h2>You have " + format(player.a.achievementpower) + " achievement power.</h2>" }],
                     ["row", [["achievement", 1001], ["achievement", 1002], ["achievement", 1003], ["achievement", 1004], ["achievement", 1005], ["achievement", 1006], ["achievement", 1007], ["achievement", 1008], ["achievement", 1009], ["achievement", 1011], ["achievement", 1012]]],
-                    ["row", [["achievement", 1013], ["achievement", 1014], ["achievement", 1015], ["achievement", 1016], ["achievement", 1017], ["achievement", 1018], ["achievement", 1019], ["achievement", 1021], ["achievement", 1022]]],
+                    ["row", [["achievement", 1013], ["achievement", 1014], ["achievement", 1015], ["achievement", 1016], ["achievement", 1017], ["achievement", 1018], ["achievement", 1019], ["achievement", 1021], ["achievement", 1022], ["achievement", 1023], ["achievement", 1024]]],
                     ["raw-html", function () { return "<h3>Note: Some of these achievements will be unobtainable, but reobtainable on upcoming layer resets.</h3>" }],
                 ]
 
@@ -741,6 +877,9 @@ addLayer("a", {
                     ["blank", "25px"],
                     ["raw-html", function () { return "<h2>Jacorb</h2>" }],
                     ["row", [["achievement", 2001], ["achievement", 2002], ["achievement", 2003], ["achievement", 2004], ["achievement", 2005], ["achievement", 2006], ["achievement", 2007], ["achievement", 2008]]],
+                    ["blank", "25px"],
+                    ["raw-html", function () { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) ? "<h2>Aarex</h2>" : "" }],
+                    ["row", [["achievement", 2009], ["achievement", 2011], ["achievement", 2012], ["achievement", 2013], ["achievement", 2014], ["achievement", 2015], ["achievement", 2016]]],
                 ]
 
             },
@@ -767,6 +906,8 @@ addLayer("a", {
                         ["raw-html", function () { return "<h2>You are gaining " + format(player.a.achievementpointspersecond) + " achievement points per second.</h2>" }],
                         ["blank", "25px"],
                         ["row", [["buyable", 11]]],
+                        ["blank", "25px"],
+                        ["row", [["upgrade", 11]]],
                     ]
 
             },
@@ -775,6 +916,7 @@ addLayer("a", {
     tabFormat: [
         ["microtabs", "stuff", { 'border-width': '0px' }],
         ["blank", "25px"],
+        ["raw-html", function () { return "<audio controls autoplay loop hidden><source src=music/achievements.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" }],
     ],
     layerShown() {
         return true

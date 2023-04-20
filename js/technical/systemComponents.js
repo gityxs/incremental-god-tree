@@ -135,7 +135,6 @@ var systemComponents = {
         <br>
         The Prestige Tree made by Jacorb and Aarex<br>
         Tested by Piterpicher, Ree, NovaLol, and Niko<br>
-        Extra notations by Niko<br>
         Typo check by Piterpicher<br>
 		<br>
 		<div class="link" onclick="showTab('changelog-tab')">Changelog</div><br>
@@ -173,7 +172,6 @@ var systemComponents = {
 				<td><button class="opt" onclick="toggleOpt('forceTooltips'); needsCanvasUpdate = true">Shift-Click to Toggle Tooltips: {{ options.forceTooltips?"ON":"OFF" }}</button></td>
 				</tr> 
 				<tr>
-                <td><button class="opt" onclick="changeNotation()">Notation: {{ player.notation }}</button></td>
 \t\t\t</tr> 
         </table>`
 	},

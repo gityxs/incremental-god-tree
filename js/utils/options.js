@@ -76,8 +76,3 @@ function milestoneShown(layer, id) {
 	}
 	return false;
 }
-let notations = ['Scientific', 'Engineering', 'Standard']
-
-function changeNotation() {
-	player.notation = notations[(notations.indexOf(player.notation) + 1) % notations.length]
-}

@@ -1,4 +1,4 @@
-addLayer("h", {
+﻿addLayer("h", {
     name: "The Hub", // This is optional, only used in a few places, If absent it just uses the layer id.
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() {
@@ -33,6 +33,10 @@ addLayer("h", {
             slotredenergy: [new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)],
             slotgreenenergy: [new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)],
             slotblueenergy: [new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)],
+            //aarexianenergy
+            aarexianenergy: new Decimal(0),
+            aarexianenergytoget: new Decimal(0),
+            aarexianenergyeffect: new Decimal(1),
         }
     },
     automate() {
@@ -45,6 +49,19 @@ addLayer("h", {
             buyBuyable(this.layer, 16)
             buyBuyable(this.layer, 17)
             buyBuyable(this.layer, 18)
+        }
+        if (hasUpgrade('h', 29)) {
+            buyBuyable(this.layer, 19)
+            buyBuyable(this.layer, 21)
+            buyBuyable(this.layer, 22)
+            buyBuyable(this.layer, 23)
+            buyBuyable(this.layer, 24)
+            buyBuyable(this.layer, 25)
+            buyBuyable(this.layer, 26)
+            buyBuyable(this.layer, 27)
+            buyBuyable(this.layer, 28)
+            buyBuyable(this.layer, 29)
+            buyBuyable(this.layer, 31)
         }
     },
     nodeStyle() {
@@ -90,7 +107,7 @@ addLayer("h", {
         },
         12: {
             cost(x) { return new Decimal(5).pow(x || getBuyableAmount(this.layer, this.id)).mul(50) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.2).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.2).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return true },
             canAfford() { return player.h.willpower.gte(this.cost()) },
             title() {
@@ -111,7 +128,7 @@ addLayer("h", {
         },
         13: {
             cost(x) { return new Decimal(7).pow(x || getBuyableAmount(this.layer, this.id)).mul(75) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.5).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.5).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return true },
             canAfford() { return player.h.willpower.gte(this.cost()) },
             title() {
@@ -153,7 +170,7 @@ addLayer("h", {
         },
         15: {
             cost(x) { return new Decimal(9).pow(x || getBuyableAmount(this.layer, this.id)).mul(66666) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 74) || player.i.singularityunlocked.eq(1) },
             canAfford() { return player.h.willpower.gte(this.cost()) },
             title() {
@@ -195,7 +212,7 @@ addLayer("h", {
         },
         17: {
             cost(x) { return new Decimal(8.4).pow(x || getBuyableAmount(this.layer, this.id)).mul(99999) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.5).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.5).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 79) || player.i.singularityunlocked.eq(1) },
             canAfford() { return player.h.willpower.gte(this.cost()) },
             title() {
@@ -216,7 +233,7 @@ addLayer("h", {
         },
         18: {
             cost(x) { return new Decimal(11.2).pow(x || getBuyableAmount(this.layer, this.id)).mul(500000) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.3).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.3).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 87) || player.i.singularityunlocked.eq(1) },
             canAfford() { return player.h.willpower.gte(this.cost()) },
             title() {
@@ -252,7 +269,7 @@ addLayer("h", {
                 let growth = 2
                 let max = Decimal.affordGeometricSeries(player.h.redenergy, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.redenergy = player.h.redenergy.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.redenergy = player.h.redenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
             style: { "color": 'red' }
@@ -274,7 +291,7 @@ addLayer("h", {
                 let growth = 2
                 let max = Decimal.affordGeometricSeries(player.h.greenenergy, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.greenenergy = player.h.greenenergy.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.greenenergy = player.h.greenenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
             style: { "color": 'green' }
@@ -296,14 +313,14 @@ addLayer("h", {
                 let growth = 2
                 let max = Decimal.affordGeometricSeries(player.h.blueenergy, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.blueenergy = player.h.blueenergy.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.blueenergy = player.h.blueenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
             style: { "color": 'blue' }
         },
         23: {
             cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul(4) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.2).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.2).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return player.i.singularityunlocked.eq(1) },
             canAfford() { return player.h.prestigepower.gte(this.cost()) },
             title() {
@@ -318,13 +335,13 @@ addLayer("h", {
                 let growth = 2
                 let max = Decimal.affordGeometricSeries(player.h.prestigepower, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.prestigepower = player.h.prestigepower.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.prestigepower = player.h.prestigepower.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
         24: {
             cost(x) { return new Decimal(2.5).pow(x || getBuyableAmount(this.layer, this.id)).mul(8) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.5).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.5).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return player.i.singularityunlocked.eq(1) },
             canAfford() { return player.h.prestigepower.gte(this.cost()) },
             title() {
@@ -339,13 +356,13 @@ addLayer("h", {
                 let growth = 2.5
                 let max = Decimal.affordGeometricSeries(player.h.prestigepower, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.prestigepower = player.h.prestigepower.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.prestigepower = player.h.prestigepower.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
         25: {
             cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul(12) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.8).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.8).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return player.i.singularityunlocked.eq(1) },
             canAfford() { return player.h.prestigepower.gte(this.cost()) },
             title() {
@@ -360,7 +377,7 @@ addLayer("h", {
                 let growth = 3
                 let max = Decimal.affordGeometricSeries(player.h.prestigepower, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.prestigepower = player.h.prestigepower.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.prestigepower = player.h.prestigepower.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
@@ -381,13 +398,13 @@ addLayer("h", {
                 let growth = 5
                 let max = Decimal.affordGeometricSeries(player.h.prestigepower, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.prestigepower = player.h.prestigepower.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.prestigepower = player.h.prestigepower.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
         27: {
             cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul(10) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 95) },
             canAfford() { return player.h.redenergy.gte(this.cost()) },
             title() {
@@ -402,13 +419,13 @@ addLayer("h", {
                 let growth = 3
                 let max = Decimal.affordGeometricSeries(player.h.redenergy, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.redenergy = player.h.redenergy.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.redenergy = player.h.redenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
         28: {
             cost(x) { return new Decimal(4).pow(x || getBuyableAmount(this.layer, this.id)).mul(5) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.3).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.3).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 95) },
             canAfford() { return player.h.greenenergy.gte(this.cost()) },
             title() {
@@ -423,13 +440,13 @@ addLayer("h", {
                 let growth = 4
                 let max = Decimal.affordGeometricSeries(player.h.greenenergy, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.greenenergy = player.h.greenenergy.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.greenenergy = player.h.greenenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
         29: {
             cost(x) { return new Decimal(5).pow(x || getBuyableAmount(this.layer, this.id)).mul(15) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 104) },
             canAfford() { return player.h.blueenergy.gte(this.cost()) },
             title() {
@@ -444,13 +461,13 @@ addLayer("h", {
                 let growth = 5
                 let max = Decimal.affordGeometricSeries(player.h.blueenergy, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.blueenergy = player.h.blueenergy.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.blueenergy = player.h.blueenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
         31: {
             cost(x) { return new Decimal(4).pow(x || getBuyableAmount(this.layer, this.id)).mul(400) },
-            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1).pow(player.i.omegapointseffect) },
             unlocked() { return hasUpgrade("i", 126) },
             canAfford() { return player.h.prestigepower.gte(this.cost()) },
             title() {
@@ -465,7 +482,91 @@ addLayer("h", {
                 let growth = 4
                 let max = Decimal.affordGeometricSeries(player.h.prestigepower, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
-                player.h.prestigepower = player.h.prestigepower.sub(cost)
+                if (!hasUpgrade("h", 29)) player.h.prestigepower = player.h.prestigepower.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        32: {
+            cost(x) { return new Decimal(1.5).pow(x || getBuyableAmount(this.layer, this.id)).mul(100) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(player.i.omegapointseffect.plus(1).log10()).pow(1.2).add(1) },
+            unlocked() { return true },
+            canAfford() { return player.h.aarexianenergy.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Shrine of ω"
+            },
+            display() {
+                return "which are boosting your ω by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Aarexian Energy"
+            },
+            buy() {
+                let base = new Decimal(100)
+                let growth = 1.5
+                let max = Decimal.affordGeometricSeries(player.h.aarexianenergy, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.h.aarexianenergy = player.h.aarexianenergy.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        33: {
+            cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul(400) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).pow(1.2).add(1) },
+            unlocked() { return true },
+            canAfford() { return player.h.aarexianenergy.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Shrine of Omega Layers"
+            },
+            display() {
+                return "which are boosting your omega layers resources by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Aarexian Energy"
+            },
+            buy() {
+                let base = new Decimal(400)
+                let growth = 2
+                let max = Decimal.affordGeometricSeries(player.h.aarexianenergy, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.h.aarexianenergy = player.h.aarexianenergy.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        34: {
+            cost(x) { return new Decimal(2.5).pow(x || getBuyableAmount(this.layer, this.id)).mul(800) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.4).add(1) },
+            unlocked() { return true },
+            canAfford() { return player.h.aarexianenergy.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Shrine of True Singularity"
+            },
+            display() {
+                return "which are boosting your true singularity xp gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Aarexian Energy"
+            },
+            buy() {
+                let base = new Decimal(800)
+                let growth = 2.5
+                let max = Decimal.affordGeometricSeries(player.h.aarexianenergy, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.h.aarexianenergy = player.h.aarexianenergy.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        35: {
+            cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul(1000) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).mul(0.6).add(1) },
+            unlocked() { return hasMilestone("i", 28) },
+            canAfford() { return player.h.aarexianenergy.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Shrine of True Singularity"
+            },
+            display() {
+                return "which are boosting your true singularity dimensions gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Aarexian Energy"
+            },
+            buy() {
+                let base = new Decimal(1000)
+                let growth = 2
+                let max = Decimal.affordGeometricSeries(player.h.aarexianenergy, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.h.aarexianenergy = player.h.aarexianenergy.sub(cost)
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
@@ -642,6 +743,55 @@ addLayer("h", {
             description: "Unlocks trig booster adjusters.",
             unlocked() { return hasUpgrade("h", 25) },
             cost: new Decimal(5000),
+            currencyLocation() { return player.h },
+            currencyDisplayName: "Prestige Power",
+            currencyInternalName: "prestigepower",
+        },
+        28:
+        {
+            title: "More Energy!",
+            description: "Unlocks aarexian energy.",
+            unlocked() { return hasUpgrade("h", 26) },
+            cost: new Decimal(15000),
+            currencyLocation() { return player.h },
+            currencyDisplayName: "Prestige Power",
+            currencyInternalName: "prestigepower",
+        },
+        29:
+        {
+            title: "Who the hell is Aarex?",
+            description: "Autobuys RBG energy buyables and singularity shrines.",
+            unlocked() { return hasUpgrade("h", 28) },
+            cost: new Decimal(1000),
+            currencyLocation() { return player.h },
+            currencyDisplayName: "Aarexian Energy",
+            currencyInternalName: "aarexianenergy",
+        },
+        31:
+        {
+            title: "Can I be the Aa to your Rex?",
+            description: "Unlocks omega shrines.",
+            unlocked() { return hasUpgrade("h", 29) },
+            cost: new Decimal(2500),
+            currencyLocation() { return player.h },
+            currencyDisplayName: "Aarexian Energy",
+            currencyInternalName: "aarexianenergy",
+        },
+        32:
+        {
+            title: "Artifact (x)",
+            unlocked() { return hasUpgrade("i", 157) },
+            cost: new Decimal("5000"),
+            currencyLocation() { return player.h },
+            currencyDisplayName: "Aarexian Energy",
+            currencyInternalName: "aarexianenergy",
+        },
+        33:
+        {
+            title: "Aarex's Blessing",
+            description: "Gain 100% of aarexian energy per second.",
+            unlocked() { return hasUpgrade("h", 28) },
+            cost: new Decimal(10000000),
             currencyLocation() { return player.h },
             currencyDisplayName: "Prestige Power",
             currencyInternalName: "prestigepower",
@@ -825,6 +975,18 @@ addLayer("h", {
                 player.h.sinetimer = new Decimal(0)
             },
         },
+        32: {
+            title() { return "Give all energy to Aarex for aarexian energy" },
+            canClick() { return true },
+            unlocked() { return true },
+            onClick() {
+                player.h.redenergy = new Decimal(0)
+                player.h.greenenergy = new Decimal(0)
+                player.h.blueenergy = new Decimal(0)
+
+                player.h.aarexianenergy = player.h.aarexianenergy.add(player.h.aarexianenergytoget)
+            },
+        },
     },
     update(delta) {
         let onepersecond = new Decimal(1)
@@ -844,7 +1006,7 @@ addLayer("h", {
         player.h.prestigepowereffect = player.h.prestigepower.plus(1).log10().pow(0.22)
         player.h.potential = player.h.willpowereffect.add(player.h.prestigepowereffect)
 
-        player.h.shrinepower = player.h.buyables[12].add(player.h.buyables[13].add(player.h.buyables[14].add(player.h.buyables[15].add(player.h.buyables[17].add(player.h.buyables[23].mul(2).add(player.h.buyables[24].mul(2).add(player.h.buyables[25].mul(2).add(player.h.buyables[26].mul(2).add(player.h.buyables[27].mul(2).add(player.h.buyables[28].mul(2).add(player.h.buyables[29].mul(2).add(player.h.buyables[31].mul(2)))))))))))))
+        player.h.shrinepower = player.h.buyables[12].add(player.h.buyables[13].add(player.h.buyables[14].add(player.h.buyables[15].add(player.h.buyables[17].add(player.h.buyables[23].mul(2).add(player.h.buyables[24].mul(2).add(player.h.buyables[25].mul(2).add(player.h.buyables[26].mul(2).add(player.h.buyables[27].mul(2).add(player.h.buyables[28].mul(2).add(player.h.buyables[29].mul(2).add(player.h.buyables[31].mul(2).add(player.h.buyables[32].mul(5)).add(player.h.buyables[33].mul(5).add(player.h.buyables[34].mul(5).add(player.h.buyables[35].mul(5))))))))))))))))
         player.h.shrinepower = player.h.shrinepower.mul(buyableEffect("h", 22))
         player.h.shrinepowereffect = player.h.shrinepower.add(1).pow(0.5)
 
@@ -862,6 +1024,8 @@ addLayer("h", {
         player.h.prestigepowertoget = player.h.willpower.div(10000).pow(0.2).floor()
         player.h.prestigepowertoget = player.h.prestigepowertoget.mul(buyableEffect("h", 21))
         player.h.prestigepowereffect2 = player.h.prestigepower.pow(0.6).add(1)
+
+        if (hasMilestone("h", 11)) player.h.prestigepower = player.h.prestigepower.add(player.h.prestigepowertoget.mul(0.5).mul(delta))
 
         //assembly line
         if (player.h.assemblylinetypeselect.eq(1))
@@ -891,6 +1055,15 @@ addLayer("h", {
         let blueenergypersecond = new Decimal(1)
         let transportspeed = new Decimal(0.5)
         let harvestspeed = new Decimal(5)
+        let assemblylinespeed = new Decimal(1)
+
+        assemblylinespeed = assemblylinespeed.mul(player.h.aarexianenergyeffect)
+
+        redenergypersecond = redenergypersecond.mul(assemblylinespeed)
+        greenenergypersecond = greenenergypersecond.mul(assemblylinespeed)
+        blueenergypersecond = blueenergypersecond.mul(assemblylinespeed)
+        transportspeed = transportspeed.mul(assemblylinespeed)
+        harvestspeed = harvestspeed.mul(assemblylinespeed)
 
         if (player.h.slotstatus[1].eq(1)) {
             player.h.slotredenergy[1] = player.h.slotredenergy[1].add(redenergypersecond.mul(delta))
@@ -1203,8 +1376,24 @@ addLayer("h", {
         if (player.h.slotblueenergy[7].lt(0)) {
             player.h.slotblueenergy[7] = new Decimal(0)
         }
-    },
 
+        //aarex energy
+
+        let totalenergy = new Decimal(0)
+        totalenergy = player.h.redenergy.add(player.h.greenenergy.add(player.h.blueenergy))
+        player.h.aarexianenergytoget = totalenergy.pow(0.2)
+
+        player.h.aarexianenergyeffect = player.h.aarexianenergy.pow(0.8).add(1)
+
+        if (hasUpgrade("i", 33)) player.h.aarexianenergy = player.h.aarexianenergy.add(player.h.aarexianenergytoget.mul(delta))
+    },
+    milestones: {
+        11: {
+            requirementDescription: "3 Potential",
+            done() { return player.h.potential.gte(3) },
+            effectDescription: "Gain 50% of prestige power per second.",
+        },
+    },
     microtabs: {
         stuff: {
             "Lore": {
@@ -1216,7 +1405,7 @@ addLayer("h", {
                     ]
 
             },
-            "Main": {
+            "Potential": {
                 unlocked() { return true },
                 buttonStyle() { return { 'color': '#68e8f4' } },
                 content:
@@ -1225,6 +1414,9 @@ addLayer("h", {
                         ["raw-html", function () { return "You specifically have " + format(player.h.potential, 6) + " potential." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                         ["raw-html", function () { return "Willpower: " + format(player.h.willpowereffect) + " Potential." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                         ["raw-html", function () { return player.h.prestigepowerunlock.eq(1) ? "Prestige Power: " + format(player.h.prestigepowereffect) + " Potential." : "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>Milestones" }],
+                        ["milestone", 11],
                     ]
 
             },
@@ -1246,15 +1438,6 @@ addLayer("h", {
                     ]
 
             },
-            "Shrines": {
-                unlocked() { return true },
-                buttonStyle() { return { 'color': '#68e8f4' } },
-                content:
-                    [
-                        ["microtabs", "shrines", { 'border-width': '0px' }],
-                    ]
-
-            },
         },
         willpower:
         {
@@ -1267,18 +1450,19 @@ addLayer("h", {
                         ["raw-html", function () { return "You are gaining " + format(player.h.willpowerpersecond) + " willpower per second." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                         ["blank", "25px"],
                         ["row", [["buyable", 11], ["buyable", 16]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>Upgrades" }],
+                        ["blank", "25px"],
+                        ["row", [["upgrade", 11], ["upgrade", 12], ["upgrade", 13], ["upgrade", 14], ["upgrade", 15], ["upgrade", 16]]],
                     ]
 
             },
-            "Upgrades": {
+            "Shrines": {
                 unlocked() { return true },
                 buttonStyle() { return { 'color': '#68e8f4' } },
                 content:
                     [
-                        ["raw-html", function () { return "You have " + format(player.h.willpower) + " willpower." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "You are gaining " + format(player.h.willpowerpersecond) + " willpower per second." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["blank", "25px"],
-                        ["row", [["upgrade", 11], ["upgrade", 12], ["upgrade", 13], ["upgrade", 14], ["upgrade", 15], ["upgrade", 16]]],
+                        ["microtabs", "shrines", { 'border-width': '0px' }],
                     ]
 
             },
@@ -1308,7 +1492,7 @@ addLayer("h", {
                         ["row", [["clickable", 12]]],
                         ["row", [["clickable", 13]]],
                         ["blank", "25px"],
-                        ["row", [["upgrade", 21], ["upgrade", 25], ["upgrade", 26]]],
+                        ["row", [["upgrade", 21], ["upgrade", 25], ["upgrade", 26], ["upgrade", 28], ["upgrade", 33], ["upgrade", 34]]],
                     ]
 
             },
@@ -1336,6 +1520,26 @@ addLayer("h", {
                 content:
                     [
                         ["microtabs", "assemblyline", { 'border-width': '0px' }],
+                    ]
+
+            },
+            "Aarexian Energy": {
+                unlocked() { return hasUpgrade("h", 28) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["raw-html", function () { return "You have " + format(player.h.redenergy) + " red energy." }, { "color": "red", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "You have " + format(player.h.greenenergy) + " green energy." }, { "color": "green", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "You have " + format(player.h.blueenergy) + " blue energy." }, { "color": "blue", "font-size": "24px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "You have " + format(player.h.aarexianenergy) + " aarexian energy, which give a " + format(player.h.aarexianenergyeffect) + "x boost to assembly line speed." }, { "color": "#68e8f4", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "You will gain " + format(player.h.aarexianenergytoget) + " aarexian energy." }, { "color": "#68e8f4", "font-size": "24px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 32]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>Upgrades" }],
+                        ["blank", "25px"],
+                        ["row", [["upgrade", 29], ["upgrade", 31], ["upgrade", 32]]],
                     ]
 
             },
@@ -1558,7 +1762,7 @@ addLayer("h", {
                         ["blank", "25px"],
                         ["raw-html", function () { return "<h3>Everyone was confused by Pelle's words." }],
                         ["raw-html", function () { return "<h3>One of them, Ra was so confused they lost all their memories of the others." }],
-                        ["raw-html", function () { return "<h3>That's also how The Nameless Ones lost their names.." }],
+                        ["raw-html", function () { return "<h3>That's also how The Nameless Ones lost their names." }],
                         ["raw-html", function () { return "<h3>However, Hevipelle knew something bad was coming." }],
                         ["blank", "25px"],
                         ["raw-html", function () { return "<h3>He put Teresa to do very intensive research." }],
@@ -1587,7 +1791,7 @@ addLayer("h", {
                         ["raw-html", function () { return "<h3>Hevipelle put Pelle in control of everything." }],
                         ["raw-html", function () { return "<h3>He trusted Pelle." }],
                         ["blank", "25px"],
-                        ["raw-html", function () { return "<h3>Each celestial had it's own reality, to hinder the destroyer." }],
+                        ["raw-html", function () { return "<h3>Each celestial had its own reality, to hinder the destroyer." }],
                         ["raw-html", function () { return "<h3>They were prepared, and anticipated until the day came." }],
                         ["blank", "25px"],
                         ["raw-html", function () { return "<img src='resources/hevi.png'</img>" }],
@@ -1603,14 +1807,14 @@ addLayer("h", {
                         ["raw-html", function () { return "<h3>She offered the destroyer to join the celestials." }],
                         ["raw-html", function () { return "<h3>However, the destroyer kept on growing." }],
                         ["blank", "25px"],
-                        ["raw-html", function () { return "<h3>It's power was no match to the celestials." }],
-                        ["raw-html", function () { return "<h3>It's power in antimatter only grew and grew." }],
+                        ["raw-html", function () { return "<h3>Its power was no match to the celestials." }],
+                        ["raw-html", function () { return "<h3>Its power in antimatter only grew and grew." }],
                         ["raw-html", function () { return "<h3>Infinity, eternity, reality. All in it's control." }],
                         ["raw-html", function () { return "<h3>Each one fell down, one by one." }],
                         ["blank", "25px"],
                         ["raw-html", function () { return "<h3>In fear, Lai'Tela banished Ra." }],
                         ["raw-html", function () { return "<h3>Ra's powers corrupted, and actually helped the destroyer." }],
-                        ["raw-html", function () { return "<h3>It's manipulation was never seen before." }],
+                        ["raw-html", function () { return "<h3>Its manipulation was never seen before." }],
                         ["blank", "25px"],
                         ["raw-html", function () { return "<h3>Hevipelle watched, as all of his children fell." }],
                         ["raw-html", function () { return "<h3>In grief, he locked himself away in the void." }],
@@ -1630,7 +1834,7 @@ addLayer("h", {
                     [
                         ["raw-html", function () { return "You have " + format(player.h.willpower) + " willpower." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                         ["raw-html", function () { return "You have " + format(player.h.shrinepower) + " shrine power." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "<h2>Your shrine power gives a x" + format(player.h.shrinepowereffect) + "<h2> boost to willpower gain. " }],
+                        ["raw-html", function () { return "<h2>Your shrine power give a x" + format(player.h.shrinepowereffect) + "<h2> boost to willpower gain. " }],
                         ["row", [["buyable", 12], ["buyable", 13], ["buyable", 14], ["buyable", 15]]],
                         ["row", [["buyable", 17], ["buyable", 18]]],
                     ]
@@ -1651,6 +1855,20 @@ addLayer("h", {
                     ]
 
             },
+            "Omega": {
+                unlocked() { return hasUpgrade("h", 31) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["raw-html", function () { return "You have " + format(player.h.aarexianenergy) + " aarexian energy." }, { "color": "#68e8f4", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "You have " + format(player.h.shrinepower) + " shrine power." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "<h2>Your shrine power give a x" + format(player.h.shrinepowereffect) + "<h2> boost to willpower gain. " }],
+                        ["row", [["buyable", 32], ["buyable", 33], ["buyable", 34], ["buyable", 35]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h3>These are worth x5 shrine power.</h3>" }],
+                    ]
+
+            },
         },
     },
 
@@ -1658,6 +1876,8 @@ addLayer("h", {
         ["raw-html", function () { return "You have " + format(player.h.potential, 0) + " potential." }, { "color": "white", "font-size": "32px", "font-family": "monospace" }],
         ["microtabs", "stuff", { 'border-width': '0px' }],
         ["blank", "25px"],
+        //MUSIC CONTROL
+        ["raw-html", function () { return "<audio controls autoplay loop hidden><source src=music/hub.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" }],
     ],
     layerShown() { return hasUpgrade("i", 66) || player.i.singularityunlocked.eq(1) }
 })
