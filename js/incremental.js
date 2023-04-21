@@ -7979,10 +7979,10 @@
         ["microtabs", "stuff", { 'border-width': '0px' }],
 
         //MUSIC CONTROL
-        ["raw-html", function () { return player.i.jacorbianunlock.eq(1) && player.i.aarexbalancing.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/jacorb.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
-        ["raw-html", function () { return player.i.aarexbalancing.eq(1) && player.i.jacorbianunlock.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/aarex.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
-        ["raw-html", function () { return inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/void.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
-        ["raw-html", function () { return !player.i.aarexbalancing.eq(1) && player.i.jacorbianunlock.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/incremental.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && player.i.jacorbianunlock.eq(1) && player.i.aarexbalancing.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/jacorb.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && player.i.aarexbalancing.eq(1) && player.i.jacorbianunlock.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/aarex.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/void.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && !player.i.aarexbalancing.eq(1) && player.i.jacorbianunlock.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/incremental.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
     ],
     layerShown() { return true }
 })
