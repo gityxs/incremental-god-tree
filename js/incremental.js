@@ -1262,7 +1262,7 @@
         player.i.alphapersecond = player.i.alphapersecond.mul(omegalayermult)
 
         player.i.seeds = player.i.seeds.add(player.i.seedspersecond.mul(delta))
-        player.i.seedeffect = player.i.seeds.pow(20)
+        player.i.seedeffect = player.i.seeds.pow(20).add(1)
         player.i.seedspersecond = buyableEffect("i", 74)
         player.i.seedspersecond = player.i.seedspersecond.mul(timestop).mul(buyableEffect("i", 75))
         player.i.seedspersecond = player.i.seedspersecond.mul(buyableEffect("i", 76))
