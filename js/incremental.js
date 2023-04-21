@@ -2092,7 +2092,7 @@
         },
         28: {
             title() { return "Big crunch due to the excess of everything" },
-            canClick() { return player.points.gte("1.79e308") },
+            canClick() { return player.points.gte("1.79e308") || player.i.infinitypause.gte(1) },
             unlocked() { return player.i.infinitypause.gte(1) },
             onClick() {
                 consolePrint("Infinity Reset #" + format(player.i.infinityresets) + " +" + format(player.i.infinitypointstoget) + " IP, +" + format(player.i.infinitypointgeneration) + " IP per second, " + formatTime(player.i.infinitytime))
