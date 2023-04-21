@@ -1253,7 +1253,7 @@
         omegalayermult = omegalayermult.mul(timestop)
         player.i.alpha = player.i.alpha.add(player.i.alphapersecond.mul(delta))
         player.i.alphaeffect = player.i.alpha.pow(0.6).add(1)
-        if (hasUpgrade("i", 143)) player.i.alphapersecond = player.points.plus(10).log10().log10().pow(0.3)
+        if (hasUpgrade("i", 143)) player.i.alphapersecond = player.points.plus(10).log10().log10().pow(0.3).add(0.001)
         if (hasUpgrade("i", 145)) player.i.alphapersecond = player.i.alphapersecond.mul(upgradeEffect("i", 145))
         if (hasUpgrade("i", 146)) player.i.alphapersecond = player.i.alphapersecond.mul(upgradeEffect("i", 146))
         if (hasUpgrade("i", 148)) player.i.alphapersecond = player.i.alphapersecond.mul(upgradeEffect("i", 148))
