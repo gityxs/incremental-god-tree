@@ -133,6 +133,7 @@ var systemComponents = {
         <br>
         The Modding Tree <a v-bind:href="'https://github.com/Acamaeda/The-Modding-Tree/blob/master/changelog.md'" target="_blank" class="link" v-bind:style = "{'font-size': '14px', 'display': 'inline'}" >{{TMT_VERSION.tmtNum}}</a> by Acamaeda
         <br>
+        Songs made by Sweetlolipop (My brother) <br>
         The Prestige Tree made by Jacorb and Aarex<br>
         Tested by Piterpicher, Ree, NovaLol, and Niko<br>
         Typo check by Piterpicher<br>

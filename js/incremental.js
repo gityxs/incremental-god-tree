@@ -7948,7 +7948,7 @@
                         ["raw-html", function () { return "<h2>You have " + format(player.i.tspower) + " <h2>true singularity power, <h2>which boost xp gain by x" + format(player.i.tspowereffect) }],
                         ["raw-html", function () { return "<h2>You are gaining " + format(player.i.tspowerpersecond) + " true singularity power per second." }],
                         ["blank", "25px"],
-                        ["raw-html", function () { return "<h1>True Singularity Dimensions" }],
+                        ["raw-html", function () { return "<h1>True Singularity Dimensions " }],
                         ["blank", "25px"],
                         ["row", [["buyable", 98], ["buyable", 99], ["buyable", 101], ["buyable", 102]]],
                     ]
@@ -7962,8 +7962,21 @@
                 buttonStyle() { return { 'background-image': 'linear-gradient(85deg, #ADD8E6, blue)' } },
                 content:
                     [
+                        ["microtabs", "cante", { 'border-width': '0px' }],
+                    ]
+
+            },
+        },
+        cante:
+        {
+            "Quotes": {
+                unlocked() { return true },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, #ADD8E6, blue)' } },
+                content:
+                    [
                         ["blank", "25px"],
-                        ["raw-html", function () { return  "<h2> YOU REACHED THE CURRENT ENDGAME! "}, { "font-size": "36px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "<h2> YOU REACHED THE CURRENT ENDGAME! " }, { "font-size": "36px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "<div class=cante-animation></span>Ξ</div>" }],
                     ]
 
             },
