@@ -132,7 +132,6 @@ addLayer("c", { //DEPRECATED
                     ["raw-html", function () { return player.c.currentscene.gte(67) && player.c.currentscene.lt(69) && player.cutscene.gte(3) ? "<h2>The hard drive was glowing with JACORBIAN ENERGY." : "" }],
                     ["raw-html", function () { return player.c.currentscene.gte(68) && player.c.currentscene.lt(69) && player.cutscene.gte(3) ? "<h2>Acamaeda left the room. There's still a lot left to do." : "" }],
                     ["row", [["clickable", 12], ["clickable", 11]]],
-                   //["raw-html", function () { return player.cutscene.eq(1) ? "<audio controls autoplay hidden><source src=music/forsakenneon.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }], If I had an OST this would be playing
                 ]               
     },
     },

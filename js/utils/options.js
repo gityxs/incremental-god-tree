@@ -14,6 +14,7 @@ function getStartOptions() {
 		forceOneTab: true,
 		oldStyle: false,
 		tooltipForcing: true,
+		musicToggle: true,
 	}
 }
 
@@ -50,9 +51,6 @@ const MS_DISPLAYS = ["ALL", "LAST, AUTO, INCOMPLETE", "AUTOMATION, INCOMPLETE", 
 
 const MS_SETTINGS = ["always", "last", "automation", "incomplete", "never"];
 
-function adjustMSDisp() {
-	options.msDisplay = MS_SETTINGS[(MS_SETTINGS.indexOf(options.msDisplay) + 1) % 5];
-}
 function milestoneShown(layer, id) {
 	complete = player[layer].milestones.includes(id);
 	auto = layers[layer].milestones[id].toggles;
@@ -75,9 +73,4 @@ function milestoneShown(layer, id) {
 			break;
 	}
 	return false;
-}
-let notations = ['Scientific', 'Engineering', 'Standard']
-
-function changeNotation() {
-	player.notation = notations[(notations.indexOf(player.notation) + 1) % notations.length]
 }

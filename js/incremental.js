@@ -166,10 +166,10 @@
         infinitypointblessingspersecond: new Decimal(0),
         infinitypointblessingseffect: new Decimal(1),
         preinfinitybuyableincreaser: new Decimal(1),
-        //secret jacorb stuff
+        // jacorb stuff
         jacorbianunlock: new Decimal(0),
         jacorbiantrialunlock: new Decimal(0),
-        jacorbcutscene: new Decimal(1),
+        jacorbcutscene: new Decimal(0),
         jacorbscene: new Decimal(0),
         imaginarytest: new Decimal(0),
         jacorbmods: new Decimal(0),
@@ -185,135 +185,157 @@
         voidsingularitypointeffect2: new Decimal(0),
         voidsingularitypointeffect3: new Decimal(0),
         voidsingularitypointeffect4: new Decimal(0),
+        //omega
+        omegacutscene: new Decimal(1),
+        omegascene: new Decimal(0),
+        omegapoints: new Decimal(0),
+        omegapointseffect: new Decimal(0),
+        omegapointstoget: new Decimal(0),
+        omegas: new Decimal(0),
+        omegastoget: new Decimal(0),
+        omegatime: new Decimal(0),
+        omegapause: new Decimal(0),
+        omegaupgradeautobuyer: new Decimal(0),
+        //omegalayers
+        alpha: new Decimal(0), 
+        alphaeffect: new Decimal(0), 
+        alphapersecond: new Decimal(0), 
+        seeds: new Decimal(0),
+        seedspersecond: new Decimal(0),
+        seedeffect: new Decimal(0),
+        beta: new Decimal(0),
+        betaeffect: new Decimal(0),
+        betapersecond: new Decimal(0), 
+        betadim1: new Decimal(0),
+        betadim1mult: new Decimal(1),
+        betadim1persecond: new Decimal(0),
+        betadim2: new Decimal(0),
+        betadim2mult: new Decimal(1),
+        betadim2persecond: new Decimal(0),
+        betadim3: new Decimal(0),
+        betadim3mult: new Decimal(1),
+        betadim3persecond: new Decimal(0),
+        betadim4: new Decimal(0),
+        betadim4mult: new Decimal(1),
+        sacrificeamount: new Decimal(0),
+        sacrificemult: new Decimal(1),
+        //gamma
+        gamma: new Decimal(0),
+        gammaeffect: new Decimal(1),
+        gammatoget: new Decimal(1),
+        dimensionbuymult: new Decimal(0.25),
+        tickspeedmult: new Decimal(1.1),
+        epsilon: new Decimal(0),
+        epsiloneffect: new Decimal(1),
+        epsilonpersecond: new Decimal(0),
+        //aarex
+        aarexcutscene: new Decimal(1),
+        aarexscene: new Decimal(0),
+        aarexbalancing: new Decimal(0),
+        aarexpoints: new Decimal(0),
+        aarexpointspersecond: new Decimal(0),
+        wastedaarexpoints: new Decimal(0),
+        wastedaarexpointstoget: new Decimal(0),
+        wastedaarexpointseffect: new Decimal(1),
+        aarexifiedinfinities: new Decimal(0),
+        aarexifiedinfinitieseffect: new Decimal(0),
+        aarexifiedinfinitiestoget: new Decimal(0),
+        aarexifiedsingularities: new Decimal(0),
+        aarexifiedsingularitieseffect: new Decimal(0),
+        aarexifiedsingularitiestoget: new Decimal(0),
+        aarexentropy: new Decimal(0),
+        //truesingularity
+        truesingularitycutscene: new Decimal(1),
+        truesingularityscene: new Decimal(0),
+        truesingularityxp: new Decimal(0),
+        truesingularityxppersecond: new Decimal(0),
+        truesingularitylevel: new Decimal(0),
+        truesingularityeffect: new Decimal(0),
+        truesingularityreq: new Decimal(10),
+        singularityenergy: new Decimal(0),
+        jacorbquest: new Decimal(1),
+        jacorbquestreq: new Decimal(1e30), //x5
+        aarexquest: new Decimal(1),
+        aarexquestreq: new Decimal(100000), //x2
+        singularityquest: new Decimal(1),
+        singularityquestreq: new Decimal(1000), //x1.5
+        omegaquest: new Decimal(1),
+        omegaquestreq: new Decimal(1e150), //x1e10
+        //zeta
+        zeta: new Decimal(0),
+        zetaeffect: new Decimal(1),
+        zetatoget: new Decimal(0),
+        //eta
+        eta: new Decimal(0),
+        etapersecond: new Decimal(0),
+        etaeffect: new Decimal(0),
+        //ts booster
+        boosterchoice: new Decimal(0),
+        jacorbboostereffect: new Decimal(1),
+        aarexboostereffect: new Decimal(1),
+        singularityboostereffect: new Decimal(1),
+        omegaboostereffect: new Decimal(1),
+        //ts dims
+        tspower: new Decimal(0),
+        tspowereffect: new Decimal(1),
+        tspowerpersecond: new Decimal(0),
+        tsdim1: new Decimal(0),
+        tsdim1mult: new Decimal(1),
+        tsdim1persecond: new Decimal(0),
+        tsdim2: new Decimal(0),
+        tsdim2mult: new Decimal(1),
+        tsdim2persecond: new Decimal(0),
+        tsdim3: new Decimal(0),
+        tsdim3mult: new Decimal(1),
+        tsdim3persecond: new Decimal(0),
+        tsdim4: new Decimal(0),
+        tsdim4mult: new Decimal(1),
     }
     },
-    autobuy() {
-        if (hasUpgrade('i', 32) || hasUpgrade('i', 38)) {
-                buyBuyable(this.layer, 11)
-                buyBuyable(this.layer, 12)
-                buyBuyable(this.layer, 13)
-                buyBuyable(this.layer, 14)
-        }
-        if (hasUpgrade('i', 41)) {
-            buyBuyable(this.layer, 15)
-            buyBuyable(this.layer, 16)
-            buyBuyable(this.layer, 17)
-            buyBuyable(this.layer, 18)
-            buyBuyable(this.layer, 19)
-            buyBuyable(this.layer, 21)
-            buyBuyable(this.layer, 22)
-        }
-        if (hasUpgrade('i', 65)) {
-            buyBuyable(this.layer, 23)
-            buyBuyable(this.layer, 24)
-            buyBuyable(this.layer, 25)
-            buyBuyable(this.layer, 26)
-        }
-        if (player.i.upgradeautobuyer.eq(1)) {
-            buyUpgrade(this.layer, 11)
-            buyUpgrade(this.layer, 12)
-            buyUpgrade(this.layer, 13)
-            buyUpgrade(this.layer, 14)
-            buyUpgrade(this.layer, 15)
-            buyUpgrade(this.layer, 16)
-            buyUpgrade(this.layer, 17)
-            buyUpgrade(this.layer, 18)
-            buyUpgrade(this.layer, 19)
-            buyUpgrade(this.layer, 21)
-            buyUpgrade(this.layer, 22)
-            buyUpgrade(this.layer, 23)
-            buyUpgrade(this.layer, 24)
-            buyUpgrade(this.layer, 25)
-            buyUpgrade(this.layer, 26)
-            buyUpgrade(this.layer, 27)
-            buyUpgrade(this.layer, 28)
-            buyUpgrade(this.layer, 29)
-            buyUpgrade(this.layer, 31)
-            buyUpgrade(this.layer, 32)
-            buyUpgrade(this.layer, 33)
-            buyUpgrade(this.layer, 34)
-            buyUpgrade(this.layer, 35)
-            buyUpgrade(this.layer, 36)
-            buyUpgrade(this.layer, 37)
-            buyUpgrade(this.layer, 38)
-            buyUpgrade(this.layer, 39)
-            buyUpgrade(this.layer, 41)
-            buyUpgrade(this.layer, 42)
-            buyUpgrade(this.layer, 43)
-            buyUpgrade(this.layer, 44)
-            buyUpgrade(this.layer, 45)
-            buyUpgrade(this.layer, 46)
-            buyUpgrade(this.layer, 47)
-            buyUpgrade(this.layer, 48)
-            buyUpgrade(this.layer, 49)
-            buyUpgrade(this.layer, 51)
-            buyUpgrade(this.layer, 52)
-            buyUpgrade(this.layer, 53)
-        }
-        if (hasUpgrade('h', 15)) {
-            buyBuyable(this.layer, 34)
-            buyBuyable(this.layer, 35)
-        }
-        if (hasMilestone("i", 12)) {
-            buyBuyable(this.layer, 11)
-            buyBuyable(this.layer, 12)
-            buyBuyable(this.layer, 13)
-            buyBuyable(this.layer, 14)
-            buyBuyable(this.layer, 15)
-            buyBuyable(this.layer, 16)
-            buyBuyable(this.layer, 17)
-            buyBuyable(this.layer, 18)
-            buyBuyable(this.layer, 19)
-            buyBuyable(this.layer, 21)
-            buyBuyable(this.layer, 22)
-            buyBuyable(this.layer, 23)
-            buyBuyable(this.layer, 24)
-            buyBuyable(this.layer, 25)
-            buyBuyable(this.layer, 26)
-            buyBuyable(this.layer, 27)
-            buyBuyable(this.layer, 28)
-            buyBuyable(this.layer, 29)
-            buyBuyable(this.layer, 31)
-            buyBuyable(this.layer, 32)
-            buyBuyable(this.layer, 33)
-            buyBuyable(this.layer, 34)
-            buyBuyable(this.layer, 35)
-            buyBuyable(this.layer, 36)
-            buyBuyable(this.layer, 37)
-            buyBuyable(this.layer, 38)
-            buyBuyable(this.layer, 39)
-            buyBuyable(this.layer, 41)
-            buyBuyable(this.layer, 42)
-            buyBuyable(this.layer, 43)
-            buyBuyable(this.layer, 44)
-            buyBuyable(this.layer, 45)
-        }
-        if (hasUpgrade("i", 136)) {
-            buyBuyable(this.layer, 46)
-            buyBuyable(this.layer, 47)
-            buyBuyable(this.layer, 48)
-            buyBuyable(this.layer, 49)
-            buyBuyable(this.layer, 51)
-            buyBuyable(this.layer, 52)
-            buyBuyable(this.layer, 53)
-            buyBuyable(this.layer, 54)
-            buyBuyable(this.layer, 55)
-            buyBuyable(this.layer, 56)
-            buyBuyable(this.layer, 57)
-            buyBuyable(this.layer, 58)
-            buyBuyable(this.layer, 59)
-            buyBuyable(this.layer, 61)
-            buyBuyable(this.layer, 62)
-            buyBuyable(this.layer, 63)
-            buyBuyable(this.layer, 64)
-            buyBuyable(this.layer, 65)
-            buyBuyable(this.layer, 66)
-            buyBuyable(this.layer, 67)
-            buyBuyable(this.layer, 68)
-            buyBuyable(this.layer, 69)
-            buyBuyable(this.layer, 71)
-            buyBuyable(this.layer, 72)
-            buyBuyable(this.layer, 73)
+    automate() {
+        if (player.i.omegaupgradeautobuyer.eq(1) && hasMilestone("i", 22)) {
+            buyUpgrade(this.layer, 94)
+            buyUpgrade(this.layer, 95)
+            buyUpgrade(this.layer, 96)
+            buyUpgrade(this.layer, 97)
+            buyUpgrade(this.layer, 98)
+            buyUpgrade(this.layer, 99)
+            buyUpgrade(this.layer, 101)
+            buyUpgrade(this.layer, 102)
+            buyUpgrade(this.layer, 103)
+            buyUpgrade(this.layer, 104)
+            buyUpgrade(this.layer, 105) 
+            buyUpgrade(this.layer, 106)
+            buyUpgrade(this.layer, 107)
+            buyUpgrade(this.layer, 108)
+            buyUpgrade(this.layer, 109)
+            buyUpgrade(this.layer, 111)
+            buyUpgrade(this.layer, 112)
+            buyUpgrade(this.layer, 113)
+            buyUpgrade(this.layer, 114)
+            buyUpgrade(this.layer, 115)
+            buyUpgrade(this.layer, 116)
+            buyUpgrade(this.layer, 117)
+            buyUpgrade(this.layer, 118)
+            buyUpgrade(this.layer, 119)
+            buyUpgrade(this.layer, 121)
+            buyUpgrade(this.layer, 122)
+            buyUpgrade(this.layer, 123)
+            buyUpgrade(this.layer, 124)
+            buyUpgrade(this.layer, 125)
+            buyUpgrade(this.layer, 126)
+            buyUpgrade(this.layer, 127)
+            buyUpgrade(this.layer, 128)
+            buyUpgrade(this.layer, 129)
+            buyUpgrade(this.layer, 131)
+            buyUpgrade(this.layer, 132)
+            buyUpgrade(this.layer, 133)
+            buyUpgrade(this.layer, 134)
+            buyUpgrade(this.layer, 135)
+            buyUpgrade(this.layer, 136)
+            buyUpgrade(this.layer, 137)
+            buyUpgrade(this.layer, 138)
+            buyUpgrade(this.layer, 139)
         }
         if (player.i.singularityupgradeautobuyer.eq(1) && hasMilestone("i", 14)) {
             buyUpgrade(this.layer, 11)
@@ -394,6 +416,152 @@
             buyUpgrade(this.layer, 93)
             buyUpgrade(this.layer, 94)
         }
+        if (player.i.upgradeautobuyer.eq(1)) {
+            buyUpgrade(this.layer, 11)
+            buyUpgrade(this.layer, 12)
+            buyUpgrade(this.layer, 13)
+            buyUpgrade(this.layer, 14)
+            buyUpgrade(this.layer, 15)
+            buyUpgrade(this.layer, 16)
+            buyUpgrade(this.layer, 17)
+            buyUpgrade(this.layer, 18)
+            buyUpgrade(this.layer, 19)
+            buyUpgrade(this.layer, 21)
+            buyUpgrade(this.layer, 22)
+            buyUpgrade(this.layer, 23)
+            buyUpgrade(this.layer, 24)
+            buyUpgrade(this.layer, 25)
+            buyUpgrade(this.layer, 26)
+            buyUpgrade(this.layer, 27)
+            buyUpgrade(this.layer, 28)
+            buyUpgrade(this.layer, 29)
+            buyUpgrade(this.layer, 31)
+            buyUpgrade(this.layer, 32)
+            buyUpgrade(this.layer, 33)
+            buyUpgrade(this.layer, 34)
+            buyUpgrade(this.layer, 35)
+            buyUpgrade(this.layer, 36)
+            buyUpgrade(this.layer, 37)
+            buyUpgrade(this.layer, 38)
+            buyUpgrade(this.layer, 39)
+            buyUpgrade(this.layer, 41)
+            buyUpgrade(this.layer, 42)
+            buyUpgrade(this.layer, 43)
+            buyUpgrade(this.layer, 44)
+            buyUpgrade(this.layer, 45)
+            buyUpgrade(this.layer, 46)
+            buyUpgrade(this.layer, 47)
+            buyUpgrade(this.layer, 48)
+            buyUpgrade(this.layer, 49)
+            buyUpgrade(this.layer, 51)
+            buyUpgrade(this.layer, 52)
+            buyUpgrade(this.layer, 53)
+        }
+        if (hasUpgrade("i", 153)) {
+            buyBuyable(this.layer, 74)
+            buyBuyable(this.layer, 75)
+            buyBuyable(this.layer, 76)
+            buyBuyable(this.layer, 77)
+            buyBuyable(this.layer, 78)
+            buyBuyable(this.layer, 79)
+            buyBuyable(this.layer, 81)
+            buyBuyable(this.layer, 82)
+            buyBuyable(this.layer, 84)
+        }
+        if (hasUpgrade("i", 163)) {
+            buyBuyable(this.layer, 88)
+            buyBuyable(this.layer, 89)
+            buyBuyable(this.layer, 91)
+            buyBuyable(this.layer, 92)
+        }
+    },
+    autobuy() {
+        if (hasUpgrade('i', 32) || hasUpgrade('i', 38)) {
+                buyBuyable(this.layer, 11)
+                buyBuyable(this.layer, 12)
+                buyBuyable(this.layer, 13)
+                buyBuyable(this.layer, 14)
+        }
+        if (hasUpgrade('i', 41)) {
+            buyBuyable(this.layer, 15)
+            buyBuyable(this.layer, 16)
+            buyBuyable(this.layer, 17)
+            buyBuyable(this.layer, 18)
+            buyBuyable(this.layer, 19)
+            buyBuyable(this.layer, 21)
+            buyBuyable(this.layer, 22)
+        }
+        if (hasUpgrade('i', 65)) {
+            buyBuyable(this.layer, 23)
+            buyBuyable(this.layer, 24)
+            buyBuyable(this.layer, 25)
+            buyBuyable(this.layer, 26)
+        }
+        if (hasUpgrade('h', 15)) {
+            buyBuyable(this.layer, 34)
+            buyBuyable(this.layer, 35)
+        }
+        if (hasMilestone("i", 12)) {
+            buyBuyable(this.layer, 11)
+            buyBuyable(this.layer, 12)
+            buyBuyable(this.layer, 13)
+            buyBuyable(this.layer, 14)
+            buyBuyable(this.layer, 15)
+            buyBuyable(this.layer, 16)
+            buyBuyable(this.layer, 17)
+            buyBuyable(this.layer, 18)
+            buyBuyable(this.layer, 19)
+            buyBuyable(this.layer, 21)
+            buyBuyable(this.layer, 22)
+            buyBuyable(this.layer, 23)
+            buyBuyable(this.layer, 24)
+            buyBuyable(this.layer, 25)
+            buyBuyable(this.layer, 26)
+            buyBuyable(this.layer, 27)
+            buyBuyable(this.layer, 28)
+            buyBuyable(this.layer, 29)
+            buyBuyable(this.layer, 31)
+            buyBuyable(this.layer, 32)
+            buyBuyable(this.layer, 33)
+            buyBuyable(this.layer, 34)
+            buyBuyable(this.layer, 35)
+            buyBuyable(this.layer, 36)
+            buyBuyable(this.layer, 37)
+            buyBuyable(this.layer, 38)
+            buyBuyable(this.layer, 39)
+            buyBuyable(this.layer, 41)
+            buyBuyable(this.layer, 42)
+            buyBuyable(this.layer, 43)
+            buyBuyable(this.layer, 44)
+            buyBuyable(this.layer, 45)
+        }
+        if (hasUpgrade("i", 136) || hasMilestone("i", 23)) {
+            buyBuyable(this.layer, 46)
+            buyBuyable(this.layer, 47)
+            buyBuyable(this.layer, 48)
+            buyBuyable(this.layer, 49)
+            buyBuyable(this.layer, 51)
+            buyBuyable(this.layer, 52)
+            buyBuyable(this.layer, 53)
+            buyBuyable(this.layer, 54)
+            buyBuyable(this.layer, 55)
+            buyBuyable(this.layer, 56)
+            buyBuyable(this.layer, 57)
+            buyBuyable(this.layer, 58)
+            buyBuyable(this.layer, 59)
+            buyBuyable(this.layer, 61)
+            buyBuyable(this.layer, 62)
+            buyBuyable(this.layer, 63)
+            buyBuyable(this.layer, 64)
+            buyBuyable(this.layer, 65)
+            buyBuyable(this.layer, 66)
+            buyBuyable(this.layer, 67)
+            buyBuyable(this.layer, 68)
+            buyBuyable(this.layer, 69)
+            buyBuyable(this.layer, 71)
+            buyBuyable(this.layer, 72)
+            buyBuyable(this.layer, 73)
+        }
     },
     nodeStyle: {
         background: "linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #77ff00, #00ff00, #00ff77, #00ffff, #0077ff, #0000ff, #7700ff, #ff00ff, #ff0077)",
@@ -404,13 +572,22 @@
     tooltip: "Incremental", // Row the layer is in on the tree (0 is the first row)
     displayRow: 1, // Row the layer is in on the tree (0 is the first row)
     update(delta) {
+        let timestop = new Decimal(1)
+
+        if (player.i.aarexbalancing.eq(0)) timestop = new Decimal(1)
+        if (player.i.aarexbalancing.eq(1)) timestop = new Decimal(0)
+
         let onepersec = new Decimal(1)
         player.i.autobuyinterval = player.i.autobuyinterval.add(onepersec.mul(delta))
 
-        if (player.points.lt("e1e8")) {
+        if (player.points.lt("e1e10")) {
             layers.i.autobuy();
         }
-        if (player.i.autobuyinterval.gte(1.5) && player.points.gte("e1e8")) {
+        if (player.i.autobuyinterval.gte(1.5) && player.points.gte("e1e10") && player.points.lte("e1e300")) {
+            layers.i.autobuy();
+            player.i.autobuyinterval = new Decimal(0)
+        }
+        if (player.i.autobuyinterval.gte(10) && player.points.gte("e1e300")) {
             layers.i.autobuy();
             player.i.autobuyinterval = new Decimal(0)
         }
@@ -469,7 +646,7 @@
             if (hasMilestone("i", 11)) preinfinityresourcemult = preinfinityresourcemult.div(1000)
             preinfinityresourcemult = preinfinityresourcemult.pow(0.0001)
         }
-        player.i.preinfinityresourcemult = preinfinityresourcemult
+        player.i.preinfinityresourcemult = preinfinityresourcemult.mul(timestop)
 
         player.i.preinfinitybuyableincreaser = new Decimal(1)
         if (hasUpgrade("i", 108) && !inChallenge("i", 21) && !inChallenge("i", 22) && !inChallenge("i", 23) && !inChallenge("i", 24)) player.i.preinfinitybuyableincreaser = player.i.preinfinitybuyableincreaser.mul(1000)
@@ -511,7 +688,7 @@
         if (player.i.trees.gte(player.i.treesoftcapstart)) {
             if (!inChallenge("i", 19)) player.i.treesoftcap = Decimal.pow(player.i.trees.add(1).sub(player.i.treesoftcapstart), 0.5)
             if (inChallenge("i", 19)) player.i.treesoftcap = Decimal.pow(player.i.trees.pow(100).add(1).sub(player.i.treesoftcapstart), 0.5)
-            leavespersecond = leavespersecond.div(player.i.treesoftcap)
+            if (player.i.seeds.lt(4)) leavespersecond = leavespersecond.div(player.i.treesoftcap)
         }
         player.i.leavespersecond = leavespersecond
 
@@ -701,6 +878,7 @@
         player.i.infinitypointstoget = player.i.infinitypointstoget.mul(player.i.infinitypointblessingseffect)
         if (hasUpgrade("i", 119) && !inChallenge("i", 24)) player.i.infinitypointstoget = player.i.infinitypointstoget.mul(upgradeEffect("i", 119))
         if (inChallenge("i", 24)) player.i.infinitypointstoget = player.i.infinitypointstoget.mul(buyableEffect("i", 67))
+        player.i.infinitypointstoget = player.i.infinitypointstoget.pow(buyableEffect("i", 77))
         player.i.infinitiestoget = new Decimal(1)
         player.i.infinitiestoget = player.i.infinitiestoget.mul(buyableEffect("h", 14))
         player.i.infinitiestoget = player.i.infinitiestoget.mul(buyableEffect("i", 29))
@@ -708,7 +886,7 @@
         if (hasUpgrade("i", 72) && !inChallenge("i", 24)) player.i.infinitiestoget = player.i.infinitiestoget.mul(upgradeEffect("i", 72))
 
         let infinitytimegain = new Decimal(1)
-        player.i.infinitytime = player.i.infinitytime.add(infinitytimegain.mul(delta))
+        player.i.infinitytime = player.i.infinitytime.add(infinitytimegain.mul(timestop).mul(delta))
         player.i.infinitypointgeneration = player.i.infinitypointstoget.div(player.i.infinitytime.add(0.0000000001))
 
         let ippassive = new Decimal(1)
@@ -770,7 +948,8 @@
         let passiveinfinitygain = new Decimal(0)
         if (hasUpgrade("i", 76) && !inChallenge("i", 24)) passiveinfinitygain = upgradeEffect("i", 76)
         if (hasMilestone("i", 17)) passiveinfinitygain = passiveinfinitygain.add(10)
-        player.i.infinities = player.i.infinities.add(passiveinfinitygain.mul(delta))
+        if (hasMilestone("i", 24)) passiveinfinitygain = player.i.infinitiestoget
+        player.i.infinities = player.i.infinities.add(passiveinfinitygain.mul(timestop).mul(delta))
 
         //replicanti
         player.i.replicantiinterval = new Decimal(5).div(buyableEffect("i", 33))
@@ -785,13 +964,15 @@
         player.i.replicantimultiplier = player.i.replicantimultiplier.mul(player.i.presingularityresourcemult)
         if (hasUpgrade("i", 112) && !inChallenge("i", 24)) player.i.replicantimultiplier = player.i.replicantimultiplier.pow(15)
 
-        if (player.i.replicanti.gt(1)) player.i.replicantieffect = player.i.replicanti.plus(1).log10().mul(333).pow(1.3).add(1)
+        if (player.i.replicanti.gt(1.5) && !hasUpgrade("i", 141)) player.i.replicantieffect = player.i.replicanti.plus(1).log10().mul(333).pow(1.3).add(1)
+        if (player.i.replicanti.gt(1.5) && hasUpgrade("i", 141)) player.i.replicantieffect = player.i.replicanti.plus(1)
 
         if (hasUpgrade("i", 112)) player.i.replicantimax = new Decimal("1e1000000")
+        if (hasUpgrade("i", 141) && hasUpgrade("i", 112)) player.i.replicantimax = player.i.replicantimax.pow(upgradeEffect("i", 141))
 
         let replicantigain = new Decimal(1)
         replicantigain = new Decimal(1)
-        player.i.replicantitimer = player.i.replicantitimer.add(replicantigain.mul(delta))
+        player.i.replicantitimer = player.i.replicantitimer.add(replicantigain.mul(timestop).mul(delta))
 
         if (player.i.replicantitimer.gte(player.i.replicantiinterval))
         {
@@ -865,21 +1046,26 @@
         player.i.singularitiestoget = new Decimal(1)
         player.i.singularitiestoget = player.i.singularitiestoget.mul(buyableEffect("h", 26))
         if (hasUpgrade("h", 22)) player.i.singularitiestoget = player.i.singularitiestoget.mul(upgradeEffect("h", 22))
+        player.i.singularitiestoget = player.i.singularitiestoget.mul(buyableEffect("i", 95))
+        if (player.i.boosterchoice.eq(3)) player.i.singularitiestoget = player.i.singularitiestoget.mul(player.i.singularityboostereffect)
 
-        if (hasUpgrade("i", 137)) player.i.singularitypoints = player.i.singularitypoints.add(player.i.singularitypointstoget.mul(0.01).mul(delta))
+        if (hasMilestone("i", 24)) player.i.singularities = player.i.singularities.add(player.i.singularitiestoget.mul(timestop).mul(delta))
+
+        if (hasUpgrade("i", 137) || hasMilestone("i", 23)) player.i.singularitypoints = player.i.singularitypoints.add(player.i.singularitypointstoget.mul(0.01).mul(delta).mul(timestop))
 
         let singularitytimegain = new Decimal(1)
-        player.i.singularitytime = player.i.singularitytime.add(singularitytimegain.mul(delta))
+        player.i.singularitytime = player.i.singularitytime.add(singularitytimegain.mul(timestop).mul(delta))
 
         player.i.presingularityresourcemult = new Decimal(1)
-        player.i.presingularityresourcemult = player.i.presingularityresourcemult.mul(player.i.singularitypointeffect)
+        player.i.presingularityresourcemult = player.i.presingularityresourcemult.mul(player.i.singularitypointeffect.mul(timestop))
         player.i.presingularityresourcemult = player.i.presingularityresourcemult.mul(buyableEffect("h", 23))
         if (hasUpgrade("i", 113)) player.i.presingularityresourcemult = player.i.presingularityresourcemult.mul(upgradeEffect("i", 113))
         if (inChallenge("i", 23)) player.i.presingularityresourcemult = player.i.presingularityresourcemult.pow(0.001)
         if (inChallenge("i", 24)) player.i.presingularityresourcemult = player.i.presingularityresourcemult.pow(0.08)
 
-        if (!hasUpgrade("i", 125)) player.i.singularitypointeffect = player.i.singularitypoints.mul(0.2).pow(0.5).add(1)
-        if (hasUpgrade("i", 125)) player.i.singularitypointeffect = player.i.singularitypoints.mul(0.2).pow(1).add(1)
+        if (!hasUpgrade("i", 125) && !hasUpgrade("i", 142)) player.i.singularitypointeffect = player.i.singularitypoints.mul(0.2).pow(0.5).add(1)
+        if (hasUpgrade("i", 125) && !hasUpgrade("i", 142)) player.i.singularitypointeffect = player.i.singularitypoints.mul(0.2).pow(1).add(1)
+        if (hasUpgrade("i", 142)) player.i.singularitypointeffect = player.i.singularitypoints.mul(0.2).pow(1).add(1).pow(upgradeEffect("i", 142))
         if (inChallenge("i", 24)) player.i.singularitypointeffect = player.i.singularitypointeffect.pow(0.1)
 
         //singularity dimensions
@@ -893,12 +1079,12 @@
         singularitydimbooster = singularitydimbooster.mul(buyableEffect("i", 72))
         singularitydimbooster = singularitydimbooster.mul(player.i.voidsingularitypointeffect1)
 
-        player.i.singularitypowerpersecond = player.i.singularitydim1.mul(player.i.singularitydim1mult.mul(singularitydimbooster))
-        player.i.singularitydim1persecond = player.i.singularitydim2.mul(player.i.singularitydim2mult.mul(singularitydimbooster))
-        player.i.singularitydim2persecond = player.i.singularitydim3.mul(player.i.singularitydim3mult.mul(singularitydimbooster))
-        player.i.singularitydim3persecond = player.i.singularitydim4.mul(player.i.singularitydim4mult.mul(singularitydimbooster))
-        player.i.singularitydim4persecond = player.i.singularitydim5.mul(player.i.singularitydim5mult.mul(singularitydimbooster))
-        player.i.singularitydim5persecond = player.i.singularitydim6.mul(player.i.singularitydim6mult.mul(singularitydimbooster))
+        player.i.singularitypowerpersecond = player.i.singularitydim1.mul(player.i.singularitydim1mult.mul(singularitydimbooster.mul(timestop)))
+        player.i.singularitydim1persecond = player.i.singularitydim2.mul(player.i.singularitydim2mult.mul(singularitydimbooster.mul(timestop)))
+        player.i.singularitydim2persecond = player.i.singularitydim3.mul(player.i.singularitydim3mult.mul(singularitydimbooster.mul(timestop)))
+        player.i.singularitydim3persecond = player.i.singularitydim4.mul(player.i.singularitydim4mult.mul(singularitydimbooster.mul(timestop)))
+        player.i.singularitydim4persecond = player.i.singularitydim5.mul(player.i.singularitydim5mult.mul(singularitydimbooster.mul(timestop)))
+        player.i.singularitydim5persecond = player.i.singularitydim6.mul(player.i.singularitydim6mult.mul(singularitydimbooster.mul(timestop)))
 
         player.i.singularitypower = player.i.singularitypower.add(player.i.singularitypowerpersecond.mul(delta))
         player.i.singularitydim1 = player.i.singularitydim1.add(player.i.singularitydim1persecond.mul(delta))
@@ -939,7 +1125,7 @@
             player.i.singularitytreesoftcap = Decimal.pow(player.i.singularitytrees.add(1).sub(player.i.singularitytreesoftcapstart), 0.75)
             singularityleavespersecond = singularityleavespersecond.div(player.i.singularitytreesoftcap)
         }
-        player.i.singularityleavespersecond = singularityleavespersecond
+        player.i.singularityleavespersecond = singularityleavespersecond.mul(timestop)
 
         player.i.singularitytreegen = new Decimal(1)
         player.i.singularitytreegen = player.i.singularitytreegen.mul(player.i.voidsingularitypointeffect3)
@@ -960,7 +1146,7 @@
         blessingbooster = blessingbooster.mul(buyableEffect("h", 29))
         if (hasUpgrade("i", 106)) blessingbooster = blessingbooster.mul(upgradeEffect("i", 106))
         blessingbooster = blessingbooster.mul(player.i.jacorbmodseffect)
-        blessingbooster = blessingbooster.mul(player.i.voidsingularitypointeffect4)
+        blessingbooster = blessingbooster.mul(player.i.voidsingularitypointeffect4.mul(timestop))
         blessingbooster = blessingbooster.mul(buyableEffect("i", 73))
 
         player.i.replicantimodblessings = player.i.replicantimodblessings.add(player.i.replicantimodblessingspersecond.mul(delta))
@@ -983,7 +1169,7 @@
 
         //jacorb secrets
 
-        document.body.style.setProperty('--background', player.i.jacorbianunlock.gte(1) ? "linear-gradient(90deg, #3B0051, #0f0f0f)" : inChallenge("i", 24) ? "linear-gradient(90deg, black, #210069)" : "#0f0f0f");
+        document.body.style.setProperty('--background', player.i.jacorbianunlock.gte(1) ? "linear-gradient(90deg, #3B0051, #0f0f0f)" : inChallenge("i", 24) ? "linear-gradient(90deg, black, #210069)" : player.i.aarexbalancing.eq(1) ? "linear-gradient(85deg, #15006d, #68e8f4)" : "#0f0f0f");
 
         if (player.i.jacorbianunlock.eq(1) && player.i.jacorbparticleenable.eq(1)) {
         makeParticles(jacorbparticle, 1)
@@ -1001,17 +1187,18 @@
         if (inChallenge("i", 23)) player.i.jacorbianenergyeffect = player.i.jacorbianenergy.pow(1.1).add(1).pow(20)
 
         if (hasChallenge("i", 19) && player.i.jacorbianunlock.eq(1)) {
-            player.i.jacorbianenergy = player.i.jacorbianenergy.add(player.i.jacorbianenergytoget.mul(2.5).mul(delta))
+            player.i.jacorbianenergy = player.i.jacorbianenergy.add(player.i.jacorbianenergytoget.mul(2.5).mul(delta).mul(timestop))
         }
         if (player.i.jacorbscene.eq(8)) {
-            player.i.jacorbcutscene = new Decimal(0)
+            player.i.jacorbcutscene = new Decimal(1)
         } 
 
         player.i.jacorbmodspersecond = buyableEffect("i", 62)
         player.i.jacorbmodspersecond = player.i.jacorbmodspersecond.mul(buyableEffect("i", 63))
         if (hasUpgrade("i", 118)) player.i.jacorbmodspersecond = player.i.jacorbmodspersecond.mul(upgradeEffect("i", 118))
+        if (player.i.boosterchoice.eq(1)) player.i.jacorbmodspersecond = player.i.jacorbmodspersecond.mul(player.i.jacorbboostereffect)
 
-        player.i.jacorbmods = player.i.jacorbmods.add(player.i.jacorbmodspersecond.mul(delta))
+        player.i.jacorbmods = player.i.jacorbmods.add(player.i.jacorbmodspersecond.mul(timestop).mul(delta))
         player.i.jacorbmodseffect = player.i.jacorbmods.pow(1.6).add(1)
 
         //void singularities
@@ -1022,19 +1209,211 @@
         if (hasUpgrade("i", 129)) player.i.voidsingularitiestoget = player.i.voidsingularitiestoget.mul(upgradeEffect("i", 129))
 
         let vspersecond = upgradeEffect("i", 138)
-        if (hasUpgrade("i", 138)) player.i.voidsingularities = player.i.voidsingularities.add(vspersecond.mul(delta))
+        if (hasUpgrade("i", 138) || hasMilestone("i", 23)) player.i.voidsingularities = player.i.voidsingularities.add(vspersecond.mul(delta))
 
         player.i.voidsingularitypointspersecond = player.i.voidsingularities.pow(1.5)
         player.i.voidsingularitypointspersecond = player.i.voidsingularitypointspersecond.mul(buyableEffect("i", 64))
         player.i.voidsingularitypointspersecond = player.i.voidsingularitypointspersecond.mul(buyableEffect("h", 31))
-        player.i.voidsingularitypoints = player.i.voidsingularitypoints.add(player.i.voidsingularitypointspersecond.mul(delta))
+        player.i.voidsingularitypoints = player.i.voidsingularitypoints.add(player.i.voidsingularitypointspersecond.mul(timestop).mul(delta))
 
         player.i.voidsingularitypointeffect1 = player.i.voidsingularitypoints.pow(1.3).add(1)
         player.i.voidsingularitypointeffect2 = player.i.voidsingularitypoints.pow(1.1).add(1)
         player.i.voidsingularitypointeffect3 = player.i.voidsingularitypoints.pow(0.5).add(1)
         player.i.voidsingularitypointeffect4 = player.i.voidsingularitypoints.pow(1.6).add(1)
 
-        
+        //OMEGA
+        if (player.i.omegascene.eq(44)) {
+            player.i.omegacutscene = new Decimal(0)
+        } 
+
+        let omegagain = new Decimal(1)
+        player.i.omegastoget = omegagain
+
+        if (player.points.gt("1ee11") && !hasUpgrade("i", 138)) player.i.omegapointstoget = player.points.plus(10).log10().log10().pow(0.4)
+        if (hasUpgrade("i", 138) && player.points.gt("1ee11")) player.i.omegapointstoget = player.points.plus(10).log10().log10().pow(0.8).mul(2)
+        if (player.points.lt("1ee11")) player.i.omegapointstoget = new Decimal(0)
+        player.i.omegapointstoget = player.i.omegapointstoget.mul(player.i.alphaeffect)
+        player.i.omegapointstoget = player.i.omegapointstoget.mul(buyableEffect("h", 32))
+
+        if (hasMilestone("i", 26)) player.i.omegapoints = player.i.omegapoints.add(player.i.omegapointstoget.mul(delta))
+
+        player.i.omegapointseffect = player.i.omegapoints.pow(5).add(1)
+
+        let omegatimegain = new Decimal(1)
+        player.i.omegatime = player.i.omegatime.add(omegatimegain.mul(timestop).mul(delta))
+
+        player.i.omegapause = player.i.omegapause.sub(1)
+        if (player.i.omegapause.gt(0)) {
+            layers.i.omegareset();
+        }
+
+        //omegalayers
+        let omegalayermult = new Decimal(1)
+        omegalayermult = omegalayermult.mul(buyableEffect("h", 33))
+        omegalayermult = omegalayermult.mul(timestop)
+        player.i.alpha = player.i.alpha.add(player.i.alphapersecond.mul(delta))
+        player.i.alphaeffect = player.i.alpha.pow(0.6).add(1)
+        if (hasUpgrade("i", 143)) player.i.alphapersecond = player.points.plus(10).log10().log10().pow(0.3).add(0.001)
+        if (hasUpgrade("i", 145)) player.i.alphapersecond = player.i.alphapersecond.mul(upgradeEffect("i", 145))
+        if (hasUpgrade("i", 146)) player.i.alphapersecond = player.i.alphapersecond.mul(upgradeEffect("i", 146))
+        if (hasUpgrade("i", 148)) player.i.alphapersecond = player.i.alphapersecond.mul(upgradeEffect("i", 148))
+        if (hasChallenge("i", 27)) player.i.alphapersecond = player.i.alphapersecond.mul(challengeEffect("i", 27))
+        player.i.alphapersecond = player.i.alphapersecond.mul(player.i.betaeffect)
+        player.i.alphapersecond = player.i.alphapersecond.mul(omegalayermult)
+
+        player.i.seeds = player.i.seeds.add(player.i.seedspersecond.mul(delta))
+        player.i.seedeffect = player.i.seeds.pow(20).add(1)
+        player.i.seedspersecond = buyableEffect("i", 74)
+        player.i.seedspersecond = player.i.seedspersecond.mul(timestop).mul(buyableEffect("i", 75))
+        player.i.seedspersecond = player.i.seedspersecond.mul(buyableEffect("i", 76))
+        if (hasUpgrade("i", 145)) player.i.seedspersecond = player.i.seedspersecond.mul(upgradeEffect("i", 145))
+
+        //beta
+        let betadimbooster = new Decimal(1)
+        betadimbooster = betadimbooster.mul(player.i.sacrificemult)
+        betadimbooster = betadimbooster.mul(buyableEffect("i", 84))
+        betadimbooster = betadimbooster.mul(player.i.gammaeffect)
+        if (inChallenge("i", 25)) betadimbooster = betadimbooster.pow(0.5)
+        if (hasChallenge("i", 25)) betadimbooster = betadimbooster.mul(challengeEffect("i", 25))
+        betadimbooster = betadimbooster.mul(omegalayermult)
+
+        player.i.betapersecond = player.i.betadim1.mul(player.i.betadim1mult.mul(betadimbooster))
+        player.i.betadim1persecond = player.i.betadim2.mul(player.i.betadim2mult.mul(betadimbooster))
+        player.i.betadim2persecond = player.i.betadim3.mul(player.i.betadim3mult.mul(betadimbooster))
+        player.i.betadim3persecond = player.i.betadim4.mul(player.i.betadim4mult.mul(betadimbooster))
+
+        player.i.beta = player.i.beta.add(player.i.betapersecond.mul(delta))
+        if (!inChallenge("i", 28)) player.i.betadim1 = player.i.betadim1.add(player.i.betadim1persecond.mul(delta))
+        if (!inChallenge("i", 28)) player.i.betadim2 = player.i.betadim2.add(player.i.betadim2persecond.mul(delta))
+        if (!inChallenge("i", 28)) player.i.betadim3 = player.i.betadim3.add(player.i.betadim3persecond.mul(delta))
+
+        player.i.betaeffect = player.i.beta.pow(0.9).add(1)
+
+        player.i.sacrificemult = player.i.sacrificeamount.pow(0.03).add(1)
+
+        if (hasChallenge("i", 26)) player.i.sacrificeamount = player.i.sacrificeamount.add(player.i.beta.mul(delta))
+        //gamma
+        let dimensionbuybase = new Decimal(0.25)
+        let tickspeedbase = new Decimal(1.1)
+
+        player.i.dimensionbuymult = dimensionbuybase.add(buyableEffect("i", 85))
+        player.i.dimensionbuymult = player.i.dimensionbuymult.mul(player.i.epsiloneffect)
+
+        player.i.tickspeedmult = tickspeedbase.add(buyableEffect("i", 86))
+        player.i.tickspeedmult = player.i.tickspeedmult.mul(player.i.epsiloneffect)
+        if (inChallenge("i", 26)) player.i.tickspeedmult = new Decimal(1.01)
+
+        player.i.gammatoget = player.i.beta.pow(0.135).div(30)
+        player.i.gammatoget = player.i.gammatoget.mul(omegalayermult)
+        player.i.gammaeffect = player.i.gamma.pow(1.1).add(1)
+
+        if (hasUpgrade("i", 165)) player.i.gamma = player.i.gamma.add(player.i.gammatoget.mul(delta))
+
+        //epsilon
+
+        player.i.epsilonpersecond = buyableEffect("i", 87)
+        player.i.epsilonpersecond = player.i.epsilonpersecond.mul(omegalayermult)
+        player.i.epsilonpersecond = player.i.epsilonpersecond.mul(player.i.zetaeffect)
+        if (hasUpgrade("i", 166)) player.i.epsilonpersecond = player.i.epsilonpersecond.mul(upgradeEffect("i", 166))
+
+        player.i.epsilon = player.i.epsilon.add(player.i.epsilonpersecond.mul(delta))
+
+        player.i.epsiloneffect = player.i.epsilon.pow(0.6).add(1)
+
+        //aarex
+        if (player.i.aarexscene.eq(25)) {
+            player.i.aarexcutscene = new Decimal(0)
+        } 
+
+        if (player.i.aarexbalancing.eq(1) && player.i.jacorbparticleenable.eq(1)) {
+            makeParticles(aarexparticle, 1)
+        }
+
+        player.i.aarexpointspersecond = player.points.plus(100).log10().log10().log10().add(1).mul(player.i.wastedaarexpointseffect)
+        if (hasUpgrade("i", 159)) player.i.aarexpointspersecond = player.i.aarexpointspersecond.mul(upgradeEffect("i", 159))
+        player.i.aarexpointspersecond = player.i.aarexpointspersecond.mul(buyableEffect("i", 88))
+        player.i.aarexpointspersecond = player.i.aarexpointspersecond.mul(buyableEffect("i", 91))
+        player.i.aarexpointspersecond = player.i.aarexpointspersecond.mul(buyableEffect("i", 93))
+        player.i.aarexpointspersecond = player.i.aarexpointspersecond.mul(player.i.aarexifiedinfinitieseffect)
+        if (player.i.boosterchoice.eq(2)) player.i.aarexpointspersecond = player.i.aarexpointspersecond.mul(player.i.aarexboostereffect)
+
+        if (player.i.aarexbalancing.eq(1)) player.i.aarexpoints = player.i.aarexpoints.add(player.i.aarexpointspersecond.mul(delta))
+
+        player.i.wastedaarexpointstoget = player.i.aarexpoints.pow(0.5)
+        player.i.wastedaarexpointstoget = player.i.wastedaarexpointstoget.mul(buyableEffect("i", 89))
+        player.i.wastedaarexpointstoget = player.i.wastedaarexpointstoget.mul(buyableEffect("i", 92))
+        player.i.wastedaarexpointstoget = player.i.wastedaarexpointstoget.mul(buyableEffect("i", 94))
+        player.i.wastedaarexpointstoget = player.i.wastedaarexpointstoget.mul(player.i.aarexifiedsingularitieseffect)
+        player.i.wastedaarexpointseffect = player.i.wastedaarexpoints.pow(0.1).add(1)
+
+        //aarexification
+        player.i.aarexentropy = player.i.wastedaarexpoints.mul(player.h.aarexianenergy).pow(0.1)
+
+        player.i.aarexifiedinfinitiestoget = player.i.infinities.pow(0.5).mul(player.i.aarexentropy)
+        player.i.aarexifiedsingularitiestoget = player.i.singularities.pow(0.5).mul(player.i.aarexentropy)
+
+        player.i.aarexifiedinfinitieseffect = player.i.aarexifiedinfinities.pow(0.35).add(1)
+        player.i.aarexifiedsingularitieseffect = player.i.aarexifiedsingularities.pow(0.3).add(1)
+
+        //truesingularity
+        if (player.i.truesingularityscene.eq(6)) {
+            player.i.truesingularitycutscene = new Decimal(0)
+        } 
+
+        if (player.i.truesingularityxp.gte(player.i.truesingularityreq)) {
+            player.i.truesingularitylevel = player.i.truesingularitylevel.add(1)
+            player.i.truesingularityxp = new Decimal(0)
+        }
+        player.i.truesingularityxp = player.i.truesingularityxp.add(player.i.truesingularityxppersecond.mul(timestop).mul(delta))
+        player.i.truesingularityxppersecond = player.i.singularityenergy.pow(1.2).div(1000)
+        player.i.truesingularityxppersecond = player.i.truesingularityxppersecond.mul(buyableEffect("h", 34))
+        player.i.truesingularityxppersecond = player.i.truesingularityxppersecond.mul(player.i.tspowereffect)
+
+        player.i.truesingularityeffect = player.i.truesingularitylevel.pow(2).add(1)
+        if (player.i.boosterchoice.eq(4)) player.i.truesingularityeffect = player.i.truesingularityeffect.mul(player.i.omegaboostereffect)
+
+        player.i.truesingularityreq = player.i.truesingularitylevel.add(2).pow(1.2)
+
+        player.i.singularityenergy = player.i.jacorbquest.add(player.i.aarexquest.add(player.i.singularityquest.add(player.i.omegaquest))).sub(4)
+
+        //zeta
+        player.i.zetaeffect = player.i.zeta.pow(0.5).add(1)
+        player.i.zetatoget = player.i.epsilon.pow(0.3).add(1).mul(omegalayermult)
+        player.i.zetatoget = player.i.zetatoget.mul(player.i.etaeffect)
+        if (hasUpgrade("i", 167)) player.i.zeta = player.i.zeta.add(player.i.zetatoget.mul(0.25).mul(delta))
+
+        //eta
+        player.i.etaeffect = player.i.eta.pow(0.4).add(1)
+        player.i.etapersecond = buyableEffect("i", 96).mul(omegalayermult)
+        player.i.etapersecond = player.i.etapersecond.mul(buyableEffect("i", 97))
+
+        player.i.eta = player.i.eta.add(player.i.etapersecond.mul(delta))
+
+        //ts booster
+
+        player.i.jacorbboostereffect = player.i.jacorbquest.pow(1.5).add(1)
+        player.i.aarexboostereffect = player.i.aarexquest.pow(1.6).add(1)
+        player.i.singularityboostereffect = player.i.singularityquest.pow(2.4).add(1)
+        player.i.omegaboostereffect = player.i.omegaquest.pow(1.2).add(1)
+
+        //ts dims
+        let tsdimbooster = new Decimal(1)
+        tsdimbooster = tsdimbooster.mul(timestop)
+        tsdimbooster = tsdimbooster.mul(buyableEffect("h", 35))
+
+
+        if (hasMilestone("i", 28)) player.i.tspowerpersecond = player.i.tsdim1.mul(player.i.tsdim1mult).mul(tsdimbooster).add(1)
+
+        player.i.tsdim1persecond = player.i.tsdim2.mul(player.i.tsdim2mult.mul(tsdimbooster))
+        player.i.tsdim2persecond = player.i.tsdim3.mul(player.i.tsdim3mult.mul(tsdimbooster))
+        player.i.tsdim3persecond = player.i.tsdim4.mul(player.i.tsdim4mult.mul(tsdimbooster))
+
+        player.i.tspower = player.i.tspower.add(player.i.tspowerpersecond.mul(delta))
+        player.i.tsdim1 = player.i.tsdim1.add(player.i.tsdim1persecond.mul(delta))
+        player.i.tsdim2 = player.i.tsdim2.add(player.i.tsdim2persecond.mul(delta))
+        player.i.tsdim3 = player.i.tsdim3.add(player.i.tsdim3persecond.mul(delta))
+
+        player.i.tspowereffect = player.i.tspower.pow(0.02).add(1)
     },
     infinityreset() {
         for (let i = 0; i < player.i.upgrades.length; i++) {
@@ -1280,6 +1659,246 @@
         player.i.jacorbianunlock = new Decimal(0)
         player.i.jacorbiantrialunlock = new Decimal(0)
     },
+    omegareset() {
+        for (let i = 0; i < player.i.upgrades.length; i++) {
+            if (+player.i.upgrades[i] < 136) {
+                player.i.upgrades.splice(i, 1);
+                i--;
+            }
+        }
+
+        player.i.buyables[11] = new Decimal(0)
+        player.i.buyables[12] = new Decimal(0)
+        player.i.buyables[13] = new Decimal(0)
+        player.i.buyables[14] = new Decimal(0)
+        player.i.buyables[15] = new Decimal(0)
+        player.i.buyables[16] = new Decimal(0)
+        player.i.buyables[17] = new Decimal(0)
+        player.i.buyables[18] = new Decimal(0)
+        player.i.buyables[19] = new Decimal(0)
+        player.i.buyables[20] = new Decimal(0)
+        player.i.buyables[21] = new Decimal(0)
+        player.i.buyables[22] = new Decimal(0)
+        player.i.buyables[23] = new Decimal(0)
+        player.i.buyables[24] = new Decimal(0)
+        player.i.buyables[25] = new Decimal(0)
+        player.i.buyables[26] = new Decimal(0)
+        player.i.buyables[27] = new Decimal(0)
+        player.i.buyables[28] = new Decimal(0)
+        player.i.buyables[29] = new Decimal(0)
+        player.i.buyables[31] = new Decimal(0)
+        player.i.buyables[32] = new Decimal(0)
+        player.i.buyables[33] = new Decimal(0)
+        player.i.buyables[34] = new Decimal(0)
+        player.i.buyables[35] = new Decimal(0)
+        player.i.buyables[36] = new Decimal(0)
+        player.i.buyables[37] = new Decimal(0)
+        player.i.buyables[38] = new Decimal(0)
+        player.i.buyables[39] = new Decimal(0)
+        player.i.buyables[40] = new Decimal(0)
+        player.i.buyables[41] = new Decimal(0)
+        player.i.buyables[42] = new Decimal(0)
+        player.i.buyables[43] = new Decimal(0)
+        player.i.buyables[44] = new Decimal(0)
+        player.i.buyables[45] = new Decimal(0)
+        player.i.buyables[46] = new Decimal(0)
+        player.i.buyables[47] = new Decimal(0)
+        player.i.buyables[48] = new Decimal(0)
+        player.i.buyables[49] = new Decimal(0)
+        player.i.buyables[51] = new Decimal(0)
+        player.i.buyables[52] = new Decimal(0)
+        player.i.buyables[53] = new Decimal(0)
+        player.i.buyables[54] = new Decimal(0)
+        player.i.buyables[55] = new Decimal(0)
+        player.i.buyables[56] = new Decimal(0)
+        player.i.buyables[57] = new Decimal(0)
+        player.i.buyables[58] = new Decimal(0)
+        player.i.buyables[59] = new Decimal(0)
+        player.i.buyables[61] = new Decimal(0)
+        if (!hasMilestone("i", 21)) player.i.buyables[62] = new Decimal(0)
+        if (!hasMilestone("i", 21)) player.i.buyables[63] = new Decimal(0)
+        player.i.buyables[64] = new Decimal(0)
+        player.i.buyables[65] = new Decimal(0)
+        player.i.buyables[66] = new Decimal(0)
+        player.i.buyables[67] = new Decimal(0)
+        player.i.buyables[68] = new Decimal(0)
+        player.i.buyables[69] = new Decimal(0)
+        player.i.buyables[71] = new Decimal(0)
+        player.i.buyables[72] = new Decimal(0)
+        player.i.buyables[73] = new Decimal(0)
+        player.points = new Decimal(1)
+        player.i.trees = new Decimal(0)
+        player.i.leaves = new Decimal(0)
+        player.i.leavespersecond = new Decimal(0)
+        player.i.treereq = new Decimal(10)
+        player.i.treesoftcapstart = new Decimal(15)
+        player.i.treesoftcap = new Decimal(1)
+        player.i.treegen = new Decimal(1)
+        //Computer
+        player.i.crypto = new Decimal(0)
+        player.i.cryptotoget = new Decimal(0)
+        player.i.bytes = new Decimal(0)
+        player.i.bytespersecond = new Decimal(0)
+        player.i.byteseffect = new Decimal(0)
+        player.i.cryptodim1 = new Decimal(0)
+        player.i.cryptodim1mult = new Decimal(1)
+        player.i.cryptodim1persecond = new Decimal(0)
+        player.i.cryptodim2 = new Decimal(0)
+        player.i.cryptodim2mult = new Decimal(1)
+        player.i.cryptodim2persecond = new Decimal(0)
+        player.i.cryptodim3 = new Decimal(0)
+        player.i.cryptodim3mult = new Decimal(1)
+        player.i.cryptodim3persecond = new Decimal(0)
+        player.i.cryptodim4 = new Decimal(0)
+        player.i.cryptodim4mult = new Decimal(1)
+        //Coding
+        player.i.codeexperience = new Decimal(0)
+        player.i.codeexperiencetoget = new Decimal(0)
+        player.i.codeexperienceeffect = new Decimal(0)
+        player.i.mods = new Decimal(0)
+        player.i.linesofcode = new Decimal(0)
+        player.i.linesofcodepersecond = new Decimal(0)
+        player.i.modreq = new Decimal(10)
+        player.i.modsoftcapstart = new Decimal(15)
+        player.i.modsoftcap = new Decimal(1)
+        player.i.modgen = new Decimal(1)
+        player.i.modeffect = new Decimal(1)
+        //Realm Mods
+        player.i.currentdisplay = new Decimal(0)
+        player.i.creatormods = new Decimal(0)
+        player.i.highmods = new Decimal(0)
+        player.i.deathmods = new Decimal(0)
+        player.i.dimensionalmods = new Decimal(0)
+        player.i.backroomsmods = new Decimal(0)
+        player.i.voidmods = new Decimal(0)
+        player.i.creatormodseffect = new Decimal(0)
+        player.i.highmodseffect = new Decimal(0)
+        player.i.deathmodseffect = new Decimal(0)
+        player.i.dimensionalmodseffect = new Decimal(0)
+        player.i.backroomsmodseffect = new Decimal(0)
+        player.i.voidmodseffect = new Decimal(0)
+        player.i.totalrealmmods = new Decimal(0)
+        player.i.jacorbianenergyunlocked = new Decimal(0)
+        player.i.jacorbianenergy = new Decimal(0)
+        player.i.jacorbianenergytoget = new Decimal(0)
+        player.i.jacorbianenergyeffect = new Decimal(0)
+        //infinity
+        player.i.infinities = new Decimal(0),
+            player.i.infinitypoints = new Decimal(0),
+            player.i.infinitiestoget = new Decimal(0),
+            player.i.infinitypointstoget = new Decimal(0),
+            player.i.ippassive = new Decimal(0),
+            resetrecord = ["", "", "", "", "", "", ""],
+            player.i.infinityresets = new Decimal(1),
+            player.i.infinitytime = new Decimal(0),
+            player.i.infinitypointgeneration = new Decimal(0),
+            player.i.preinfinityresourcemult = new Decimal(0), //This is so it can also multiply points//
+            player.i.apoints = new Decimal(0.001), //HARD CHALLENGE ONLY//
+            //breakinfinity
+            player.i.brokeninfinities = new Decimal(0),
+            player.i.brokeninfinitiestoget = new Decimal(0),
+            player.i.infinitybroken = new Decimal(0),
+            //replicanti
+            player.i.replicanti = new Decimal(1),
+            player.i.replicantimultiplier = new Decimal(1),
+            player.i.replicantiinterval = new Decimal(5),
+            player.i.replicantitimer = new Decimal(1),
+            player.i.replicantimods = new Decimal(0),
+            //infinitydimensions
+            player.i.infinitypower = new Decimal(0),
+            player.i.infinitydim1 = new Decimal(0),
+            player.i.infinitydim1mult = new Decimal(1),
+            player.i.infinitydim2 = new Decimal(0),
+            player.i.infinitydim2mult = new Decimal(1),
+            player.i.infinitydim3 = new Decimal(0),
+            player.i.infinitydim3mult = new Decimal(1),
+            player.i.infinitydim4 = new Decimal(0),
+            player.i.infinitydim4mult = new Decimal(1)
+        player.i.singularitypause= new Decimal(0)
+        player.i.singularities= new Decimal(0)
+        player.i.singularitypoints= new Decimal(0)
+        player.i.singularitiestoget= new Decimal(0)
+        player.i.singularitypointstoget= new Decimal(0)
+        player.i.singularitytime= new Decimal(0)
+        player.i.singularitypointeffect= new Decimal(0)
+        player.i.presingularityresourcemult= new Decimal(0)
+        player.i.singularitypower= new Decimal(0)
+        player.i.singularitypowereffect= new Decimal(1)
+        player.i.singularitypowerpersecond= new Decimal(0)
+        player.i.singularitydim1= new Decimal(0)
+        player.i.singularitydim1mult= new Decimal(1)
+        player.i.singularitydim1persecond= new Decimal(0)
+        player.i.singularitydim2= new Decimal(0)
+        player.i.singularitydim2mult= new Decimal(1)
+        player.i.singularitydim2persecond= new Decimal(0)
+        player.i.singularitydim3= new Decimal(0)
+        player.i.singularitydim3mult= new Decimal(1)
+        player.i.singularitydim3persecond= new Decimal(0)
+        player.i.singularitydim4= new Decimal(0)
+        player.i.singularitydim4mult= new Decimal(1)
+        player.i.singularitydim4persecond= new Decimal(0)
+        player.i.singularitydim5= new Decimal(0)
+        player.i.singularitydim5mult= new Decimal(1) //unlocked after void singularity
+        player.i.singularitydim5persecond= new Decimal(0)
+        player.i.singularitydim6= new Decimal(0)
+        player.i.singularitydim6mult= new Decimal(1) //unlocked after void singularity
+        player.i.singularitytrees= new Decimal(0)
+        player.i.singularityleaves= new Decimal(0)
+        player.i.singularityleavespersecond= new Decimal(0)
+        player.i.singularitytreereq = new Decimal(10),
+            player.i.singularitytreesoftcapstart= new Decimal(5),
+            player.i.singularitytreesoftcap= new Decimal(1)
+        player.i.singularitytreegen= new Decimal(1)
+        player.i.singularitytreeeffect= new Decimal(1)
+        //singularity studies
+        player.i.singularitytheorems= new Decimal(0)
+        player.i.singularitytheoremsrespec= new Decimal(0)
+        player.i.singularityblessings= new Decimal(0)
+        player.i.singularityblessingspersecond= new Decimal(0)
+        player.i.replicantimodblessings= new Decimal(0)
+        player.i.replicantimodblessingspersecond= new Decimal(0)
+        player.i.replicantimodblessingseffect= new Decimal(1)
+        player.i.infinitydimensionblessings= new Decimal(0)
+        player.i.infinitydimensionblessingspersecond= new Decimal(0)
+        player.i.infinitydimensionblessingseffect= new Decimal(1)
+        player.i.infinitypointblessings= new Decimal(0)
+        player.i.infinitypointblessingspersecond= new Decimal(0)
+        player.i.infinitypointblessingseffect= new Decimal(1)
+        player.i.preinfinitybuyableincreaser= new Decimal(1)
+        //secret jacorb stuff
+        player.i.jacorbianunlock= new Decimal(0)
+        player.i.jacorbiantrialunlock= new Decimal(0)
+        player.i.imaginarytest= new Decimal(0)
+        player.i.jacorbmods= new Decimal(0)
+        player.i.jacorbmodseffect= new Decimal(0)
+        player.i.jacorbmodspersecond= new Decimal(0) 
+        //voidsingularities
+        player.i.voidsingularities= new Decimal(0)
+        player.i.voidsingularitiestoget= new Decimal(0)
+        player.i.voidsingularitypoints= new Decimal(0)
+        player.i.voidsingularitypointspersecond= new Decimal(0)
+        player.i.voidsingularitypointeffect1= new Decimal(0)
+        player.i.voidsingularitypointeffect2= new Decimal(0)
+        player.i.voidsingularitypointeffect3= new Decimal(0)
+        player.i.voidsingularitypointeffect4= new Decimal(0)
+        player.i.omegatime = new Decimal(0)
+        player.i.omegapoints = player.i.omegapoints.add(player.i.omegapointstoget)
+
+        player.i.jacorbianunlock = new Decimal(0)
+        player.i.jacorbiantrialunlock = new Decimal(0)
+
+        player.i.wastedaarexpoints = player.i.wastedaarexpoints.add(player.i.wastedaarexpointstoget)
+
+        player.i.aarexbalancing = new Decimal(0)
+        player.i.aarexpoints = new Decimal(0)
+
+        player.i.buyables[88] = new Decimal(0)
+        player.i.buyables[89] = new Decimal(0)
+        player.i.buyables[91] = new Decimal(0)
+        player.i.buyables[92] = new Decimal(0)
+
+        player.i.boosterchoice = new Decimal(0)
+    },
     cryptoreset() {
                 if (!hasUpgrade("i", 38)) {
                     if (!hasUpgrade("i", 31)) {
@@ -1473,7 +2092,7 @@
         },
         28: {
             title() { return "Big crunch due to the excess of everything" },
-            canClick() { return true },
+            canClick() { return player.points.gte("1.79e308") || player.i.infinitypause.gte(1) },
             unlocked() { return player.i.infinitypause.gte(1) },
             onClick() {
                 consolePrint("Infinity Reset #" + format(player.i.infinityresets) + " +" + format(player.i.infinitypointstoget) + " IP, +" + format(player.i.infinitypointgeneration) + " IP per second, " + formatTime(player.i.infinitytime))
@@ -1604,7 +2223,7 @@
                     startChallenge("i", 18)
                 }
             },
-            style: { width: '150px', "min-height": '60px' }
+            style: { width: '150px', "min-height": '60px', "background-color": "#ff69b4", }
         },
         38: {
             title() { return "Turn your replicanti into a replicanti mod" },
@@ -1621,7 +2240,7 @@
         39: {
             title() { return "Unlock Singularity" },
             canClick() { return player.points.gte("1e35000") && player.i.infinitypoints.gte("1e175") && player.i.brokeninfinities.gte("1e35") && player.i.infinities.gte("100000") && player.i.replicantimods.gte("100") && player.i.infinitypower.gte("1e130") && player.h.willpower.gte("1e9") && player.h.prestigepower.gte("100") },
-            unlocked() { return true },
+            unlocked() { return player.i.singularitycutscene.eq(0)},
             onClick() {
                 player.i.singularityunlocked = new Decimal(1)
             },
@@ -1630,7 +2249,7 @@
         41: {
             title() { return "<h2> Next  " },
             canClick() { return player.i.singularitycutscene.neq(0) },
-            unlocked() { return player.i.singularitycutscene.neq(0) },
+            unlocked() { return player.i.singularitycutscene.eq(1) },
             onClick() {
                 player.i.singularityscene = player.i.singularityscene.add(1)
             },
@@ -1641,6 +2260,7 @@
             unlocked() { return player.i.singularitycutscene.eq(0) },
             onClick() {
                 player.i.singularitypause = new Decimal(5)
+                player.i.singularities = player.i.singularities.add(player.i.singularitiestoget)
             },
             style: { width: '400px', "min-height": '100px' }
         },
@@ -1650,8 +2270,9 @@
             unlocked() { return player.i.singularityunlocked.eq(1) },
             onClick() {
                 player.i.singularitypause = new Decimal(5)
+                player.i.singularities = player.i.singularities.add(player.i.singularitiestoget)
             },
-            style: { width: '150px', "min-height": '60px' }
+            style: { width: '150px', "min-height": '60px', "background-color": "red", }
         },
         43: {
             title() { return "Upgrade Autobuyer On" },
@@ -1698,7 +2319,7 @@
         48: {
             title() { return "Implement Jacorbian Balancing" },
             display: "Req: 10,000 Jacorbian Energy (Please don't do this)",
-            canClick() { return player.i.jacorbianenergy.gte("10000") && !hasUpgrade("i", 65) },
+            canClick() { return player.i.jacorbianenergy.gte("10000") && !hasUpgrade("i", 65) && player.i.aarexbalancing.eq(0) },
             unlocked() { return player.i.singularityunlocked.eq(1) && player.i.jacorbianunlock.eq(0)  },
             onClick() {
                 player.i.jacorbianunlock = new Decimal(1)
@@ -1718,8 +2339,8 @@
         },
         51: {
             title() { return "<h2> Next  " },
-            canClick() { return player.i.jacorbcutscene.neq(0) },
-            unlocked() { return player.i.jacorbcutscene.neq(0) },
+            canClick() { return player.i.jacorbcutscene.eq(0) },
+            unlocked() { return player.i.jacorbcutscene.eq(0) },
             onClick() {
                 player.i.jacorbscene = player.i.jacorbscene.add(1)
             },
@@ -1739,6 +2360,307 @@
             onClick() {
                 player.i.jacorbparticleenable = new Decimal(0)
             },
+        },
+        54: {
+            title() { return "<h2> Next  " },
+            canClick() { return player.i.omegacutscene.neq(0) },
+            unlocked() { return player.i.omegacutscene.neq(0) },
+            onClick() {
+                player.i.omegascene = player.i.omegascene.add(1)
+            },
+        },
+        55: {
+            title() { return "Create the power of omega, at the cost of everything." },
+            canClick() { return player.i.omegapointstoget.gte(1) || player.i.aarexbalancing.eq(1) },
+            unlocked() { return true },
+            onClick() {
+                player.i.omegapause = new Decimal(5)
+        player.i.omegas = player.i.omegas.add(player.i.omegastoget)
+            },
+            style: { width: '400px', "min-height": '100px' }
+        },
+        56: {
+            title() { return "+" + format(player.i.omegapointstoget) + " OM" },
+            canClick() { return player.i.omegapointstoget.gte(1) || player.i.aarexbalancing.eq(1) },
+            unlocked() { return hasUpgrade("i", 139) && player.i.aarexbalancing.eq(0) },
+            onClick() {
+                player.i.omegapause = new Decimal(5)
+        player.i.omegas = player.i.omegas.add(player.i.omegastoget)
+            },
+            style: { width: '150px', "min-height": '60px', "background-color": "orange", }
+        },
+        57: {
+            title() { return "Upgrade Autobuyer On" },
+            canClick() { return player.i.omegaupgradeautobuyer.eq(0) },
+            unlocked() { return hasMilestone("i", 22) },
+            onClick() {
+                player.i.omegaupgradeautobuyer = new Decimal(1) //Each number is assinged to its corresponding realm
+            },
+        },
+        58: {
+            title() { return "Upgrade Autobuyer Off" },
+            canClick() { return player.i.omegaupgradeautobuyer.eq(1) },
+            unlocked() { return hasMilestone("i", 22) },
+            onClick() {
+                player.i.omegaupgradeautobuyer = new Decimal(0)
+            },
+        },
+        59: {
+            title() { return "Destroy alpha and beta to make gamma" },
+            canClick() { return player.i.gammatoget.gte(1) },
+            unlocked() { return true },
+            onClick() {
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim1mult = new Decimal(1)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim2mult = new Decimal(1)
+                player.i.betadim3 = new Decimal(0)
+                player.i.betadim3mult = new Decimal(1)
+                player.i.betadim4 = new Decimal(0)
+                player.i.betadim4mult = new Decimal(1)
+                player.i.sacrificeamount = new Decimal(0)
+                player.i.buyables[78] = new Decimal(0)
+                player.i.buyables[79] = new Decimal(0)
+                player.i.buyables[81] = new Decimal(0)
+                player.i.buyables[82] = new Decimal(0)
+                player.i.buyables[84] = new Decimal(0)
+                player.i.alpha = new Decimal(0)
+
+                player.i.gamma = player.i.gamma.add(player.i.gammatoget)
+            },
+            style: { width: '400px', "min-height": '100px' }
+        },
+        61: {
+            title() { return "+" + format(player.i.gammatoget) + " GA" },
+            canClick() { return player.i.gammatoget.gte(1) },
+            unlocked() { return hasUpgrade("i", 152) },
+            onClick() {
+                player.i.alpha = new Decimal(0)
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim1mult = new Decimal(1)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim2mult = new Decimal(1)
+                player.i.betadim3 = new Decimal(0)
+                player.i.betadim3mult = new Decimal(1)
+                player.i.betadim4 = new Decimal(0)
+                player.i.betadim4mult = new Decimal(1)
+                player.i.sacrificeamount = new Decimal(0)
+                player.i.buyables[78] = new Decimal(0)
+                player.i.buyables[79] = new Decimal(0)
+                player.i.buyables[81] = new Decimal(0)
+                player.i.buyables[82] = new Decimal(0)
+                player.i.buyables[84] = new Decimal(0)
+                player.i.alpha = new Decimal(0)
+
+                player.i.gamma = player.i.gamma.add(player.i.gammatoget)
+            },
+            style: { width: '150px', "min-height": '60px', "background-color": "#32CD32", }
+        },
+        62: {
+            title() { return "<h2> Next  " },
+            canClick() { return player.i.omegacutscene.eq(0) },
+            unlocked() { return player.i.omegascene.neq(57) },
+            onClick() {
+                player.i.omegascene = player.i.omegascene.add(1)
+            },
+        },
+        63: {
+            title() { return "<h2> Next  " },
+            canClick() { return player.i.aarexcutscene.eq(1) },
+            unlocked() { return player.i.aarexscene.neq(25) },
+            onClick() {
+                player.i.aarexscene = player.i.aarexscene.add(1)
+            },
+        },
+        64: {
+            title() { return "Implement Aarexian Balancing" },
+            display: "Time will stop. You sure you want to do this?",
+            canClick() { return player.i.jacorbianunlock.eq(0) && player.i.aarexbalancing.eq(0) },
+            unlocked() { return true },
+            onClick() {
+                player.i.aarexbalancing = new Decimal(1)
+            },
+            style: { width: '400px', "min-height": '60px', "background-color": "#68e8f4", }
+        },
+        65: {
+            title() { return "<h3> Enable Aarexian Rain  " },
+            canClick() { return true },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            onClick() {
+                player.i.jacorbparticleenable = new Decimal(1)
+            },
+        },
+        66: {
+            title() { return "<h3> Disable Aarexian Rain  " },
+            canClick() { return true },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            onClick() {
+                player.i.jacorbparticleenable = new Decimal(0)
+            },
+        },
+        67: {
+            title() { return "+" + format(player.i.omegapointstoget) + " Omega" + "  +" + format(player.i.wastedaarexpointstoget) + " WAP" },
+            canClick() { return player.i.omegapointstoget.gte(1) || player.i.aarexbalancing.eq(1) },
+            unlocked() { return hasUpgrade("i", 139) && player.i.aarexbalancing.eq(1) },
+            onClick() {
+                player.i.omegapause = new Decimal(5)
+                player.i.omegas = player.i.omegas.add(player.i.omegastoget)
+            },
+            style: { width: '150px', "min-height": '60px', "background-color": "#68e8f4", }
+        },
+        68: {
+            title() { return "+" + format(player.i.cryptotoget) + " CR" },
+            canClick() { return player.i.cryptotoget.gte(1) },
+            unlocked() { return hasUpgrade("i", 17) || player.i.singularityunlocked.gte(1) },
+            onClick() {
+                player.i.cryptopause = new Decimal(3)
+            },
+            style: { width: '150px', "min-height": '60px', "background-color": "blue", }
+        },
+        69: {
+            title() { return "+" + format(player.i.codeexperiencetoget) + " CE" },
+            canClick() { return player.i.codeexperiencetoget.gte(1) },
+            unlocked() { return hasUpgrade("i", 36) || player.i.singularityunlocked.gte(1) },
+            onClick() {
+                player.i.codeexperiencepause = new Decimal(3)
+            },
+            style: { width: '150px', "min-height": '60px', "background-color": "purple", }
+        },
+        71: {
+            title() { return "Aarexify your infinities" },
+            canClick() { return player.i.aarexentropy.gte(4) },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            onClick() {
+                player.i.infinities = new Decimal(0)
+                player.i.aarexpoints = new Decimal(0)
+                player.i.wastedaarexpoints = new Decimal(0)
+                player.i.buyables[88] = new Decimal(0)
+                player.i.buyables[89] = new Decimal(0)
+                player.i.buyables[91] = new Decimal(0)
+                player.i.buyables[92] = new Decimal(0)
+                player.i.buyables[93] = new Decimal(0)
+                player.i.buyables[94] = new Decimal(0)
+                player.i.buyables[95] = new Decimal(0)
+
+                player.i.aarexifiedinfinities = player.i.aarexifiedinfinities.add(player.i.aarexifiedinfinitiestoget)
+            },
+            style: { width: '400px', "min-height": '100px', "background-color": "#68e8f4", }
+        },
+        72: {
+            title() { return "Aarexify your singularities" },
+            canClick() { return player.i.aarexentropy.gte(4) },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            onClick() {
+                player.i.singularities = new Decimal(0)
+                player.i.aarexpoints = new Decimal(0)
+                player.i.wastedaarexpoints = new Decimal(0)
+                player.i.buyables[88] = new Decimal(0)
+                player.i.buyables[89] = new Decimal(0)
+                player.i.buyables[91] = new Decimal(0)
+                player.i.buyables[92] = new Decimal(0)
+                player.i.buyables[93] = new Decimal(0)
+                player.i.buyables[94] = new Decimal(0)
+                player.i.buyables[95] = new Decimal(0)
+
+                player.i.aarexifiedsingularities = player.i.aarexifiedsingularities.add(player.i.aarexifiedsingularitiestoget)
+            },
+            style: { width: '400px', "min-height": '100px', "background-color": "#68e8f4", }
+        },
+        73: {
+            title() { return "<h2> Next  " },
+            canClick() { return player.i.truesingularitycutscene.eq(1) },
+            unlocked() { return player.i.truesingularityscene.neq(6) },
+            onClick() {
+                player.i.truesingularityscene = player.i.truesingularityscene.add(1)
+            },
+        },
+        74: {
+            title() { return "Jacorb Quest " + format(player.i.jacorbquest, 0) + "<br> Requires " + format(player.i.jacorbmods, 2) + "/" + format(player.i.jacorbquestreq, 2) + " jacorbian mods." },
+            canClick() { return player.i.jacorbmods.gte(player.i.jacorbquestreq) },
+            unlocked() { return true },
+            onClick() {
+                player.i.jacorbquest = player.i.jacorbquest.add(1)
+                player.i.jacorbquestreq = player.i.jacorbquestreq.mul(5)
+            },
+            style: { width: '400px', "min-height": '100px', "background-color": "purple", }
+        },
+        75: {
+            title() { return "Aarex Quest " + format(player.i.aarexquest, 0) + "<br> Requires " + format(player.i.aarexpoints, 2) + "/" + format(player.i.aarexquestreq, 2) + " aarex points." },
+            canClick() { return player.i.aarexpoints.gte(player.i.aarexquestreq) },
+            unlocked() { return true },
+            onClick() {
+                player.i.aarexquest = player.i.aarexquest.add(1)
+                player.i.aarexquestreq = player.i.aarexquestreq.mul(5)
+            },
+            style: { width: '400px', "min-height": '100px', "background-color": "#68e8f4", }
+        },
+        76: {
+            title() { return "Singularity Quest " + format(player.i.singularityquest, 0) + "<br> Requires " + format(player.i.singularities, 2) + "/" + format(player.i.singularityquestreq, 2) + " singularities." },
+            canClick() { return player.i.singularities.gte(player.i.singularityquestreq) },
+            unlocked() { return true },
+            onClick() {
+                player.i.singularityquest = player.i.singularityquest.add(1)
+                player.i.singularityquestreq = player.i.singularityquestreq.mul(2)
+            },
+            style: { width: '400px', "min-height": '100px', "background-color": "red", }
+        },
+        77: {
+            title() { return "Omega Quest " + format(player.i.omegaquest, 0) + "<br> Requires " + format(player.i.omegapoints, 2) + "/" + format(player.i.omegaquestreq, 2) + " ω." },
+            canClick() { return player.i.omegapoints.gte(player.i.omegaquestreq) },
+            unlocked() { return true },
+            onClick() {
+                player.i.omegaquest = player.i.omegaquest.add(1)
+                player.i.omegaquestreq = player.i.omegaquestreq.mul(1e10)
+            },
+            style: { width: '400px', "min-height": '100px', "background-color": "orange", }
+        },
+        78: {
+            title() { return "Sacrifice epsilon for " + format(player.i.zetatoget) + " zeta" },
+            canClick() { return player.i.zetatoget.gt(10) },
+            unlocked() { return true },
+            onClick() {
+                player.i.zeta = player.i.zeta.add(player.i.zetatoget)
+                player.i.epsilon = new Decimal(0)
+            },
+            style: { width: '400px', "min-height": '100px' }
+        },
+        79: {
+            title() { return "Boost with Jacorb" },
+            canClick() { return player.i.boosterchoice.eq(0) },
+            unlocked() { return true },
+            onClick() {
+                player.i.boosterchoice = new Decimal(1)
+            },
+            style: { width: '200px', "min-height": '100px', "background-color": "purple", }
+        },
+        81: {
+            title() { return "Boost with Aarex" },
+            canClick() { return player.i.boosterchoice.eq(0) },
+            unlocked() { return true },
+            onClick() {
+                player.i.boosterchoice = new Decimal(2)
+            },
+            style: { width: '200px', "min-height": '100px', "background-color": "#68e8f4", }
+        },
+        82: {
+            title() { return "Boost with Singularity" },
+            canClick() { return player.i.boosterchoice.eq(0) },
+            unlocked() { return true },
+            onClick() {
+                player.i.boosterchoice = new Decimal(3)
+            },
+            style: { width: '200px', "min-height": '100px', "background-color": "red", }
+        },
+        83: {
+            title() { return "Boost with Omega" },
+            canClick() { return player.i.boosterchoice.eq(0) },
+            unlocked() { return true },
+            onClick() {
+                player.i.boosterchoice = new Decimal(4)
+            },
+            style: { width: '200px', "min-height": '100px', "background-color": "orange", }
         },
     },
     upgrades: {
@@ -3152,6 +4074,281 @@
             currencyDisplayName: "Singularity Points",
             currencyInternalName: "singularitypoints",
         },
+        141:
+        {
+            title: "Omega Upgrade I",
+            description: "Improves replicanti effect and boosts the cap based on Omega.",
+            unlocked() { return true },
+            cost: new Decimal("25"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+            effectDisplay() { return "^" + format(upgradeEffect(this.layer, this.id))},
+            effect() {
+                return player.i.omegapoints.pow(2).add(1)
+            },
+        },
+        142:
+        {
+            title: "Omega Upgrade II",
+            description: "Improves singularity point effect based on ω.",
+            unlocked() { return hasUpgrade("i", 141) },
+            cost: new Decimal("100"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+            effectDisplay() { return "^" + format(upgradeEffect(this.layer, this.id)) },
+            effect() {
+                return player.i.omegapoints.pow(0.8).add(1)
+            },
+        },
+        143:
+        {
+            title: "Omega Upgrade III",
+            description: "Improves ω gain effect and unlocks a new tab.",
+            unlocked() { return hasUpgrade("i", 142) },
+            cost: new Decimal("500"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+        },
+        144:
+        {
+            title: "Alpha Upgrade I",
+            description: "Unlocks seeds, found in the trees tab.",
+            unlocked() { return true },
+            cost: new Decimal("1000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "α",
+            currencyInternalName: "alpha",
+        },
+        145:
+        {
+            title: "Omega Upgrade IV",
+            description: "Boosts seed and α gain based on singularities",
+            unlocked() { return hasUpgrade("i", 143) },
+            cost: new Decimal("1000000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+            effectDisplay() { return "x" + format(upgradeEffect(this.layer, this.id)) },
+            effect() {
+                return player.i.singularities.pow(0.1).add(1)
+            },
+        },
+        146:
+        {
+            title: "Alpha Upgrade II",
+            description: "Boosts α gain based on potential.",
+            unlocked() { return hasUpgrade("i", 144) },
+            cost: new Decimal("10000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "α",
+            currencyInternalName: "alpha",
+            effectDisplay() { return "x" + format(upgradeEffect(this.layer, this.id)) },
+            effect() {
+                return player.h.potential.pow(1.5).add(1)
+            },
+        },
+        147:
+        {
+            title: "Alpha Upgrade III",
+            description: "Unlocks Meta-IP multiplier. (Found in main infinity tab)",
+            unlocked() { return hasUpgrade("i", 146) },
+            cost: new Decimal("100000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "α",
+            currencyInternalName: "alpha",
+        },
+        148:
+        {
+            title: "Alpha Upgrade IV",
+            description: "Boosts α gain based on seeds. Unlocks the next Omega Layer.",
+            unlocked() { return hasUpgrade("i", 147) },
+            cost: new Decimal("1e7"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "α",
+            currencyInternalName: "alpha",
+            effectDisplay() { return "x" + format(upgradeEffect(this.layer, this.id)) },
+            effect() {
+                return player.i.seeds.pow(0.15).add(1)
+            },
+        },
+        149:
+        {
+            title: "Omega Upgrade V",
+            description: "Unlocks β dimensional sacrifice.",
+            unlocked() { return hasUpgrade("i", 148) },
+            cost: new Decimal("1e16"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+        },
+        151:
+        {
+            title: "Alpha Upgrade V",
+            description: "Unlocks β dimensions tickspeed.",
+            unlocked() { return hasUpgrade("i", 148) },
+            cost: new Decimal("1e18"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "α",
+            currencyInternalName: "alpha",
+        },
+        152:
+        {
+            title: "Alpha Upgrade VI",
+            description: "Unlocks the next omega layer.",
+            unlocked() { return hasUpgrade("i", 151) },
+            cost: new Decimal("1e22"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "α",
+            currencyInternalName: "alpha",
+        },
+        153:
+        {
+            title: "Omega Upgrade VI",
+            description: "Automates seeds, meta-ip, and β dimensions.",
+            unlocked() { return hasUpgrade("i", 152) },
+            cost: new Decimal("1e28"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+        },
+        154:
+        {
+            title: "Omega Upgrade VII",
+            description: "Unlocks the next omega layer.",
+            unlocked() { return hasUpgrade("i", 153) },
+            cost: new Decimal("1e35"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ω",
+            currencyInternalName: "omegapoints",
+        },
+        155:
+        {
+            title: "Artifact (A)",
+            unlocked() { return hasUpgrade("i", 154) },
+            cost: new Decimal("1ee150000000"),
+            currencyLocation() { return player },
+            currencyDisplayName: "Points",
+            currencyInternalName: "points",
+        },
+        156:
+        {
+            title: "Artifact (r)",
+            unlocked() { return hasUpgrade("a", 11) },
+            cost: new Decimal("1e150000000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ST",
+            currencyInternalName: "singularitytheorems",
+        },
+        157:
+        {
+            title: "Artifact (e)",
+            unlocked() { return hasUpgrade("i", 156) },
+            cost: new Decimal("1e30"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Jacorbian Mods",
+            currencyInternalName: "jacorbmods",
+        },
+        158:
+        {
+            title: "Buy my buyables please.",
+            description: "Unlocks aarexian buyables.",
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            cost: new Decimal("250"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Wasted Aarex Points",
+            currencyInternalName: "wastedaarexpoints",
+        },
+        159:
+        {
+            title: "The energy matters too you know.",
+            description: "Boosts aarex point gain based on aarexian energy.",
+            unlocked() { return player.i.aarexbalancing.eq(1) && hasUpgrade("i", 158) },
+            cost: new Decimal("1000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Wasted Aarex Points",
+            currencyInternalName: "wastedaarexpoints",
+            effectDisplay() { return "x" + format(upgradeEffect(this.layer, this.id)) },
+            effect() {
+                return player.h.aarexianenergy.pow(0.15).add(1)
+            },
+        },
+        161:
+        {
+            title: "Dont waste the buyables!",
+            description: "Unlocks wasted buyables.",
+            unlocked() { return player.i.aarexbalancing.eq(1) && hasUpgrade("i", 159) },
+            cost: new Decimal("10000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Wasted Aarex Points",
+            currencyInternalName: "wastedaarexpoints",
+        },
+        162:
+        {
+            title: "Aarexify Everything!",
+            description: "Unlocks aarexification.",
+            unlocked() { return player.i.aarexbalancing.eq(1) && hasUpgrade("i", 161) },
+            cost: new Decimal("100000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Wasted Aarex Points",
+            currencyInternalName: "wastedaarexpoints",
+        },
+        163:
+        {
+            title: "Aareximation",
+            description: "Autobuys non-wasted aarex buyables.",
+            unlocked() { return player.i.aarexbalancing.eq(1) && hasUpgrade("i", 162) },
+            cost: new Decimal("1e6"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Wasted Aarex Points",
+            currencyInternalName: "wastedaarexpoints",
+        },
+        164:
+        {
+            title: "The What!?",
+            description: "Unlocks true singularity.",
+            unlocked() { return player.i.aarexbalancing.eq(1) && hasUpgrade("i", 163) },
+            cost: new Decimal("1e8"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "Wasted Aarex Points",
+            currencyInternalName: "wastedaarexpoints",
+        },
+        165:
+        {
+            title: "Zeta Upgrade I",
+            description: "Produce 100% of γ per second.",
+            unlocked() { return true },
+            cost: new Decimal("4000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ζ",
+            currencyInternalName: "zeta",
+        },
+        166:
+        {
+            title: "Zeta Upgrade II",
+            description: "Boost ε gain based on γ",
+            unlocked() { return true },
+            cost: new Decimal("25000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ζ",
+            currencyInternalName: "zeta",
+            effectDisplay() { return "x" + format(upgradeEffect(this.layer, this.id)) },
+            effect() {
+                return player.i.gamma.plus(10).log10().add(1)
+            },
+        },
+        167:
+        {
+            title: "Zeta Upgrade III",
+            description: "Produce 25% of ζ per second and unlock η.",
+            unlocked() { return true },
+            cost: new Decimal("100000"),
+            currencyLocation() { return player.i },
+            currencyDisplayName: "ζ",
+            currencyInternalName: "zeta",
+        },
     },
     buyables: {
         11: {
@@ -3556,13 +4753,13 @@
                 return getBuyableAmount(this.layer, this.id).mul(0.1).add(1)
             },
             unlocked() { return true },
-            canAfford() { return player.i.brokeninfinities.gte(this.cost()) },
+            canAfford() { return player.i.brokeninfinities.gte(this.cost()) && getBuyableAmount(this.layer, this.id).lt(10000) },
             title() {
                 return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Infinity Multiplier"
             },
             display() {
                 return "which are boosting infinity gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Broken Infinities"
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Broken Infinities (Capped at 10,000)"
             },
             buy() {
                 let base = new Decimal(10)
@@ -3570,7 +4767,9 @@
                 let max = Decimal.affordGeometricSeries(player.i.brokeninfinities, base, growth, getBuyableAmount(this.layer, this.id))
                 let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
                 if (!hasMilestone("i", 12)) player.i.brokeninfinities = player.i.brokeninfinities.sub(cost)
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+
+                if (max.lt(10000)) setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+                if (max.gt(10000)) setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(10000))
             },
         },
         31: {
@@ -4443,6 +5642,603 @@
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
             },
         },
+        74: {
+            cost(x) { return new Decimal(1000).pow(x || getBuyableAmount(this.layer, this.id)).mul("10000") },
+            effect() {
+                return Decimal.pow(5, player[this.layer].buyables[this.id]).sub(1)
+            },
+            unlocked() { return hasUpgrade("i", 144) },
+            canAfford() { return player.i.omegapoints.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Seed Generator "
+            },
+            display() {
+                return "which are producing +" + format(tmp[this.layer].buyables[this.id].effect) + " seeds per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " ω"
+            },
+            buy() {
+                let base = new Decimal("10000")
+                let growth = 1000
+                let max = Decimal.affordGeometricSeries(player.i.omegapoints, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.omegapoints = player.i.omegapoints.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        75: {
+            cost(x) { return new Decimal(100).pow(x || getBuyableAmount(this.layer, this.id)).mul("1000") },
+            effect() {
+                return Decimal.pow(5, player[this.layer].buyables[this.id])
+            },
+            unlocked() { return hasUpgrade("i", 144) },
+            canAfford() { return player.i.alpha.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Fertilizer "
+            },
+            display() {
+                return "which are multiplying seed gain by x" + format(tmp[this.layer].buyables[this.id].effect) + " seeds per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " α"
+            },
+            buy() {
+                let base = new Decimal("1000")
+                let growth = 100
+                let max = Decimal.affordGeometricSeries(player.i.alpha, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.alpha = player.i.alpha.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        76: {
+            cost(x) { return new Decimal(100).pow(x || getBuyableAmount(this.layer, this.id)).mul("100") },
+            effect() {
+                return Decimal.pow(2, player[this.layer].buyables[this.id])
+            },
+            unlocked() { return hasUpgrade("i", 144) },
+            canAfford() { return player.i.seeds.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Better Soil"
+            },
+            display() {
+                return "which are multiplying seed gain by x" + format(tmp[this.layer].buyables[this.id].effect) + " seeds per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " seeds"
+            },
+            buy() {
+                let base = new Decimal("100")
+                let growth = 100
+                let max = Decimal.affordGeometricSeries(player.i.seeds, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.seeds = player.i.seeds.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        77: {
+            cost(x) { return new Decimal(38).pow(x || getBuyableAmount(this.layer, this.id)).mul("308") },
+            effect() {
+                return Decimal.pow(100, player[this.layer].buyables[this.id]).pow(100).pow(player.i.truesingularityeffect)
+            },
+            unlocked() { return hasUpgrade("i", 147) },
+            canAfford() { return player.i.alpha.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Meta-IP Multiplier "
+            },
+            display() {
+                return "which are boosting IP gain by ^" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " α"
+            },
+            buy() {
+                let base = new Decimal("308")
+                let growth = 38
+                let max = Decimal.affordGeometricSeries(player.i.alpha, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.alpha = player.i.alpha.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+            style: { "color": 'blue' }
+        },
+        78: {
+            cost(x) { return new Decimal(100).pow(x || getBuyableAmount(this.layer, this.id)).mul(1000) },
+            unlocked() { return true },
+            canAfford() { return player.i.alpha.gte(this.cost()) },
+            title() {
+                return format(player.i.betadim1) + "<br/>Beta Dimension 1"
+            },
+            display() {
+                return "which gives " + format(player.i.betapersecond) + " β per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " α\n\
+                    (" + format(player.i.betadim1mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(1000)
+                let growth = 100
+                let max = Decimal.affordGeometricSeries(player.i.alpha, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.alpha = player.i.alpha.sub(cost)
+                if (!inChallenge("i", 27)) player.i.betadim1mult = player.i.betadim1mult.add(max.mul(player.i.dimensionbuymult))
+                if (inChallenge("i", 27)) player.i.betadim1mult = player.i.betadim1mult.div(max.mul(player.i.dimensionbuymult.mul(1000)))
+                player.i.betadim1 = player.i.betadim1.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        79: {
+            cost(x) { return new Decimal(40).pow(x || getBuyableAmount(this.layer, this.id)).mul(100) },
+            unlocked() { return true },
+            canAfford() { return player.i.beta.gte(this.cost()) },
+            title() {
+                return format(player.i.betadim2) + "<br/>Beta Dimension 2"
+            },
+            display() {
+                return "which gives " + format(player.i.betadim1persecond) + " β dimension 1 per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " β\n\
+                    (" + format(player.i.betadim2mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(100)
+                let growth = 40
+                let max = Decimal.affordGeometricSeries(player.i.beta, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.beta = player.i.beta.sub(cost)
+                if (!inChallenge("i", 27)) player.i.betadim2mult = player.i.betadim2mult.add(max.mul(player.i.dimensionbuymult))
+                if (inChallenge("i", 27)) player.i.betadim2mult = player.i.betadim2mult.div(max.mul(player.i.dimensionbuymult.mul(1000)))
+                player.i.betadim2 = player.i.betadim2.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        81: {
+            cost(x) { return new Decimal(60).pow(x || getBuyableAmount(this.layer, this.id)).mul(1e5) },
+
+            unlocked() { return true },
+            canAfford() { return player.i.beta.gte(this.cost()) },
+            title() {
+                return format(player.i.betadim3) + "<br/>Beta Dimension 3"
+            },
+            display() {
+                return "which gives " + format(player.i.betadim2persecond) + " β dimension 2 per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " β\n\
+                    (" + format(player.i.betadim3mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(1e5)
+                let growth = 60
+                let max = Decimal.affordGeometricSeries(player.i.beta, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.beta = player.i.beta.sub(cost)
+                if (!inChallenge("i", 27)) player.i.betadim3mult = player.i.betadim3mult.add(max.mul(player.i.dimensionbuymult))
+                if (inChallenge("i", 27)) player.i.betadim3mult = player.i.betadim3mult.div(max.mul(player.i.dimensionbuymult.mul(1000)))
+                player.i.betadim3 = player.i.betadim3.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        82: {
+            cost(x) { return new Decimal(120).pow(x || getBuyableAmount(this.layer, this.id)).mul(1e8) },
+            unlocked() { return true },
+            canAfford() { return player.i.beta.gte(this.cost()) },
+            title() {
+                return format(player.i.betadim4) + "<br/>Beta Dimension 4"
+            },
+            display() {
+                return "which gives " + format(player.i.betadim3persecond) + " β dimension 3 per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " β\n\
+                    (" + format(player.i.betadim4mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(1e8)
+                let growth = 120
+                let max = Decimal.affordGeometricSeries(player.i.beta, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.beta = player.i.beta.sub(cost)
+                if (!inChallenge("i", 27)) player.i.betadim4mult = player.i.betadim4mult.add(max.mul(player.i.dimensionbuymult))
+                if (inChallenge("i", 27)) player.i.betadim4mult = player.i.betadim4mult.div(max.mul(player.i.dimensionbuymult.mul(1000)))
+                player.i.betadim4 = player.i.betadim4.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        83: {
+            cost(x) { return false },
+            unlocked() { return hasUpgrade("i", 149) },
+            canAfford() { return player.i.betadim4.gte(1) },
+            title() {
+                return format(player.i.sacrificemult) + "x<br/>Beta Dimensional Sacrifice"
+            },
+            display() {
+                return "Sets β and β dims 1-3 to 0 for a multiplier to β dimensions."
+            },
+            buy() {
+                if (!inChallenge("i", 26)) player.i.sacrificeamount = player.i.sacrificeamount.add(player.i.beta)
+                if (inChallenge("i", 26)) player.i.sacrificeamount = player.i.sacrificeamount.add(player.i.beta.pow(0.1))
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim3 = new Decimal(0)
+            },
+        },
+        84: {
+            cost(x) { return new Decimal(100).pow(x || getBuyableAmount(this.layer, this.id)).mul("1e8") },
+            effect() {
+                return Decimal.mul(player.i.tickspeedmult, player[this.layer].buyables[this.id]).add(1)
+            },
+            unlocked() { return hasUpgrade("i", 151) },
+            canAfford() { return player.i.beta.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Beta Tickspeed "
+            },
+            display() {
+                return "which are boosting β dimensions production by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " β"
+            },
+            buy() {
+                let base = new Decimal("1e8")
+                let growth = 100
+                let max = Decimal.affordGeometricSeries(player.i.beta, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 153)) player.i.beta = player.i.beta.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        85: {
+            cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul("2") },
+            effect() {
+                return player[this.layer].buyables[this.id].mul(0.05)
+            },
+            unlocked() { return true },
+            canAfford() { return player.i.gamma.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Beta Dimension Boost"
+            },
+            display() {
+                return "which are adding +" + format(tmp[this.layer].buyables[this.id].effect) + " to the dimension buy multiplier.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " γ"
+            },
+            buy() {
+                let base = new Decimal("2")
+                let growth = 2
+                let max = Decimal.affordGeometricSeries(player.i.gamma, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.gamma = player.i.gamma.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        86: {
+            cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul("25") },
+            effect() {
+                return player[this.layer].buyables[this.id].mul(0.1)
+            },
+            unlocked() { return true },
+            canAfford() { return player.i.gamma.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Beta Galaxy"
+            },
+            display() {
+                return "which are adding +" + format(tmp[this.layer].buyables[this.id].effect) + " to the tickspeed power.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " γ"
+            },
+            buy() {
+                let base = new Decimal("25")
+                let growth = 3
+                let max = Decimal.affordGeometricSeries(player.i.gamma, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.gamma = player.i.gamma.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        87: {
+            cost(x) { return new Decimal(10).pow(x || getBuyableAmount(this.layer, this.id)).mul("1e10") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(1.2)
+            },
+            unlocked() { return true },
+            canAfford() { return player.i.gamma.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Epsilon Generator"
+            },
+            display() {
+                return "which are generating +" + format(tmp[this.layer].buyables[this.id].effect) + " ε per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " γ"
+            },
+            buy() {
+                let base = new Decimal("1e10")
+                let growth = 10
+                let max = Decimal.affordGeometricSeries(player.i.gamma, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.gamma = player.i.gamma.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        88: {
+            cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul("100") },
+            effect() {
+                return player[this.layer].buyables[this.id].add(1)
+            },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.aarexpoints.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Aarex Booster"
+            },
+            display() {
+                return "which are boosting aarex point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Aarex Points"
+            },
+            buy() {
+                let base = new Decimal("100")
+                let growth = 2
+                let max = Decimal.affordGeometricSeries(player.i.aarexpoints, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 163)) player.i.aarexpoints = player.i.aarexpoints.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        89: {
+            cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul("200") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(0.5).add(1)
+            },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.aarexpoints.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Wasted Aarex Booster"
+            },
+            display() {
+                return "which are boosting wasted aarex point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Aarex Points"
+            },
+            buy() {
+                let base = new Decimal("200")
+                let growth = 3
+                let max = Decimal.affordGeometricSeries(player.i.aarexpoints, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 163)) player.i.aarexpoints = player.i.aarexpoints.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        91: {
+            cost(x) { return new Decimal(1e2).pow(x || getBuyableAmount(this.layer, this.id)).mul("1e25") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(0.8).add(1)
+            },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.jacorbmods.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Booster From An Old Friend"
+            },
+            display() {
+                return "which are boosting aarex point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Jacorbian Mods"
+            },
+            buy() {
+                let base = new Decimal("1e25")
+                let growth = 1e2
+                let max = Decimal.affordGeometricSeries(player.i.jacorbmods, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 163)) player.i.jacorbmods = player.i.jacorbmods.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        92: {
+            cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul("2") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(0.6).add(1)
+            },
+            unlocked() { return player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.singularities.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Singularity Booster"
+            },
+            display() {
+                return "which are boosting wasted aarex point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Singularities"
+            },
+            buy() {
+                let base = new Decimal("2")
+                let growth = 3
+                let max = Decimal.affordGeometricSeries(player.i.singularities, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                if (!hasUpgrade("i", 163)) player.i.singularities = player.i.singularities.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        93: {
+            cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul("500") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(1.1).add(1)
+            },
+            unlocked() { return hasUpgrade("i", 161) && player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.wastedaarexpoints.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Aarex Booster (Wasted)"
+            },
+            display() {
+                return "which are boosting aarex point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Wasted Aarex Points"
+            },
+            buy() {
+                let base = new Decimal("500")
+                let growth = 2
+                let max = Decimal.affordGeometricSeries(player.i.wastedaarexpoints, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.wastedaarexpoints = player.i.wastedaarexpoints.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        94: {
+            cost(x) { return new Decimal(4).pow(x || getBuyableAmount(this.layer, this.id)).mul("1500") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(0.65).add(1)
+            },
+            unlocked() { return hasUpgrade("i", 161) && player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.wastedaarexpoints.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Wasted Aarex Booster (Wasted)"
+            },
+            display() {
+                return "which are boosting wasted aarex point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Wasted Aarex Points"
+            },
+            buy() {
+                let base = new Decimal("1500")
+                let growth = 3
+                let max = Decimal.affordGeometricSeries(player.i.wastedaarexpoints, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.wastedaarexpoints = player.i.wastedaarexpoints.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        95: {
+            cost(x) { return new Decimal(5).pow(x || getBuyableAmount(this.layer, this.id)).mul("2500") },
+            effect() {
+                return player[this.layer].buyables[this.id].pow(0.8).add(1)
+            },
+            unlocked() { return hasUpgrade("i", 161) && player.i.aarexbalancing.eq(1) },
+            canAfford() { return player.i.wastedaarexpoints.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/>Singularity Gain (For some reason)"
+            },
+            display() {
+                return "which are boosting singularity gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Wasted Aarex Points"
+            },
+            buy() {
+                let base = new Decimal("2500")
+                let growth = 5
+                let max = Decimal.affordGeometricSeries(player.i.wastedaarexpoints, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.wastedaarexpoints = player.i.wastedaarexpoints.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        96: {
+            cost(x) { return new Decimal(3).pow(x || getBuyableAmount(this.layer, this.id)).mul(50000) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id) },
+            unlocked() { return true },
+            canAfford() { return player.i.zeta.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Eta Generator"
+            },
+            display() {
+                return "which gives +" + format(tmp[this.layer].buyables[this.id].effect) + " η per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " ζ"
+            },
+            buy() {
+                let base = new Decimal(50000)
+                let growth = 3
+                let max = Decimal.affordGeometricSeries(player.i.zeta, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.zeta = player.i.zeta.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        97: {
+            cost(x) { return new Decimal(2).pow(x || getBuyableAmount(this.layer, this.id)).mul(1000) },
+            effect(x) { return new getBuyableAmount(this.layer, this.id).add(1) },
+            unlocked() { return true },
+            canAfford() { return player.i.eta.gte(this.cost()) },
+            title() {
+                return format(getBuyableAmount(this.layer, this.id), 0) + "<br/> Eta Booster"
+            },
+            display() {
+                return "which boosts η gain by " + format(tmp[this.layer].buyables[this.id].effect) + "x\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " η"
+            },
+            buy() {
+                let base = new Decimal(1000)
+                let growth = 2
+                let max = Decimal.affordGeometricSeries(player.i.eta, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.eta = player.i.eta.sub(cost)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        98: {
+            cost(x) { return new Decimal(10).pow(x || getBuyableAmount(this.layer, this.id)).mul(10) },
+            unlocked() { return true },
+            canAfford() { return player.i.tspower.gte(this.cost()) },
+            title() {
+                return format(player.i.tsdim1) + "<br/>True Singularity Dimension 1"
+            },
+            display() {
+                return "which gives " + format(player.i.tspowerpersecond) + " true singularity power per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " ts power.\n\
+                    (" + format(player.i.tsdim1mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(10)
+                let growth = 10
+                let max = Decimal.affordGeometricSeries(player.i.tspower, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.tspower = player.i.tspower.sub(cost)
+                player.i.tsdim1mult = player.i.tsdim1mult.add(max)
+                player.i.tsdim1 = player.i.tsdim1.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        99: {
+            cost(x) { return new Decimal(25).pow(x || getBuyableAmount(this.layer, this.id)).mul(100) },
+            unlocked() { return true },
+            canAfford() { return player.i.tspower.gte(this.cost()) },
+            title() {
+                return format(player.i.tsdim2) + "<br/>True Singularity Dimension 2"
+            },
+            display() {
+                return "which gives " + format(player.i.tsdim1persecond) + " ts dimension 1 per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " ts power.\n\
+                    (" + format(player.i.tsdim2mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(100)
+                let growth = 25
+                let max = Decimal.affordGeometricSeries(player.i.tspower, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.tspower = player.i.tspower.sub(cost)
+                player.i.tsdim2mult = player.i.tsdim2mult.add(max)
+                player.i.tsdim2 = player.i.tsdim2.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        101: {
+            cost(x) { return new Decimal(50).pow(x || getBuyableAmount(this.layer, this.id)).mul(1e5) },
+
+            unlocked() { return true },
+            canAfford() { return player.i.tspower.gte(this.cost()) },
+            title() {
+                return format(player.i.tsdim3) + "<br/>True Singularity Dimension 3"
+            },
+            display() {
+                return "which gives " + format(player.i.tsdim2persecond) + " ts dimension 2 per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " ts power.\n\
+                    (" + format(player.i.tsdim3mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(1e5)
+                let growth = 50
+                let max = Decimal.affordGeometricSeries(player.i.tspower, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.tspower = player.i.tspower.sub(cost)
+                player.i.tsdim3mult = player.i.tsdim3mult.add(max)
+                player.i.tsdim3 = player.i.tsdim3.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
+        102: {
+            cost(x) { return new Decimal(100).pow(x || getBuyableAmount(this.layer, this.id)).mul(1e8) },
+            unlocked() { return true },
+            canAfford() { return player.i.tspower.gte(this.cost()) },
+            title() {
+                return format(player.i.tsdim4) + "<br/>True Singularity Dimension 4"
+            },
+            display() {
+                return "which gives " + format(player.i.tsdim3persecond) + " ts dimension 3 per second.\n\
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " ts power.\n\
+                    (" + format(player.i.tsdim4mult) + "x)"
+            },
+            buy() {
+                let base = new Decimal(1e8)
+                let growth = 100
+                let max = Decimal.affordGeometricSeries(player.i.tspower, base, growth, getBuyableAmount(this.layer, this.id))
+                let cost = Decimal.sumGeometricSeries(max, base, growth, getBuyableAmount(this.layer, this.id))
+                player.i.tspower = player.i.tspower.sub(cost)
+                player.i.tsdim4mult = player.i.tsdim4mult.add(max)
+                player.i.tsdim4 = player.i.tsdim4.add(max)
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
+            },
+        },
     },
     milestones: {
         11: {
@@ -4484,6 +6280,51 @@
             requirementDescription: "1000 Singularities",
             done() { return player.i.singularities.gte(1000) },
             effectDescription: "Gain 100% of broken infinities on break.",
+        },
+        21: {
+            requirementDescription: "2 Ω",
+            done() { return player.i.omegas.gte(2) },
+            effectDescription: "Always keep jacorbian mods.",
+        },
+        22: {
+            requirementDescription: "8 Ω",
+            done() { return player.i.omegas.gte(8) },
+            effectDescription: "Unlock an upgrade autobuyer.",
+        },
+        23: {
+            requirementDescription: "16 Ω",
+            done() { return player.i.omegas.gte(16) },
+            effectDescription: "Gain 1% of SP, autobuys buyables, and passively generates void singularities.",
+        },
+        24: {
+            requirementDescription: "100 Ω",
+            done() { return player.i.omegas.gte(100) },
+            effectDescription: "Gain 100% of infinities and singularities per second.",
+        },
+        25: {
+            requirementDescription: "Level 5",
+            done() { return player.i.truesingularitylevel.gte(5) },
+            effectDescription: "Unlock ζ.",
+        },
+        26: {
+            requirementDescription: "Level 10",
+            done() { return player.i.truesingularitylevel.gte(10) },
+            effectDescription: "Produce 100% of ω per second.",
+        },
+        27: {
+            requirementDescription: "Level 15",
+            done() { return player.i.truesingularitylevel.gte(15) },
+            effectDescription: "Unlocks boosters based on quests.",
+        },
+        28: {
+            requirementDescription: "Level 25",
+            done() { return player.i.truesingularitylevel.gte(25) },
+            effectDescription: "Unlocks true singularity dimensions.",
+        },
+        29: {
+            requirementDescription: "Level 40",
+            done() { return player.i.truesingularitylevel.gte(40) },
+            effectDescription: "Unlocks cante, the celestial of replicanti.",
         },
     },
     challenges: {
@@ -4782,6 +6623,142 @@
             },
             style: { width: '400px', height: '200px' }
         },
+        25: {
+            name: "Delta Challenge I",
+            challengeDescription: "Lower β dimensions production by ^0.5",
+            unlocked() { return true },
+            goal() { return new Decimal("1e35") },
+            goalDescription() { return format(this.goal()) + " β" },
+            canComplete: function () { return player.i.beta.gte("1e35") },
+            rewardDescription: "Boost β dimensions production based on seeds.",
+            onEnter() {
+                player.i.alpha = new Decimal(0)
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim1mult = new Decimal(1)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim2mult = new Decimal(1)
+                player.i.betadim3 = new Decimal(0)
+                player.i.betadim3mult = new Decimal(1)
+                player.i.betadim4 = new Decimal(0)
+                player.i.betadim4mult = new Decimal(1)
+                player.i.sacrificeamount = new Decimal(0)
+                player.i.buyables[78] = new Decimal(0)
+                player.i.buyables[79] = new Decimal(0)
+                player.i.buyables[81] = new Decimal(0)
+                player.i.buyables[82] = new Decimal(0)
+                player.i.buyables[84] = new Decimal(0)
+                player.i.alpha = new Decimal(0)
+
+                player.i.gamma = player.i.gamma.add(player.i.gammatoget)
+            },
+            rewardEffect() {
+                return player.i.seeds.plus(1).log10().pow(1.2).add(1)
+            },
+            onExit() {
+            },
+            rewardDisplay() { return format(this.rewardEffect()) + "x" }, // Add formatting to the effect
+        },
+        26: {
+            name: "Delta Challenge II",
+            challengeDescription: "Lower β sacrifice gain by ^0.1 and tickspeed power to x1.01.",
+            unlocked() { return hasChallenge("i", 25) },
+            goal() { return new Decimal("1e70") },
+            goalDescription() { return format(this.goal()) + " β" },
+            canComplete: function () { return player.i.beta.gte("1e70") },
+            rewardDescription: "Automatically gain sacrifice.",
+            onEnter() {
+                player.i.alpha = new Decimal(0)
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim1mult = new Decimal(1)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim2mult = new Decimal(1)
+                player.i.betadim3 = new Decimal(0)
+                player.i.betadim3mult = new Decimal(1)
+                player.i.betadim4 = new Decimal(0)
+                player.i.betadim4mult = new Decimal(1)
+                player.i.sacrificeamount = new Decimal(0)
+                player.i.buyables[78] = new Decimal(0)
+                player.i.buyables[79] = new Decimal(0)
+                player.i.buyables[81] = new Decimal(0)
+                player.i.buyables[82] = new Decimal(0)
+                player.i.buyables[84] = new Decimal(0)
+                player.i.alpha = new Decimal(0)
+
+                player.i.gamma = player.i.gamma.add(player.i.gammatoget)
+            },
+            onExit() {
+            },
+        },
+        27: {
+            name: "Delta Challenge III",
+            challengeDescription: "Buying dimensions divides its dimension's gain (haha shouldn't have bought autobuyer).",
+            unlocked() { return hasChallenge("i", 26) },
+            goal() { return new Decimal("1e52") },
+            goalDescription() { return format(this.goal()) + " β" },
+            canComplete: function () { return player.i.beta.gte("1e52") },
+            rewardDescription: "Boosts α gain based on γ.",
+            onEnter() {
+                player.i.alpha = new Decimal(0)
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim1mult = new Decimal(1)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim2mult = new Decimal(1)
+                player.i.betadim3 = new Decimal(0)
+                player.i.betadim3mult = new Decimal(1)
+                player.i.betadim4 = new Decimal(0)
+                player.i.betadim4mult = new Decimal(1)
+                player.i.sacrificeamount = new Decimal(0)
+                player.i.buyables[78] = new Decimal(0)
+                player.i.buyables[79] = new Decimal(0)
+                player.i.buyables[81] = new Decimal(0)
+                player.i.buyables[82] = new Decimal(0)
+                player.i.buyables[84] = new Decimal(0)
+                player.i.alpha = new Decimal(0)
+
+                player.i.gamma = player.i.gamma.add(player.i.gammatoget)
+            },
+            onExit() {
+            },
+            rewardEffect() {
+                return player.i.gamma.plus(1).pow(1.24).add(1)
+            },
+            rewardDisplay() { return format(this.rewardEffect()) + "x" }, // Add formatting to the effect
+        },
+        28: {
+            name: "Delta Challenge IV",
+            challengeDescription: "β Dimensions 2-4 don't produce anything",
+            unlocked() { return hasChallenge("i", 27) },
+            goal() { return new Decimal("1e26") },
+            goalDescription() { return format(this.goal()) + " β" },
+            canComplete: function () { return player.i.beta.gte("1e26") },
+            rewardDescription: "Unlocks the next omega layer.",
+            onEnter() {
+                player.i.alpha = new Decimal(0)
+                player.i.beta = new Decimal(0)
+                player.i.betadim1 = new Decimal(0)
+                player.i.betadim1mult = new Decimal(1)
+                player.i.betadim2 = new Decimal(0)
+                player.i.betadim2mult = new Decimal(1)
+                player.i.betadim3 = new Decimal(0)
+                player.i.betadim3mult = new Decimal(1)
+                player.i.betadim4 = new Decimal(0)
+                player.i.betadim4mult = new Decimal(1)
+                player.i.sacrificeamount = new Decimal(0)
+                player.i.buyables[78] = new Decimal(0)
+                player.i.buyables[79] = new Decimal(0)
+                player.i.buyables[81] = new Decimal(0)
+                player.i.buyables[82] = new Decimal(0)
+                player.i.buyables[84] = new Decimal(0)
+                player.i.alpha = new Decimal(0)
+
+                player.i.gamma = player.i.gamma.add(player.i.gammatoget)
+            },
+            onExit() {
+            },
+        },
     },
     bars: {
         treebar: {
@@ -4827,6 +6804,21 @@
             },
             display() {
                 return "<h5>" + format(player.i.singularityleaves) + "/" + format(player.i.singularitytreereq) + "<h5> Singularity leaves to beat a singularity tree</h5>";
+            },
+        },
+        truesingularitybar: {
+            unlocked() { return true },
+            direction: RIGHT,
+            width: 476,
+            height: 50,
+            progress() {
+                return player.i.truesingularityxp.div(player.i.truesingularityreq)
+            },
+            fillStyle: {
+                "background-image": "linear-gradient(85deg, red, purple)", 
+            },
+            display() {
+                return "<h5>" + format(player.i.truesingularityxp) + "/" + format(player.i.truesingularityreq) + "<h5> XP</h5>";
             },
         },
     },
@@ -4898,10 +6890,16 @@
                         ["raw-html", function () { return "<h2>You beat " + formatWhole(player.i.trees) + "<h2> trees, which produce " + format(player.gain) + "<h2> points per second. " }],
                         ["raw-html", function () { return "<h2>You will gain " + format(player.i.treegen, 1) + "<h2> trees." }],
                         ["raw-html", function () { return player.i.trees.gte(player.i.treesoftcapstart) ? "After " + formatWhole(player.i.treesoftcapstart) + " trees, leaf gain is divided by " + format(player.i.treesoftcap) + " (Based on trees)" : "" }, { "color": "red", "font-size": "16px", "font-family": "monospace" }],
-                        ["blank", "50px"],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return hasUpgrade("i", 144) ? "<h1>Seeds</h1>" : "" }],
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.seeds) + "<h2> seeds, which make trees ^" + formatWhole(player.i.seedeffect) + " stronger" }],
+                        ["raw-html", function () { return "<h2>You are making " + format(player.i.seedspersecond) + "<h2> seeds per second. " }],
+                        ["row", [["buyable", 74], ["buyable", 75], ["buyable", 76]]],
+                        ["blank", "25px"],
                         ["raw-html", function () { return "<h1>Upgrades</h1>" }],
                         ["row", [["upgrade", 11], ["upgrade", 12], ["upgrade", 13], ["upgrade", 14], ["upgrade", 15]]],
                         ["row", [["upgrade", 16], ["upgrade", 17], ["upgrade", 28], ["upgrade", 33], ["upgrade", 35]]],
+                        ["row", [["upgrade", 155]]],
                         ["blank", "50px"],
                         ["raw-html", function () { return hasUpgrade("i", 13) ? "<h1>Buyables</h1>" : "" }],
                         ["raw-html", function () { return hasUpgrade("i", 13) ? "<h3>(Always buying max just deal with it it's easier like that.) " : "" }],
@@ -4948,11 +6946,20 @@
 
             },
             "Omega": {
-                unlocked() { return hasUpgrade("i", 139) /*|| player.i.omegaunlocked.eq(0)*/ },
+                unlocked() { return hasUpgrade("i", 139)},
                 buttonStyle() { return { 'color': 'orange' } },
                 content:
                     [
                         ["microtabs", "omega", { 'border-width': '0px' }],
+                    ]
+
+            },
+            "Celestials": {
+                unlocked() { return hasMilestone("i", 29) },
+                buttonStyle() { return { 'color': 'yellow' } },
+                content:
+                    [
+                        ["microtabs", "celestials", { 'border-width': '0px' }],
                     ]
 
             },
@@ -5104,7 +7111,7 @@
 
             },
             "Jacorb's Mods": {
-                unlocked() { return hasChallenge("i", 23) },
+                unlocked() { return hasChallenge("i", 23) || hasMilestone("i", 21) },
                 buttonStyle() { return { 'color': 'purple' } },
                 content:
                     [
@@ -5123,7 +7130,7 @@
                         ["raw-html", function () { return "You are gaining " + format(player.i.jacorbmodspersecond) + " jacorbian mods per second." }, { "color": "purple", "font-size": "20px", "font-family": "monospace" }],
                         ["blank", "25px"],
                         ["row", [["buyable", 62], ["buyable", 63]]],
-                        ["row", [["upgrade", 115], ["upgrade", 116], ["upgrade", 117], ["upgrade", 118], ["upgrade", 119], ["upgrade", 121], ["upgrade", 122]]],
+                        ["row", [["upgrade", 115], ["upgrade", 116], ["upgrade", 117], ["upgrade", 118], ["upgrade", 119], ["upgrade", 121], ["upgrade", 122], ["upgrade", 157]]],
                     ]
 
             },
@@ -5145,7 +7152,7 @@
                         ["row", [["upgrade", 61], ["upgrade", 62], ["upgrade", 63], ["upgrade", 64], ["upgrade", 65], ["upgrade", 66]]],
                         ["raw-html", function () { return "<h3>You have a x" + format(player.i.preinfinityresourcemult) + "<h3> pre-infinity resource multiplier. " }],
                         ["blank", "25px"],
-                        ["row", [["buyable", 27], ["buyable", 36]]],
+                        ["row", [["buyable", 27], ["buyable", 36], ["buyable", 77]]],
                         ["blank", "25px"],
                         ["row", [["clickable", 31], ["clickable", 29]]],
                         ["row", [["clickable", 33], ["clickable", 32]]],
@@ -5277,34 +7284,16 @@
                         ["blank", "25px"],
                         ["row", [["clickable", 39]]],
                         ["blank", "25px"],
-                        ["raw-html", function () { return "Point Req: " + format(player.points) + "/1e35,000 points." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "IP Req: " + format(player.i.infinitypoints) + "/1e175 IP." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "Broken Infinity Req: " + format(player.i.brokeninfinities) + "/1e35 Broken Infinities." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "Infinity Req: " + format(player.i.infinities) + "/100,000 Infinities." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "Replicanti Mod Req: " + format(player.i.replicantimods) + "/100 Replicanti Mods." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "Infinity Power Req: " + format(player.i.infinitypower) + "/1e130 Infinity Power." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "Willpower Req: " + format(player.h.willpower) + "/1e9 Willpower." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                        ["raw-html", function () { return "Prestige Power Req: " + format(player.h.prestigepower) + "/100 Prestige Power." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ? "Point Req: " + format(player.points) + "/1e35,000 points.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"IP Req: " + format(player.i.infinitypoints) + "/1e175 IP.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"Broken Infinity Req: " + format(player.i.brokeninfinities) + "/1e35 Broken Infinities.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"Infinity Req: " + format(player.i.infinities) + "/100,000 Infinities.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"Replicanti Mod Req: " + format(player.i.replicantimods) + "/100 Replicanti Mods.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"Infinity Power Req: " + format(player.i.infinitypower) + "/1e130 Infinity Power.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"Willpower Req: " + format(player.h.willpower) + "/1e9 Willpower.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ?"Prestige Power Req: " + format(player.h.prestigepower) + "/100 Prestige Power.": "" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                         ["blank", "25px"],
-                        ["raw-html", function () { return "The grind is on, my friend." }, { "color": "red", "font-size": "24px", "font-family": "monospace" }],
-                    ]
-
-            },
-            "Main": {
-                unlocked() { return player.i.singularityunlocked.eq(1) },
-                buttonStyle() { return { 'color': 'red' } },
-                content:
-                    [
-                        ["row", [["clickable", 40]]],
-                        ["raw-html", function () { return "<h2>You have " + format(player.i.singularitypoints) + " singularity points. " }],
-                        ["raw-html", function () { return "<h2>Which boost pre-singularity resource multiplier by " + format(player.i.singularitypointeffect) + "x. " }],
-                        ["raw-html", function () { return "<h2>You will gain " + format(player.i.singularitypointstoget) + " on reset. " }],
-                        ["raw-html", function () { return "<h3>You have " + format(player.i.singularities) + " singularities. " }],
-                        ["raw-html", function () { return "<h3>You will gain " + format(player.i.singularitiestoget) + " on reset. " }],
-                        ["raw-html", function () { return "<h3>You spent " + formatTime(player.i.singularitytime) + " this singularity. " }],
-                        ["blank", "25px"],
-                        ["raw-html", function () { return "<h1>Unlockers</h1>" }],
-                        ["row", [["upgrade", 95], ["upgrade", 96], ["upgrade", 104], ["upgrade", 107], ["upgrade", 126], ["upgrade", 135], ["upgrade", 139]]],
+                        ["raw-html", function () { return player.i.singularitycutscene.eq(0) ? "The grind is on, my friend." : ""}, { "color": "red", "font-size": "24px", "font-family": "monospace" }],
                         ["raw-html", function () { return player.i.singularityscene.gte(1) && player.i.singularityscene.lt(9) ? "<h2> The power of singularity.  " : "" }],
                         ["raw-html", function () { return player.i.singularityscene.gte(2) && player.i.singularityscene.lt(9) ? "<h2> Stronger than the power of infinity.  " : "" }],
                         ["raw-html", function () { return player.i.singularityscene.gte(3) && player.i.singularityscene.lt(9) ? "<h2> For those who reject the path of eternity.  " : "" }],
@@ -5327,6 +7316,24 @@
                         ["raw-html", function () { return player.i.singularityscene.gte(20) && player.i.singularityscene.lt(21) ? "<h2> YOU WILL FINISH THE JOB. " : "" }],
                         ["blank", "25px"],
                         ["row", [["clickable", 41]]],
+                    ]
+
+            },
+            "Main": {
+                unlocked() { return player.i.singularityunlocked.eq(1) },
+                buttonStyle() { return { 'color': 'red' } },
+                content:
+                    [
+                        ["row", [["clickable", 40]]],
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.singularitypoints) + " singularity points. " }],
+                        ["raw-html", function () { return "<h2>Which boost pre-singularity resource multiplier by " + format(player.i.singularitypointeffect) + "x. " }],
+                        ["raw-html", function () { return "<h2>You will gain " + format(player.i.singularitypointstoget) + " on reset. " }],
+                        ["raw-html", function () { return "<h3>You have " + format(player.i.singularities) + " singularities. " }],
+                        ["raw-html", function () { return "<h3>You will gain " + format(player.i.singularitiestoget) + " on reset. " }],
+                        ["raw-html", function () { return "<h3>You spent " + formatTime(player.i.singularitytime) + " this singularity. " }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>Unlockers</h1>" }],
+                        ["row", [["upgrade", 95], ["upgrade", 96], ["upgrade", 104], ["upgrade", 107], ["upgrade", 126], ["upgrade", 135], ["upgrade", 139]]],
                         ["raw-html", function () { return "<h3>You have a x" + format(player.i.presingularityresourcemult) + " pre-singularity resource multiplier (multiplies all but infinities). " }],
                         ["blank", "25px"],
                         ["raw-html", function () { return "<h1>Milestones</h1>" }],
@@ -5422,7 +7429,7 @@
                         ["blank", "25px"],
                         ["row", [["upgrade", 97], ["upgrade", 98], ["upgrade", 99], ["upgrade", 101], ["upgrade", 102], ["upgrade", 103]]],
                         ["row", [["upgrade", 108], ["upgrade", 109], ["upgrade", 111], ["upgrade", 112], ["upgrade", 113], ["upgrade", 114]]],
-                        ["row", [["upgrade", 123], ["upgrade", 124], ["upgrade", 125], ["upgrade", 131], ["upgrade", 134]]],
+                        ["row", [["upgrade", 123], ["upgrade", 124], ["upgrade", 125], ["upgrade", 131], ["upgrade", 134], ["upgrade", 156]]],
                         ["blank", "25px"],
                         ["raw-html", function () { return hasUpgrade("i", 114) ? "<h2>Stuck? " : "" }],
                         ["raw-html", function () { return hasUpgrade("i", 114) ? "<h2>Seek the harbringer of exponential growth. " : ""}],
@@ -5508,12 +7515,468 @@
         },
         omega:
         {
-            "Unlock": {
-                unlocked() { return /*player.i.omegaunlocked.eq(0)*/ },
+            "Cutscene": {
+                unlocked() { return player.i.omegacutscene.eq(1) },
                 buttonStyle() { return { 'color': 'orange' } },
                 content:
                     [
-                        ["raw-html", function () { return "<h1><a href=https://discord.gg/DubGsHrbs2>HOORAY! You reached the endgame. Join the discord server for updates </a></h1>" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.omegascene.gte(1) && player.i.omegascene.lt(9) ? "<h2> You have made it.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(2) && player.i.omegascene.lt(9) ? "<h2> You are ever-so slightly closer to the celestials.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(3) && player.i.omegascene.lt(9) ? "<h2> This inflation, this large magnitude of numbers.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(4) && player.i.omegascene.lt(9) ? "<h2> It does not matter.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(5) && player.i.omegascene.lt(9) ? "<h2> These numbers are only another representation of infinity.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(6) && player.i.omegascene.lt(9) ? "<h2> However, you will now find purpose for your grinding.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(7) && player.i.omegascene.lt(9) ? "<h2> Defeating these celestials will grant you a handsome reward.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(8) && player.i.omegascene.lt(9) ? "<h2> You will gain power like no other man.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(9) && player.i.omegascene.lt(16) ? "<h2> You, the stinking high-school dropout that smokes weed.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(10) && player.i.omegascene.lt(16) ? "<h2> You will be no longer that.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(11) && player.i.omegascene.lt(16) ? "<h2> You will be on the top of the world.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(12) && player.i.omegascene.lt(16) ? "<h1> You will become GOD.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(13) && player.i.omegascene.lt(16) ? "<h2> You will show everyone your true power.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(14) && player.i.omegascene.lt(16) ? "<h2> Even from there, it is still the beginning.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(15) && player.i.omegascene.lt(16) ? "<h2> You do have some realms to stitch up.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(16) && player.i.omegascene.lt(27) ? "<h2> Along the path of eternity,  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(17) && player.i.omegascene.lt(27) ? "<h2> You would have made countless realities.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(18) && player.i.omegascene.lt(27) ? "<h2> The power of which can defeat only seven celestials.  " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(19) && player.i.omegascene.lt(27) ? "<h2> Teresa. Effarig. Nameless. V. Ra. Lai'tela. Pelle. " : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(20) && player.i.omegascene.lt(27) ? "<h2> Seven celestials of great power and strength." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(21) && player.i.omegascene.lt(27) ? "<h2> But a great weakness to the eternal path." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(22) && player.i.omegascene.lt(27) ? "<h2> A great weakness to the manipulation of time." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(23) && player.i.omegascene.lt(27) ? "<h2> These celestials are different." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(24) && player.i.omegascene.lt(27) ? "<h2> They abandoned Hevipelle a long time ago." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(25) && player.i.omegascene.lt(27) ? "<h2> They gained different power, different strength." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(26) && player.i.omegascene.lt(27) ? "<h2> Under this power, you can defeat them." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(27) && player.i.omegascene.lt(34) ? "<h2> The power of omega." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(28) && player.i.omegascene.lt(34) ? "<h2> Unlike anything seen before." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(29) && player.i.omegascene.lt(34) ? "<h2> You are ready for your point gain to explode." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(30) && player.i.omegascene.lt(34) ? "<h2> It will take time, but you will get there." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(31) && player.i.omegascene.lt(34) ? "<h2> By the way, you are doing great." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(32) && player.i.omegascene.lt(34) ? "<h2> Out of all my years being Red Diamond, you have made it the farthest." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(33) && player.i.omegascene.lt(34) ? "<h2> I give you my true word of encouragement." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(34) && player.i.omegascene.lt(44) ? "<h2> Hopefully, when this is all over, we get to live in harmony." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(35) && player.i.omegascene.lt(44) ? "<h2> My good friend Jacorb, he will return as well right?" : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(36) && player.i.omegascene.lt(44) ? "<h2> Haven't seen the man in forever." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(37) && player.i.omegascene.lt(44) ? "<h2> Don't remember much about him. Only know his name." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(38) && player.i.omegascene.lt(44) ? "<h2> After all this time, I feel I have lost my identity." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(39) && player.i.omegascene.lt(44) ? "<h2> I can't remember anything before I entered the higher plane." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(40) && player.i.omegascene.lt(44) ? "<h2> I feel as if I have a greater purpose." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(41) && player.i.omegascene.lt(44) ? "<h2> Was the higher plane a mistake?" : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(42) && player.i.omegascene.lt(44) ? "<h2> Did anything happen in the past?" : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(43) && player.i.omegascene.lt(44) ? "<h2> My friend, you must help me." : "" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 54]]],
+                    ]
+
+            },
+            "Main": {
+                unlocked() { return player.i.omegacutscene.eq(0) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.omegapoints) + " <h1>ω, <h2>which boost pre-omega shrine effects by ^" + format(player.i.omegapointseffect) + "<h3> (Does not include singularities and infinities)" }],
+                        ["raw-html", function () { return "<h2>You will gain " + format(player.i.omegapointstoget) + " on reset. " }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h3>You have " + format(player.i.omegas) + " <h1>Ω. " }],
+                        ["raw-html", function () { return "<h3>You will gain " + format(player.i.omegastoget) + " on reset. " }],
+                        ["raw-html", function () { return "<h3>You spent " + formatTime(player.i.omegatime) + " this singularity. " }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 55]]],
+                        ["raw-html", function () { return "<h4>Resets all incremental layer progress except for singularity milestones and challenges." }],
+                        ["blank", "25px"],
+                        ["milestone", 21],
+                        ["milestone", 22],
+                        ["milestone", 23],
+                        ["milestone", 24],
+                        ["row", [["clickable", 58], ["clickable", 57]]],
+                    ]
+
+            },
+            "Upgrades": {
+                unlocked() { return player.i.omegacutscene.eq(0) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.omegapoints) + " <h1>ω" }],
+                        ["blank", "25px"],
+                        ["row", [["upgrade", 141], ["upgrade", 142], ["upgrade", 143], ["upgrade", 145], ["upgrade", 149], ["upgrade", 153], ["upgrade", 154]]],
+                    ]
+
+            },
+            "Omega Layers": {
+                unlocked() { return hasUpgrade("i", 143) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["microtabs", "omegalayers", { 'border-width': '0px' }],
+                    ]
+
+            },
+            "Aarexian Balancing": {
+                unlocked() { return hasUpgrade("i", 155) && hasUpgrade("i", 156) && hasUpgrade("i", 157) && hasUpgrade("a", 11) && hasUpgrade("h", 32) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["microtabs", "aarex", { 'border-width': '0px' }],
+                    ]
+
+            },
+            "True Singularity": {
+                unlocked() { return hasUpgrade("i", 164) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["microtabs", "truesingularity", { 'border-width': '0px' }],
+                    ]
+
+            },
+        },
+        omegalayers:
+        {
+            "Alpha": {
+                unlocked() { return hasUpgrade("i", 143) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.alpha) + " <h1>α, <h2>which boost ω by x" + format(player.i.alphaeffect) }],
+                        ["raw-html", function () { return "<h2>You are gaining " + format(player.i.alphapersecond) + " α per second, which is powered by the amount of points you have. " }],
+                        ["blank", "25px"],
+                        ["row", [["upgrade", 144], ["upgrade", 146], ["upgrade", 147], ["upgrade", 148], ["upgrade", 151], ["upgrade", 152]]],
+                    ]
+
+            },
+            "Beta": {
+                unlocked() { return hasUpgrade("i", 148) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.beta) + " <h1>β, <h2>which boost α by x" + format(player.i.betaeffect) }],
+                        ["raw-html", function () { return "<h2>You are gaining " + format(player.i.betapersecond) + " β per second, which is powered by your β dimensions. " }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>β Dimensions" }],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 78], ["buyable", 79], ["buyable", 81], ["buyable", 82]]],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 83], ["buyable", 84]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h3>Dimension Buy Multiplier: +" + format(player.i.dimensionbuymult) }],
+                        ["raw-html", function () { return "<h3>Tickspeed Power: +" + format(player.i.tickspeedmult) }],
+                    ]
+
+            },
+            "Gamma": {
+                unlocked() { return hasUpgrade("i", 152) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.gamma) + " <h1>γ, <h2>which boost β dimensions by x" + format(player.i.gammaeffect) }],
+                        ["raw-html", function () { return "<h2>You will gain " + format(player.i.gammatoget) + " on reset" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 59]]],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 85], ["buyable", 86]]],
+                    ]
+
+            },
+            "Delta": {
+                unlocked() { return hasUpgrade("i", 154) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>δ Challenges" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.omegascene.gte(44) && player.i.omegascene.lt(52) ? "<h2> Omega Layers, one of the powers held by one of the great lost celestials." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(45) && player.i.omegascene.lt(52) ? "<h2> Seems you've made it up to here." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(46) && player.i.omegascene.lt(52) ? "<h2> You are getting closer and closer to the first celestial." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(47) && player.i.omegascene.lt(52) ? "<h2> Can you feel the power getting stronger?" : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(48) && player.i.omegascene.lt(52) ? "<h2> That is the power of replication. The first celestial." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(49) && player.i.omegascene.lt(52) ? "<h2> You will meet him very shortly." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(50) && player.i.omegascene.lt(52) ? "<h2> His power goes very far indeed." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(51) && player.i.omegascene.lt(52) ? "<h2> You are almost ready." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(52) && player.i.omegascene.lt(57) ? "<h2> These omega powers have existed since the time of the infinity keeper." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(53) && player.i.omegascene.lt(57) ? "<h2> However, it's power was stored in the form of glyphs and alchemy." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(54) && player.i.omegascene.lt(57) ? "<h2> The sad part is you will likely never find a glyph ever again." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(55) && player.i.omegascene.lt(57) ? "<h2> The keeper's reckless behavior destroyed them all." : "" }],
+                        ["raw-html", function () { return player.i.omegascene.gte(56) && player.i.omegascene.lt(57) ? "<h2> Well, got to go. Good luck." : "" }],
+                        ["row", [["clickable", 62]]],
+                        ["row", [["challenge", 25], ["challenge", 26], ["challenge", 27], ["challenge", 28]]],
+                    ]
+
+            },
+            "Epsilon": {
+                unlocked() { return hasChallenge("i", 28) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.epsilon) + " <h1>ε, <h2>which boost dimension buy multiplier and tickspeed power by x" + format(player.i.epsiloneffect) }],
+                        ["raw-html", function () { return "<h2>You are gaining " + format(player.i.epsilonpersecond) + " ε per second." }],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 87]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h2>Stuck? " }],
+                        ["raw-html", function () { return "<h2>Seek the omnisity, the expert of mods. " }],
+                        ["raw-html", function () { return "<h2>Seek the one who trained all the gods. " }],
+                        ["raw-html", function () { return "<h2>Buy the 5 artifacts, scattered through the game. " }],
+                        ["raw-html", function () { return "<h2>If you find them all, you might just spell his name. " }],
+
+                    ]
+
+            },
+            "Zeta": {
+                unlocked() { return hasMilestone("i", 25) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.zeta) + " <h1>ζ, <h2>which boost ε by x" + format(player.i.zetaeffect) }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 78]]],
+                        ["blank", "25px"],
+                        ["row", [["upgrade", 165], ["upgrade", 166], ["upgrade", 167]]],
+                    ]
+
+            },
+            "Eta": {
+                unlocked() { return hasUpgrade("i", 167) },
+                buttonStyle() { return { 'color': 'orange' } },
+                content:
+                    [
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.eta) + " <h1>η, <h2>which boost ζ by x" + format(player.i.etaeffect) }],
+                        ["raw-html", function () { return "<h2>You are gaining " + format(player.i.etapersecond) + " η per second." }],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 96], ["buyable", 97]]],
+                    ]
+
+            },
+        },
+        aarex:
+        {
+            "Cutscene": {
+                unlocked() { return player.i.aarexcutscene.eq(1) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexscene.gte(1) && player.i.aarexscene.lt(8) ? "<h2> Finally! I can speak!  " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(2) && player.i.aarexscene.lt(8) ? "<h2> This exile has silenced me for years! " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(3) && player.i.aarexscene.lt(8) ? "<h2> Thanks buddy, but I have no clue why you did this. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(4) && player.i.aarexscene.lt(8) ? "<h2> Wait, are you trying to free us? " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(5) && player.i.aarexscene.lt(8) ? "<h2> Perhaps you could be up to good use. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(6) && player.i.aarexscene.lt(8) ? "<h2> You must be the prophesied hero to unite the realms! " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(7) && player.i.aarexscene.lt(8) ? "<h2> Well in that case, I shall introduce myself. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(8) && player.i.aarexscene.lt(15) ? "<h2> My full name is Aarex Tiaokhiao, but you can call me Aarex. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(9) && player.i.aarexscene.lt(15) ? "<h2> I am the knight of upgrades; Show me some respect. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(10) && player.i.aarexscene.lt(15) ? "<h2> I am also the omnisity of NG+++. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(11) && player.i.aarexscene.lt(15) ? "<h2> I helped Hevipelle in his quest of antimatter. I helped him manipulate quantum and ghosts. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(12) && player.i.aarexscene.lt(15) ? "<h2> Meta dimensions, emperor dimensions, bosonic labs, all of them. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(13) && player.i.aarexscene.lt(15) ? "<h2> Do they still do that?" : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(14) && player.i.aarexscene.lt(15) ? "<h2> My telepathic ability suggests they use a new method now." : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(15) && player.i.aarexscene.lt(25) ? "<h2> Reality eh? Does Hevipelle think it's funny to stop using my technique?" : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(16) && player.i.aarexscene.lt(25) ? "<h2> My technique gave more antimatter. I guess that's the best he could do without me." : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(17) && player.i.aarexscene.lt(25) ? "<h2> You must have met my old friend Jacorb, didn't you." : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(18) && player.i.aarexscene.lt(25) ? "<h2> We used to be the best of buddies, until we had a falling out. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(19) && player.i.aarexscene.lt(25) ? "<h2> We made a tree together. The prestige tree. I wonder how it's doing. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(20) && player.i.aarexscene.lt(25) ? "<h2> We used Acamaeda's engine to make it. We thought it was powerful enough to destroy the death realm. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(21) && player.i.aarexscene.lt(25) ? "<h2> The day we got exiled, I left Jacorb behind. That was my biggest mistake. Our first years in exile were tough.  " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(22) && player.i.aarexscene.lt(25) ? "<h2> We argued and argued, until the high lord of the death realm silenced me.  " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(23) && player.i.aarexscene.lt(25) ? "<h2> I just want to speak with him once more.  " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexscene.gte(24) && player.i.aarexscene.lt(25) ? "<h2> Please, just let me free.  " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 63]]],
+                    ]
+
+            },
+            "Main": {
+                unlocked() { return player.i.aarexcutscene.eq(0) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You can turn off balancing by doing an omega reset.<h2>" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You gain wasted aarex points by disabling balancing.<h2>" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 64]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You have " + format(player.i.aarexpoints) + " <h2>aarex points, which generation is based on points.<h2>" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You are making " + format(player.i.aarexpointspersecond) + " <h2>aarex points per second.<h2>" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You have " + format(player.i.wastedaarexpoints) + " <h2>wasted aarex points, which boost aarex point gain by x<h2>" + format(player.i.wastedaarexpointseffect) + "." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You will gain " + format(player.i.wastedaarexpointstoget) + " <h2> wasted aarex points." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h1>Upgrades " : "" }],
+                        ["row", [["upgrade", 158], ["upgrade", 159], ["upgrade", 161], ["upgrade", 162], ["upgrade", 163], ["upgrade", 164]]],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 66], ["clickable", 65]]],
+                    ]
+
+            },
+            "Aarexian Buyables": {
+                unlocked() { return hasUpgrade("i", 158) && player.i.aarexbalancing.eq(1) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You have " + format(player.i.aarexpoints) + " <h2>aarex points, which generation is based on points.<h2>" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You are making " + format(player.i.aarexpointspersecond) + " <h2>aarex points per second.<h2>" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You have " + format(player.i.wastedaarexpoints) + " <h2>wasted aarex points, which boost aarex point gain by x<h2>" + format(player.i.wastedaarexpointseffect) + "." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You will gain " + format(player.i.wastedaarexpointstoget) + " <h2> wasted aarex points." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 88], ["buyable", 89], ["buyable", 91], ["buyable", 92]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return hasUpgrade("i", 161) && player.i.aarexbalancing.eq(1) ? "<h1>Wasted Buyables " : "" }],
+                        ["raw-html", function () { return hasUpgrade("i", 161) && player.i.aarexbalancing.eq(1) ? "<h3>(They don't reset on omega) " : "" }],
+                        ["row", [["buyable", 93], ["buyable", 94], ["buyable", 95]]],
+                    ]
+
+            },
+            "Aarexification": {
+                unlocked() { return hasUpgrade("i", 162) && player.i.aarexbalancing.eq(1) },
+                buttonStyle() { return { 'color': '#68e8f4' } },
+                content:
+                    [
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>There is " + format(player.i.aarexentropy) + " <h2>aarex entropy, which is based on wasted aarex points and energy" : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You have " + format(player.i.aarexifiedinfinities) + " <h2>aarexified infinities, which boost aarex point gain by x" + format(player.i.aarexifiedinfinitieseffect) + "." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You will gain " + format(player.i.aarexifiedinfinitiestoget) + " <h2>aarexified infinities." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You have " + format(player.i.aarexifiedsingularities) + " <h2>aarexified singularities, which boost wasted aarex point gain by x" + format(player.i.aarexifiedsingularitieseffect) + "." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You will gain " + format(player.i.aarexifiedsingularitiestoget) + " <h2>aarexified singularities." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>Aarexified resource gain is based on the resource and aarex entropy." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>Aarexification will reset current aarexian balancing progress (except upgrades)." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.aarexbalancing.eq(1) ? "<h2>You need 4 entropy for aarexification." : "" }, { "color": "#68e8f4", "font-size": "16px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 71]]],
+                        ["row", [["clickable", 72]]],
+                    ]
+
+            },
+        },
+        truesingularity:
+        {
+            "Cutscene": {
+                unlocked() { return player.i.truesingularitycutscene.eq(1) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.truesingularityscene.gte(1) && player.i.truesingularityscene.lt(6) ? "<h2> You did it. You are 25% of the way to freeing me! " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.truesingularityscene.gte(2) && player.i.truesingularityscene.lt(6) ? "<h2> Now, this new feature is your reward. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.truesingularityscene.gte(3) && player.i.truesingularityscene.lt(6) ? "<h2> The true singularity, the weapon against the lost celestials. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.truesingularityscene.gte(4) && player.i.truesingularityscene.lt(6) ? "<h2> It is now in your hands. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.truesingularityscene.gte(5) && player.i.truesingularityscene.lt(6) ? "<h2> Thanks for your help. " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["row", [["clickable", 73]]],
+                    ]
+
+            },
+            "Main": {
+                unlocked() { return player.i.truesingularitycutscene.eq(0) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["blank", "50px"],
+                        ["row", [["bar", "truesingularitybar"]]],
+                        ["raw-html", function () { return "<h2>Your true singularity is level " + format(player.i.truesingularitylevel, 0) + " which boosts Meta-IP effect by ^" + format(player.i.truesingularityeffect) }],
+                        ["raw-html", function () { return "<h2>You are gaining " + format(player.i.truesingularityxppersecond) + " xp per second"}],
+                        ["blank", "50px"],
+                        ["raw-html", function () { return '<div class="black-hole"></div>' }], 
+                    ]
+
+            },
+            "Quests": {
+                unlocked() { return player.i.truesingularitycutscene.eq(0) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.singularityenergy, 0) + " singularity energy, which produces true singularity xp." }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 74]]],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 75]]],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 76]]],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 77]]],
+                    ]
+
+            },
+            "Milestones": {
+                unlocked() { return player.i.truesingularitycutscene.eq(0) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h2>Your true singularity is level " + format(player.i.truesingularitylevel, 0) }],
+                        ["blank", "25px"],
+                        ["milestone", 25],
+                        ["milestone", 26],
+                        ["milestone", 27],
+                        ["milestone", 28],
+                        ["milestone", 29],
+                    ]
+
+            },
+            "Boosters": {
+                unlocked() { return hasMilestone("i", 27) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(0) ? "<h2> You are not boosting " : "" }, { "color": "white", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(1) ? "<h2> You are boosting with jacorb " : "" }, { "color": "purple", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(1) ? "<h2> x" + format(player.i.jacorbboostereffect) + " boost to jacorbian mods" : "" }, { "color": "purple", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(2) ? "<h2> You are boosting with aarex " : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(2) ? "<h2> x" + format(player.i.aarexboostereffect) + " boost to aarex points" : "" }, { "color": "#68e8f4", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(3) ? "<h2> You are boosting with singularity " : "" }, { "color": "red", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(3) ? "<h2> x" + format(player.i.singularityboostereffect) + " boost to singularities" : "" }, { "color": "red", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(4) ? "<h2> You are boosting with omega " : "" }, { "color": "orange", "font-size": "18px", "font-family": "monospace" }],
+                        ["raw-html", function () { return player.i.boosterchoice.eq(4) ? "<h2> x" + format(player.i.omegaboostereffect) + " boost to true singularity effect" : "" }, { "color": "orange", "font-size": "18px", "font-family": "monospace" }],
+                        ["blank", "25px"],
+                        ["row", [["clickable", 79], ["clickable", 81], ["clickable", 82], ["clickable", 83]]],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h3>You get to choose one booster every omega run, but the choice is reset when you do an omega reset. " }],
+                    ]
+
+            },
+            "Dimensions": {
+                unlocked() { return hasMilestone("i", 28) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, red, purple)' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h2>You have " + format(player.i.tspower) + " <h2>true singularity power, <h2>which boost xp gain by x" + format(player.i.tspowereffect) }],
+                        ["raw-html", function () { return "<h2>You are gaining " + format(player.i.tspowerpersecond) + " true singularity power per second." }],
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h1>True Singularity Dimensions " }],
+                        ["blank", "25px"],
+                        ["row", [["buyable", 98], ["buyable", 99], ["buyable", 101], ["buyable", 102]]],
+                    ]
+
+            },
+        },
+        celestials:
+        {
+            "Cante": {
+                unlocked() { return hasMilestone("i", 29) },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, #ADD8E6, blue)' } },
+                content:
+                    [
+                        ["microtabs", "cante", { 'border-width': '0px' }],
+                    ]
+
+            },
+        },
+        cante:
+        {
+            "Quotes": {
+                unlocked() { return true },
+                buttonStyle() { return { 'background-image': 'linear-gradient(85deg, #ADD8E6, blue)' } },
+                content:
+                    [
+                        ["blank", "25px"],
+                        ["raw-html", function () { return "<h2> YOU REACHED THE CURRENT ENDGAME! " }, { "font-size": "36px", "font-family": "monospace" }],
+                        ["raw-html", function () { return "<div class=cante-animation></span>Ξ</div>" }],
                     ]
 
             },
@@ -5525,9 +7988,14 @@
         ["raw-html", function () { return "You have " + format(player.points) + " points." }, { "color": "white", "font-size": "32px", "font-family": "monospace" }],
         ["raw-html", function () { return "You are gaining " + format(player.gain) + " points per second."}, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
         ["raw-html", function () { return inChallenge("i", 16) ? "You have " + format(player.i.apoints) + " ANTIPOINTS." : "" }, { "color": "white", "font-size": "16px", "font-family": "monospace" }],
-        ["row", [["clickable", 37], ["clickable", 42]]],
+        ["row", [["clickable", 68], ["clickable", 69], ["clickable", 37], ["clickable", 42], ["clickable", 56], ["clickable", 67], ["clickable", 61]]],
         ["microtabs", "stuff", { 'border-width': '0px' }],
-        ["blank", "25px"],
+
+        //MUSIC CONTROL
+        ["raw-html", function () { return options.musicToggle && player.i.jacorbianunlock.eq(1) && player.i.aarexbalancing.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/jacorb.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && player.i.aarexbalancing.eq(1) && player.i.jacorbianunlock.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/aarex.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/void.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
+        ["raw-html", function () { return options.musicToggle && !player.i.aarexbalancing.eq(1) && player.i.jacorbianunlock.eq(0) && !inChallenge("i", 24) ? "<audio controls autoplay loop hidden><source src=music/incremental.mp3 type<=audio/mp3>loop=true hidden=true autostart=true</audio>" : "" }],
     ],
     layerShown() { return true }
 })
@@ -5550,5 +8018,22 @@ const jacorbparticle = {
     },
     speed() { // Randomize speed a bit
         return (Math.random() + 4) * 4
+    },
+}
+const aarexparticle = {
+    image: "resources/aarexlayer.png",
+    x() {
+        return (Math.random() + 4) * 300
+    },
+    y() {
+        return (Math.random() + 1) * -400
+    },
+    spread: 200,
+    time: 5,
+    dir() {
+        return (Math.random() + 1) * 365
+    },
+    speed() { // Randomize speed a bit
+        return (Math.random() + 4) * 7
     },
 }
