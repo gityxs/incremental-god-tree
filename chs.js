@@ -691,7 +691,7 @@ var cnItems = {
     "Inf in it ie": "无限在它的 ie",
     "Jacorb Would Be Proud": "雅各布会感到骄傲",
     "Make a mod with exactly ONE point.": "制作一个只有一点的模组。",
-    "Make the assembly line a cleanse (follow the guide).": "使流水线清洁（遵循指南）。",
+    "Make the assembly line a cleanse (follow the guide).": "使流水线净化（遵循指南）。",
     "MY FAVORITE FEATURE IS BACK!": "我最喜欢的功能回来了！",
     "My Favorite Feature Will Never Even Leave Me In Pain!": "我最喜欢的功能永远不会让我痛苦！",
     "My Favorite Feature Will Never Leave Me!": "我最喜欢的功能永远不会离开我！",
