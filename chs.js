@@ -1277,7 +1277,7 @@ var cnRegReplace = new Map([
     [/^You are gaining (.+) willpower per second.$/, '你每秒获得 $1 意志。'],
     [/^You are gaining (.+) ε per second.$/, '你每秒获得 $1 ε。'],
     [/^You are gaining (.+) β per second, which is powered by your β dimensions.$/, '你每秒获得 $1 β，它由您的 β 维度提供支持。'],
-    [/^You are gaining (.+) α per second, which is powered by the amount of points you have.$/, '你每秒获得 $1 α，它由您拥有的点数which boost pre-omega shrine effects by ^提供支持。'],
+    [/^You are gaining (.+) α per second, which is powered by the amount of points you have.$/, '您每秒获得 (.+) α，这取决于您拥有的点数。'],
     [/^which are boosting IP gain by (.+).\n(.+)Cost: (.+) α$/, '提升无限点数增益 $1。\n$2成本：$3 α'],
     [/^which are multiplying seed gain by (.+) seeds per second.\n(.+)Cost: (.+) α$/, '每秒乘以种子增益 $1 种子。\n$2成本：$3 α'],
     [/^which are multiplying seed gain by (.+) seeds per second.\n(.+)Cost: (.+) seeds$/, '每秒乘以种子增益 $1 种子。\n$2成本：$3 种子'],
